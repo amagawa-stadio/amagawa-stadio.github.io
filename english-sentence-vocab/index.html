@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>例文で英単語！</title>
+  <meta name="description" content="中学3年間の英単語を「生きた例文」と「誤答の個別解説」で完全マスターする学習アプリ">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-BgHhq5HV.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C72G7hjB.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- トップヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <button id="btn-header-back" class="icon-btn header-back-btn hidden" title="戻る">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button id="btn-home" class="icon-btn" title="ホームへ">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </button>
+        <div class="header-title-box">
+          <h1 class="header-title" id="app-header-title">例文で英単語！</h1>
+        </div>
+      </div>
+      <div class="header-right">
+        <button id="btn-sound-toggle" class="icon-btn active" title="音声ON/OFF">
+          <svg id="icon-sound-on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+        <button id="btn-speed-toggle" class="header-speed-chip" title="読み上げ速度を切替 (タップで 0.8x / 1.0x / 1.2x)">
+          <span id="header-speed-label">0.9x</span>
+        </button>
+        <button id="btn-nav-notebook" class="icon-btn notebook-badge-btn" title="復習ノート">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span id="notebook-badge-count" class="badge">0</span>
+        </button>
+        <button id="btn-open-help" class="icon-btn help-header-btn" title="使い方＆品詞カラーガイド">
+          <span>？</span>
+        </button>
+        <button id="btn-open-settings" class="icon-btn settings-header-btn" title="各種設定・アプリの評価" aria-label="各種設定">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ画面群 -->
+    <main class="app-main">
+      
+      <!-- 1. ホーム画面 -->
+      <section id="view-home" class="view-section active">
+        <!-- マトリックス風デジタルコード背景レイヤー（トップ画面専用・高品位モノトーン緑演出） -->
+        <div class="matrix-bg-layer" aria-hidden="true">
+          <div class="matrix-code-col c1">01 A B C V N ADJ ADV PREP CONJ PRON 10 01</div>
+          <div class="matrix-code-col c2">WORD SENTENCE CONTEXT GRAMMAR LOGIC 0110</div>
+          <div class="matrix-code-col c3">SV SVO SVC SVOO SVOC TO-INF PART 1011</div>
+          <div class="matrix-code-col c4">EIKEN H.S.EXAM VOCAB 3630 SENTENCES 8592</div>
+          <div class="matrix-code-col c5">NOUN VERB ADJ ADV AUX PREP CONJ ART 0101</div>
+          <div class="matrix-code-col c6">MEMORY FOCUS REVIEW MASTER TARGET 1101</div>
+        </div>
+
+        <div class="home-hero">
+          <div class="hero-badge">MATRIX VOCABULARY SYSTEM</div>
+          <h2 class="hero-title">「例文」と「なぜ？」で<br><span class="accent-text">一生モノの単語力</span>へ</h2>
+          <p class="hero-desc">トップ画面は落ち着いた空間で迷わず選択。学習中は<strong>カラフルな品詞色分け</strong>で自然に記憶へ残ります。</p>
+        </div>
+
+        <!-- 🔥 連続学習日数（ストリーク）＆ 学習カレンダー・使い方ガイドバー -->
+        <div class="home-streak-row">
+          <div id="home-streak-card" class="home-streak-card" title="タップして学習カレンダーを開く">
+            <div class="streak-card-left">
+              <div class="streak-flame-badge">🔥</div>
+              <div class="streak-card-info">
+                <div class="streak-title-line">
+                  <span class="streak-label">連続学習</span>
+                  <span id="home-streak-days" class="streak-days-num">0</span>
+                  <span class="streak-days-unit">日</span>
+                  <span id="home-total-goal-days" class="streak-total-days">（合計0日）</span>
+                  <span id="home-today-pill" class="streak-today-pill">今日 0 問</span>
+                </div>
+                <div id="home-streak-message" class="streak-sub-message">1日目！今日からコツコツ頑張ろう！</div>
+              </div>
+            </div>
+            <button id="btn-open-calendar" class="streak-cal-btn" type="button">
+              <span>📅</span>
+              <span>記録</span>
+            </button>
+          </div>
+
+          <button id="btn-home-open-help" class="home-guide-banner-btn" type="button">
+            <span class="guide-btn-left">
+              <span class="guide-btn-icon">🎨</span>
+              <span><strong>使い方 ＆ 品詞カラー早見表</strong>（色と模様のヒミツ・辞書の裏ワザ）</span>
+            </span>
+            <span class="guide-btn-arrow">？ 見る ▸</span>
+          </button>
+        </div>
+
+        <!-- ==========================================
+             STEP 1: 学習を始める（迷ったらここ！）
+             ========================================== -->
+        <div class="home-step-frame step-frame-primary">
+          <div class="home-step-header">
+            <div class="home-step-badge-row">
+              <span class="home-step-pill primary">STEP 1</span>
+              <span class="home-step-rec-tag">★ まずはここから</span>
+            </div>
+            <h3 class="home-step-title">「学習を始める」迷ったらここを進めましょう</h3>
+            <p class="home-step-sub">慣れるまではレベルを選んで、単語と例文の学習に集中しましょう。</p>
+          </div>
+
+          <!-- 選択フォーム -->
+          <div class="config-card">
+            <!-- レベル選択 (複数選択可能) -->
+            <div class="config-group">
+              <label class="config-label">
+                <span class="label-icon">🎯</span> 学習レベルを選ぶ
+                <span class="config-label-sub">(複数選択可)</span>
+              </label>
+              <div class="chip-group" id="level-chips">
+                <button class="chip active" data-level="beginner">初級 (中1)</button>
+                <button class="chip" data-level="intermediate">中級 (中2)</button>
+                <button class="chip" data-level="advanced">上級 (中3)</button>
+                <button class="chip" data-level="super">超級 (準2級)</button>
+              </div>
+            </div>
+
+            <!-- 品詞・カテゴリ選択 -->
+            <div class="config-group">
+              <label class="config-label">
+                <span class="label-icon">📚</span> カテゴリ・品詞を選ぶ
+              </label>
+              <div class="chip-group" id="category-chips">
+                <button class="chip active" data-pos="all">すべて</button>
+                <button class="chip" data-pos="verb">動詞</button>
+                <button class="chip" data-pos="noun">名詞</button>
+                <button class="chip" data-pos="adj">形容詞</button>
+                <button class="chip" data-pos="adv">副詞</button>
+                <button class="chip" data-pos="idiom">熟語</button>
+                <button class="chip" data-pos="aux">助動詞</button>
+                <button class="chip" data-pos="interrogative">疑問詞</button>
+              </div>
+            </div>
+
+            <!-- 学習ルール紹介バナー -->
+            <div class="session-info-banner">
+              <span class="info-icon">⚡</span>
+              <span>1回の学習は<strong>「3単語」</strong>＋関連例文！サクッと集中特訓</span>
+            </div>
+
+            <!-- スタートボタン -->
+            <button id="btn-start-session" class="btn-primary start-btn pulse-glow">
+              <span>学習をはじめる！</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             STEP 2: My 単語帳とMy復習ノートで復習！
+             ========================================== -->
+        <div class="home-step-frame">
+          <div class="home-step-header">
+            <div class="home-step-badge-row">
+              <span class="home-step-pill">STEP 2</span>
+            </div>
+            <h3 class="home-step-title">My 単語帳とMy復習ノートで復習！</h3>
+            <p class="home-step-sub">間違えた単語や例文を重点的に復習して、記憶を確実に定着させましょう。</p>
+          </div>
+
+          <!-- 復習ノート＆直接復習ボタン -->
+          <div class="home-bottom-cards">
+            <!-- My単語帳カード -->
+            <div class="sub-card">
+              <div class="sub-card-header" id="card-open-vocab-notebook">
+                <div class="sub-card-icon">📖</div>
+                <div class="sub-card-info">
+                  <div class="sub-card-title">My 単語帳</div>
+                  <div class="sub-card-desc">要復習単語 (<span id="home-vocab-count">0</span>件)</div>
+                </div>
+              </div>
+              <button id="btn-quick-vocab-review" class="btn-quick-review">
+                <span>単語復習 (5問) ▸</span>
+              </button>
+            </div>
+
+            <!-- My復習ノートカード -->
+            <div class="sub-card">
+              <div class="sub-card-header" id="card-open-sentence-notebook">
+                <div class="sub-card-icon">📝</div>
+                <div class="sub-card-info">
+                  <div class="sub-card-title">My 復習ノート</div>
+                  <div class="sub-card-desc">要復習例文 (<span id="home-sentence-count">0</span>件)</div>
+                </div>
+              </div>
+              <button id="btn-quick-sentence-review" class="btn-quick-review">
+                <span>例文復習 (3問) ▸</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             STEP 3: 実力を試すべく、実戦模試に挑戦！
+             ========================================== -->
+        <div class="home-step-frame">
+          <div class="home-step-header">
+            <div class="home-step-badge-row">
+              <span class="home-step-pill">STEP 3</span>
+            </div>
+            <h3 class="home-step-title">実力を試すべく、実戦模試に挑戦！</h3>
+            <p class="home-step-sub">学習が進んだら、本番形式のタイマー付きテストと記録分析で実力を測りましょう。</p>
+          </div>
+
+          <div class="step3-cards-stack">
+            <!-- 🏆 高校入試・実戦模試モード エントリーバナー -->
+            <div class="mock-entry-card" id="btn-open-mock-config">
+              <div class="mock-entry-left">
+                <div class="mock-entry-icon">🏆</div>
+                <div class="mock-entry-text">
+                  <div class="mock-entry-title-row">
+                    <span class="mock-entry-title">実戦模試に挑戦！</span>
+                    <span class="mock-best-badge" id="home-mock-best-badge">高校入試本番演習</span>
+                  </div>
+                  <div class="mock-entry-desc">タイマー付き本番テストで100点満点・推定偏差値・弱点を判定！</div>
+                </div>
+              </div>
+              <div class="mock-entry-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+            </div>
+
+            <!-- 🎓 難関受験問題にチャレンジ！（キーボード入力・3大語彙問題） -->
+            <div class="challenge-entry-frame">
+              <div class="challenge-entry-header">
+                <div class="challenge-entry-title-row">
+                  <span class="challenge-entry-icon">🎓</span>
+                  <span class="challenge-entry-title">難関受験問題にチャレンジ！</span>
+                  <span class="challenge-entry-tag">キーボード入力・5問</span>
+                </div>
+                <p class="challenge-entry-desc">私立難関校で出題される記述式語彙問題（英英定義・共通語・同音異義語）に特訓！</p>
+              </div>
+
+              <div class="challenge-btns-grid">
+                <button type="button" class="challenge-mode-btn" id="btn-start-challenge-def" data-chalmode="defQuiz">
+                  <span class="chal-btn-icon">🔤</span>
+                  <span class="chal-btn-main">単語クイズ</span>
+                  <span class="chal-btn-sub">英英定義＋適語形</span>
+                  <span class="chal-btn-prog" id="home-chal-def-prog">0 / 60問</span>
+                </button>
+
+                <button type="button" class="challenge-mode-btn" id="btn-start-challenge-common" data-chalmode="commonWord">
+                  <span class="chal-btn-icon">🔗</span>
+                  <span class="chal-btn-main">共通語</span>
+                  <span class="chal-btn-sub">2文共通の多義語</span>
+                  <span class="chal-btn-prog" id="home-chal-com-prog">0 / 60問</span>
+                </button>
+
+                <button type="button" class="challenge-mode-btn" id="btn-start-challenge-homo" data-chalmode="homophone">
+                  <span class="chal-btn-icon">🔊</span>
+                  <span class="chal-btn-main">同音異義語</span>
+                  <span class="chal-btn-sub">同じ発音・別綴り</span>
+                  <span class="chal-btn-prog" id="home-chal-hom-prog">0 / 60問</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 学習の記録（ダッシュボード）ショートカット -->
+            <div class="stats-entry-card" id="btn-open-stats">
+              <div class="stats-entry-left">
+                <div class="stats-entry-icon">📊</div>
+                <div class="stats-entry-text">
+                  <div class="stats-entry-title">学習の記録・品詞別マスター率</div>
+                  <div class="stats-entry-desc">全体の進捗と品詞ごとの習熟度データをチェック！</div>
+                </div>
+              </div>
+              <div class="stats-entry-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 姉妹アプリ＆サイト共通宣伝枠（GitHub Pages連動・自動更新） -->
+        <div id="sister-apps-promo" data-current-app="com.hiroki.sentencevocab"></div>
+      </section>
+
+      <!-- 2. 学習中画面（スペル穴埋め / 例文クイズ共通ラッパー） -->
+      <section id="view-learning" class="view-section">
+        <!-- クイズ専用トップバー（左上: トップへ戻るボタン） -->
+        <div class="quiz-top-bar">
+          <button id="btn-quiz-exit-top" class="quiz-exit-btn" title="学習を中断してトップへ戻る">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span>トップへ戻る</span>
+          </button>
+          <div class="quiz-top-info">
+            <span id="session-word-indicator">単語 1 / 3</span>
+            <span id="session-phase-indicator" class="phase-badge">スペル完成</span>
+          </div>
+        </div>
+
+        <!-- 学習進行バー -->
+        <div class="progress-bar-container">
+          <div class="progress-track">
+            <div id="progress-fill" class="progress-fill" style="width: 20%;"></div>
+          </div>
+        </div>
+
+        <!-- 2-A: ステップ1 スペル穴埋め画面 -->
+        <div id="phase-spelling" class="learning-phase-box">
+          <div class="phase-header">
+            <span class="step-tag" id="spelling-step-tag">STEP 1</span>
+            <h3 class="phase-title">パネルを並べて単語を完成させよう！</h3>
+          </div>
+
+          <!-- 品詞テーマクラスが付与されるカード -->
+          <div class="spelling-card" id="spelling-card-box">
+            <!-- 品詞バッジ（色分け） -->
+            <div class="card-pos-badge" id="spelling-pos-badge">名詞</div>
+
+            <div class="spelling-meaning" id="spelling-meaning">りんご</div>
+
+            <!-- 音声ヒントボタン -->
+            <button id="btn-audio-hint" class="audio-hint-btn" title="発音を聞く">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              <span>発音ヒントを聞く</span>
+            </button>
+
+            <!-- 穴埋めスロット表示 -->
+            <div class="slots-container" id="spelling-slots">
+              <!-- JSで動的生成 -->
+            </div>
+
+            <!-- 正解・不正解メッセージ表示領域 -->
+            <div id="spelling-feedback" class="feedback-banner hidden"></div>
+
+            <!-- 文字パネル候補群 -->
+            <div class="panels-container" id="spelling-panels">
+              <!-- JSで動的生成 -->
+            </div>
+
+            <!-- 操作ボタン（1文字戻す） -->
+            <div class="spelling-actions">
+              <button id="btn-spell-backspace" class="action-btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
+                <span>1文字消す</span>
+              </button>
+              <button id="btn-spell-reveal" class="action-btn-reveal" title="My単語帳に登録して解答を確認する">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>解答を見る</span>
+              </button>
+            </div>
+            <button id="btn-spell-next-after-reveal" class="btn-next spelling-next-after-reveal hidden">
+              <span>例文クイズへ進む</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-B: ステップ2 例文4択クイズ画面 -->
+        <div id="phase-sentence" class="learning-phase-box hidden">
+          <div class="phase-header">
+            <span class="step-tag green" id="sentence-step-tag">STEP 2</span>
+            <div class="sentence-q-counter" id="sentence-counter-badge">例文問題 1 / 2</div>
+          </div>
+
+          <!-- 品詞テーマクラスが付与されるカード -->
+          <div class="sentence-card" id="sentence-card-box">
+            <!-- 日本語訳 -->
+            <div class="sentence-translation" id="sentence-translation">
+              私はリンゴを1つ持っています。
+            </div>
+
+            <!-- 穴あき英文（単語タップで辞書が開く） -->
+            <div class="sentence-english-box" id="sentence-english-tokens">
+              <!-- JSで単語ごとに生成 -->
+            </div>
+
+            <!-- 英文音声コントロール行（通常再生・スロー再生） -->
+            <div id="sentence-quiz-svocm-row" class="svocm-control-row hidden"><button id="btn-sentence-quiz-svocm" class="svocm-toggle-btn" type="button" aria-pressed="false" title="文の要素（SVOCM）の線分表示をオン/オフ"><span>📐 SVOCM</span></button><div id="sentence-quiz-svocm-legend" class="svocm-mini-legend hidden"><span class="svocm-leg-item role-s"><b>S</b>主語</span><span class="svocm-leg-item role-v"><b>V</b>動詞</span><span class="svocm-leg-item role-o"><b>O</b>目的語</span><span class="svocm-leg-item role-c"><b>C</b>補語</span><span class="svocm-leg-item role-m"><b>M</b>修飾語</span></div></div>
+            <div class="sentence-audio-row">
+              <div class="sentence-audio-controls">
+                <button id="btn-sentence-audio" class="small-audio-btn" title="英文を聞く (正解の音声ヒント)">
+                  <svg class="audio-speaker-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                  <span id="sentence-audio-label">英文を聞く (ヒント)</span>
+                </button>
+                <button id="btn-sentence-audio-slow" class="small-audio-btn slow-audio-btn" title="ゆっくり発音を聞く (0.75倍速)">
+                  <span>🐢 0.75x</span>
+                </button>
+                <button id="btn-toggle-pos-color" class="small-audio-btn pos-color-toggle-btn active" type="button" aria-pressed="true" title="単語の色分け表示をオン/オフ切り替え"><span>🎨 単語の色分け</span></button>
+              </div>
+              <div class="sentence-sub-controls-row">
+                <span class="grammar-point-tag" id="grammar-point-tag">冠詞 an の用法</span>
+                <button id="btn-scramble-hint" class="small-audio-btn scramble-hint-btn hidden" type="button" title="次に選ぶ単語のヒントを表示（語順が違う場合はリセットを案内）">
+                  <span>💡 ヒント</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4択選択肢 (通常時) -->
+            <div class="options-grid" id="sentence-options">
+              <!-- JSで動的生成 -->
+            </div>
+
+            <!-- 単語並べ替えコンテナ (例文復習時のみ表示) -->
+            <div id="sentence-scramble-container" class="scramble-container hidden">
+              <!-- 解答トレイ（単語スロット） -->
+              <div class="scramble-tray-card">
+                <div class="scramble-tray-header">
+                  <span class="scramble-tray-title">組み立てた英文:</span>
+                  <div class="scramble-actions">
+                    <button id="btn-scramble-backspace" class="scramble-action-btn" title="直前の単語を戻す">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
+                      <span>1つ戻す</span>
+                    </button>
+                    <button id="btn-scramble-reset" class="scramble-action-btn" title="最初から並べ直す">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                      <span>リセット</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="scramble-tray-box" id="scramble-tray">
+                  <div class="scramble-placeholder" id="scramble-placeholder">
+                    下の単語パネルをタップして文を組み立てよう
+                  </div>
+                </div>
+              </div>
+
+              <!-- シャッフルされた単語選択パネル群（品詞カラー付き！） -->
+              <div id="scramble-tray-svocm-row" class="svocm-control-row hidden"><button id="btn-scramble-tray-svocm" class="svocm-toggle-btn" type="button" aria-pressed="false" title="文の要素（SVOCM）の線分表示をオン/オフ"><span>📐 SVOCM</span></button><div id="scramble-tray-svocm-legend" class="svocm-mini-legend hidden"><span class="svocm-leg-item role-s"><b>S</b>主語</span><span class="svocm-leg-item role-v"><b>V</b>動詞</span><span class="svocm-leg-item role-o"><b>O</b>目的語</span><span class="svocm-leg-item role-c"><b>C</b>補語</span><span class="svocm-leg-item role-m"><b>M</b>修飾語</span></div></div>
+              <div class="scramble-pool-wrapper">
+                <div class="scramble-pool-guide" id="scramble-pool-guide">単語パネル（品詞カラー付き）:</div>
+                <div class="scramble-pool" id="scramble-pool">
+                  <!-- JSで品詞カラー付きパネルを動的生成 -->
+                </div>
+              </div>
+
+              <!-- 判定ボタン -->
+              <div class="scramble-check-box">
+                <button id="btn-scramble-check" class="btn-scramble-check disabled" disabled>
+                  <span>✨ 判定する (CHECK)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 個別解説ボックス（選択肢タップ、または並べ替え判定で展開） -->
+            <div id="explanation-box" class="explanation-box hidden">
+              <div class="explanation-header">
+                <div class="explanation-status" id="exp-status-icon">🟢 正解！</div>
+                <button id="btn-trivia" class="btn-trivia hidden">
+                  <span>💡 豆知識・余談</span>
+                </button>
+              </div>
+              <!-- 正解の語順（並べ替え時、品詞色分けで表示） -->
+              <div id="scramble-correct-answer-box" class="scramble-correct-box hidden">
+                <div class="scramble-correct-label">【正しい語順】</div>
+                <div id="scramble-correct-tokens" class="scramble-correct-tokens"></div>
+                <div id="scramble-correct-svocm-row" class="svocm-control-row"><button id="btn-scramble-correct-svocm" class="svocm-toggle-btn" type="button" aria-pressed="false" title="文の要素（SVOCM）の線分表示をオン/オフ"><span>📐 SVOCM</span></button><div id="scramble-correct-svocm-legend" class="svocm-mini-legend hidden"><span class="svocm-leg-item role-s"><b>S</b>主語</span><span class="svocm-leg-item role-v"><b>V</b>動詞</span><span class="svocm-leg-item role-o"><b>O</b>目的語</span><span class="svocm-leg-item role-c"><b>C</b>補語</span><span class="svocm-leg-item role-m"><b>M</b>修飾語</span></div></div>
+              </div>
+              <div class="explanation-body" id="exp-text">
+                <!-- 個別解説文 -->
+              </div>
+              <button id="btn-next-sentence" class="btn-next-step">
+                <span>次の問題へ進む</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 3. 単語まとめ画面（1単語完了時） -->
+      <section id="view-summary" class="view-section">
+        <div class="summary-hero" id="summary-hero-box">
+          <div class="summary-word-badge" id="sum-word-badge">動詞 / 初級</div>
+          <h2 class="summary-word-title" id="sum-word-title">apple</h2>
+          <div class="summary-word-sub">
+            <span class="summary-meaning" id="sum-word-meaning">りんご</span>
+            <button id="btn-sum-word-audio" class="icon-audio-circle" title="発音を聞く">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="summary-content-card">
+          <!-- 連語・イディオムセクション -->
+          <div class="summary-section">
+            <h4 class="summary-sec-title">
+              <span class="sec-icon">🔗</span> 一緒に覚える重要連語・熟語
+            </h4>
+            <div class="collocation-list" id="sum-collocations">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+
+          <!-- 類義語・対義語セクション -->
+          <div class="summary-section" id="sum-synonyms-section">
+            <h4 class="summary-sec-title">
+              <span class="sec-icon">🔄</span> 類義語・対義語・関連語
+            </h4>
+            <div class="synonym-list" id="sum-synonyms">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+
+          <!-- 例文振り返りセクション -->
+          <div class="summary-section">
+            <h4 class="summary-sec-title">
+              <span class="sec-icon">📖</span> 今回学んだ例文
+            </h4>
+            <div class="summary-sentences-list" id="sum-sentences">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+
+          <!-- 次の単語へ進むボタン -->
+          <button id="btn-next-word-session" class="btn-primary summary-next-btn">
+            <span id="sum-next-btn-text">次の単語へ進む (2 / 3)</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- 4. セッションリザルト画面（3単語すべて完了時） -->
+      <section id="view-result" class="view-section">
+        <div class="result-card">
+          <div class="result-trophy" id="result-trophy-icon">🎉</div>
+          <h2 class="result-title" id="result-main-title">学習セッション達成！</h2>
+          <p class="result-subtitle" id="result-sub-desc">今回の3単語と例文をすべてマスターしました！</p>
+
+          <div class="result-stats-row">
+            <div class="stat-box">
+              <div class="stat-val" id="res-score-words">3 / 3</div>
+              <div class="stat-lbl" id="res-score-words-lbl">単語クリア</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val" id="res-score-rate">100%</div>
+              <div class="stat-lbl">正答率</div>
+            </div>
+          </div>
+
+          <!-- 自動保存された復習アイテムの案内 -->
+          <div id="result-notebook-notice" class="notebook-notice-box hidden">
+            <div class="notice-title" id="result-notice-title">📌 復習ノートに自動追加されました</div>
+            <ul id="result-notice-list" class="notice-list"></ul>
+          </div>
+
+          <div class="result-actions">
+            <button id="btn-result-again" class="btn-primary">
+              <span id="btn-result-again-text">続けて別の3つの単語を学ぶ！</span>
+            </button>
+            <button id="btn-result-home" class="btn-secondary">
+              <span>ホームに戻る</span>
+            </button>
+          </div>
+
+          <!-- 今回学習した単語セクション -->
+          <div class="result-learned-section" id="result-learned-section">
+            <h3 class="result-learned-heading">
+              <span class="sec-icon">📚</span> 今回学習した単語
+            </h3>
+            <div id="result-learned-list" class="result-learned-list">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. My復習ノート＆単語帳画面 -->
+      <section id="view-notebook" class="view-section">
+        <div class="notebook-header-card">
+          <div class="notebook-top-row">
+            <h2 class="notebook-title">📔 苦手克服ノート</h2>
+            <button id="btn-close-notebook-top" class="notebook-back-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>ホームへ戻る</span>
+            </button>
+          </div>
+          <p class="notebook-desc">間違えた問題はここで集中特訓！単語は5問、例文は3問たまると復習テストに挑戦でき、解き切るとアーカイブへ移動します。</p>
+          
+          <div class="notebook-tabs">
+            <button class="notebook-tab active" data-tab="vocab">My単語帳 (<span id="nb-tab-vcount">0</span>)</button>
+            <button class="notebook-tab" data-tab="sentences">My例文 (<span id="nb-tab-scount">0</span>)</button>
+            <button class="notebook-tab" data-tab="archive-vocab">単語アーカイブ (<span id="nb-tab-avcount">0</span>)</button>
+            <button class="notebook-tab" data-tab="archive-sentences">例文アーカイブ (<span id="nb-tab-ascount">0</span>)</button>
+          </div>
+        </div>
+
+        <!-- タブ1: My単語帳 -->
+        <div id="tab-content-vocab" class="notebook-tab-panel active">
+          <div id="vocab-training-banner" class="training-banner hidden">
+            <div class="banner-text-box">
+              <span class="banner-badge">✨ 5問達成！</span>
+              <span>集中特訓でアーカイブへ移動させよう！</span>
+            </div>
+            <button id="btn-start-vocab-review" class="btn-review-start pulse-glow">単語特訓スタート！</button>
+          </div>
+          <div id="vocab-notebook-list" class="notebook-items-list scrollable-list">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+
+        <!-- タブ2: My例文ノート -->
+        <div id="tab-content-sentences" class="notebook-tab-panel">
+          <div id="sentence-training-banner" class="training-banner hidden">
+            <div class="banner-text-box">
+              <span class="banner-badge">✨ 3問達成！</span>
+              <span>集中特訓でアーカイブへ移動させよう！</span>
+            </div>
+            <button id="btn-start-sentence-review" class="btn-review-start pulse-glow">例文特訓スタート！</button>
+          </div>
+          <div id="sentence-notebook-list" class="notebook-items-list scrollable-list">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+
+        <!-- タブ3: 単語アーカイブ -->
+        <div id="tab-content-archive-vocab" class="notebook-tab-panel">
+          <div class="archive-intro">特訓をクリアして克服した単語が保管されています。いつでも復習可能です！</div>
+          <div id="archive-vocab-list" class="notebook-items-list scrollable-list">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+
+        <!-- タブ4: 例文アーカイブ -->
+        <div id="tab-content-archive-sentences" class="notebook-tab-panel">
+          <div class="archive-intro">特訓をクリアして克服した例文問題が保管されています。いつでも復習可能です！</div>
+          <div id="archive-sentences-list" class="notebook-items-list scrollable-list">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 学習の記録（極上分析ダッシュボード）画面 -->
+      <section id="view-stats" class="view-section">
+        <div class="stats-header-card">
+          <div class="stats-top-row">
+            <h2 class="stats-title">📊 学習分析ダッシュボード</h2>
+            <button id="btn-close-stats-top" class="notebook-back-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>ホームへ戻る</span>
+            </button>
+          </div>
+          <p class="stats-desc">日々の努力と6大品詞の能力バランスを可視化！すべて「マスター」を目指そう！</p>
+
+          <!-- 単語 / 例文 切り替えタブ -->
+          <div class="stats-tabs">
+            <button class="stats-tab active" data-statstab="words">📖 単語の習熟度 (3,630語)</button>
+            <button class="stats-tab" data-statstab="sentences">📝 例文の習熟度 (8,592問)</button>
+          </div>
+        </div>
+
+        <!-- ① ヒーローステータスカード（称号ランク & SVG円形プログレスリング & 主要KPI） -->
+        <div class="stats-hero-card" id="stats-hero-card">
+          <div class="stats-rank-bar">
+            <div class="stats-rank-badge" id="stats-rank-badge">
+              <span class="rank-icon" id="stats-rank-icon">🌱</span>
+              <div class="rank-text-group">
+                <span class="rank-label-sub">CURRENT TITLE</span>
+                <span class="rank-title-main" id="stats-rank-name">Bronze Challenger</span>
+              </div>
+            </div>
+            <div class="stats-next-rank-box" id="stats-next-rank-box">
+              <span class="next-rank-lbl" id="stats-next-rank-text">次の称号まであと 150 語</span>
+              <div class="next-rank-mini-track">
+                <div class="next-rank-mini-fill" id="stats-next-rank-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-hero-main-grid">
+            <!-- SVG 円形プログレスリング -->
+            <div class="stats-ring-box" id="stats-hero-ring-box">
+              <!-- JSでアニメーション付きSVGリングを描画 -->
+            </div>
+
+            <!-- 右側3大KPIカード群 -->
+            <div class="stats-kpi-column">
+              <div class="stats-kpi-item streak">
+                <div class="kpi-icon">🔥</div>
+                <div class="kpi-info">
+                  <div class="kpi-val" id="stats-kpi-streak">0 日</div>
+                  <div class="kpi-lbl">連続学習ストリーク</div>
+                </div>
+              </div>
+              <div class="stats-kpi-item accuracy">
+                <div class="kpi-icon">🎯</div>
+                <div class="kpi-info">
+                  <div class="kpi-val" id="stats-kpi-accuracy">--%</div>
+                  <div class="kpi-lbl">総合正答率 (Accuracy)</div>
+                </div>
+              </div>
+              <div class="stats-kpi-item mastered">
+                <div class="kpi-icon">👑</div>
+                <div class="kpi-info">
+                  <div class="kpi-val" id="stats-kpi-mastered">0 語</div>
+                  <div class="kpi-lbl">完全マスター達成数</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ② 品詞別 六角形レーダーチャートカード -->
+        <div class="stats-glass-card" id="stats-radar-card">
+          <div class="stats-sec-header">
+            <div class="stats-sec-title">
+              <span>🕸️</span>
+              <span>品詞別 6大能力レーダー</span>
+            </div>
+            <span class="stats-sec-badge">SVG CHART</span>
+          </div>
+          <div class="stats-radar-svg-wrapper" id="stats-radar-svg-box">
+            <!-- JSで純粋SVGの六角形レーダーチャートを動的生成 -->
+          </div>
+          <div class="stats-radar-advice" id="stats-radar-advice">
+            <!-- JSで得意・弱点診断コメントを生成 -->
+          </div>
+        </div>
+
+        <!-- ③ 学年・レベル別 プログレスバーカード -->
+        <div class="stats-glass-card" id="stats-level-card">
+          <div class="stats-sec-header">
+            <div class="stats-sec-title">
+              <span>🎓</span>
+              <span>学年・レベル別 制覇率</span>
+            </div>
+            <span class="stats-sec-badge" id="stats-level-mode-badge">単語ベース</span>
+          </div>
+          <div class="stats-levels-list" id="stats-levels-list">
+            <!-- JSで中1 / 中2 / 中3 / 超級のプログレスバーを動的生成 -->
+          </div>
+        </div>
+
+        <!-- ④ 品詞カテゴリー別 詳細内訳セクション -->
+        <div class="stats-glass-card stats-detail-section">
+          <div class="stats-sec-header">
+            <div class="stats-sec-title">
+              <span>📚</span>
+              <span>品詞カテゴリー別 詳細内訳</span>
+            </div>
+          </div>
+
+          <!-- 4分類カラー凡例 -->
+          <div class="mastery-legend">
+            <div class="legend-item"><span class="legend-dot dot-mastered"></span> マスター (2回正解)</div>
+            <div class="legend-item"><span class="legend-dot dot-remembered"></span> 覚えた (1回正解)</div>
+            <div class="legend-item"><span class="legend-dot dot-review"></span> 要復習 (要特訓)</div>
+            <div class="legend-item"><span class="legend-dot dot-unanswered"></span> 未回答</div>
+          </div>
+
+          <!-- 単語の記録パネル -->
+          <div id="statstab-content-words" class="stats-tab-panel active">
+            <div class="stats-category-list" id="stats-words-list">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+
+          <!-- 例文の記録パネル -->
+          <div id="statstab-content-sentences" class="stats-tab-panel">
+            <div class="stats-category-list" id="stats-sentences-list">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ⑤ 難関受験問題チャレンジ（キーボード入力）達成記録セクション -->
+        <div class="stats-glass-card stats-challenge-section" id="stats-challenge-section">
+          <div class="stats-sec-header">
+            <div class="stats-sec-title">
+              <span>🎓</span>
+              <span>難関受験問題にチャレンジ！ 達成記録</span>
+            </div>
+            <span class="stats-sec-badge" id="stats-chal-overall-badge">正答率 --%</span>
+          </div>
+          <p class="stats-chal-lead">
+            記述式（キーボード入力）の「単語クイズ」「共通語」「同音異義語」の習得進捗と正解率です。
+          </p>
+          <div class="stats-challenge-list" id="stats-challenge-list">
+            <!-- JSで3部門の進捗バー・正解率カードを動的生成 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. 実戦模試 演習画面 -->
+      <section id="view-mock-exam" class="view-section">
+        <!-- 模試専用トップバー -->
+        <div class="quiz-top-bar mock-top-bar">
+          <button id="btn-mock-exit-top" class="quiz-exit-btn" title="模試を中断してトップへ戻る">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span>中断</span>
+          </button>
+          <div class="mock-top-center">
+            <span id="mock-q-indicator" class="mock-q-indicator">第 1 / 10 問</span>
+            <span id="mock-q-type-tag" class="phase-badge mock-type-badge">例文4択</span>
+          </div>
+          <div id="mock-timer-badge" class="mock-timer-badge" title="残り時間">
+            <span class="timer-icon">⏱️</span>
+            <span id="mock-timer-text">05:00</span>
+          </div>
+        </div>
+
+        <!-- 模試進行バー -->
+        <div class="progress-bar-container">
+          <div class="progress-track">
+            <div id="mock-progress-fill" class="progress-fill mock-fill" style="width: 10%;"></div>
+          </div>
+        </div>
+
+        <!-- パターンA: 例文4択問題 (本番演習) -->
+        <div id="mock-phase-sentence" class="learning-phase-box">
+          <div class="sentence-card mock-question-card" id="mock-sentence-card">
+            <div class="mock-card-meta-row">
+              <span class="mock-scope-chip" id="mock-q-level-chip">中2標準</span>
+              <span class="grammar-point-tag" id="mock-grammar-tag">重要構文</span>
+            </div>
+
+            <div class="sentence-translation" id="mock-sentence-translation">
+              日本語訳がここに表示されます。
+            </div>
+
+            <!-- クリアに可視化された品詞色分け穴あき英文 (ルール1厳守: ブラインドマスク禁止) -->
+            <div class="sentence-english-box" id="mock-sentence-tokens">
+              <!-- JSで単語ごとに生成 -->
+            </div>
+
+            <!-- 音声ヒント行 -->
+            <div class="sentence-audio-row">
+              <div class="sentence-audio-controls">
+                <button id="btn-mock-sentence-audio" class="small-audio-btn" title="英文を聞く (ヒント)">
+                  <svg class="audio-speaker-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                  <span>英文を聞く (ヒント)</span>
+                </button>
+                <button id="btn-mock-sentence-audio-slow" class="small-audio-btn slow-audio-btn" title="ゆっくり発音を聞く (0.75倍速)">
+                  <span>🐢 0.75x</span>
+                </button>
+                <button id="btn-mock-toggle-pos-color" class="small-audio-btn pos-color-toggle-btn active" type="button" aria-pressed="true" title="単語の色分け表示をオン/オフ切り替え"><span>🎨 単語の色分け</span></button>
+              </div>
+            </div>
+
+            <!-- 4択選択肢 (タップで記録して次へ) -->
+            <div class="options-grid" id="mock-sentence-options">
+              <!-- JSで動的生成 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- パターンB: スペル完成問題 (本番演習) -->
+        <div id="mock-phase-spelling" class="learning-phase-box hidden">
+          <div class="spelling-card mock-question-card" id="mock-spelling-card">
+            <div class="card-pos-badge" id="mock-spelling-pos-badge">名詞</div>
+            <div class="spelling-meaning" id="mock-spelling-meaning">意味</div>
+
+            <button id="btn-mock-spell-audio" class="audio-hint-btn" title="発音を聞く">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              <span>発音ヒントを聞く</span>
+            </button>
+
+            <div class="slots-container" id="mock-spelling-slots"></div>
+            <div class="panels-container" id="mock-spelling-panels"></div>
+
+            <div class="mock-spell-actions">
+              <button id="btn-mock-spell-backspace" class="action-btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
+                <span>1文字消す</span>
+              </button>
+              <button id="btn-mock-spell-submit" class="btn-primary mock-spell-submit-btn disabled" disabled>
+                <span>解答を確定して次へ ➔</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- パス（わからない・次へ進む）フッター -->
+        <div class="mock-footer-bar">
+          <button id="btn-mock-skip" class="mock-skip-btn">
+            <span>この問題をパスして次へ進む ⏭️</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 8. 実戦模試リザルト（成績表・偏差値換算・弱点診断・全問見直し）画面 -->
+      <section id="view-mock-result" class="view-section">
+        <div class="mock-result-hero-card" id="mock-result-hero-card">
+          <div class="mock-res-top-badge-row">
+            <span class="mock-res-scope-label" id="mock-res-scope-label">🏆 高校入試総合・10問模試</span>
+            <span class="mock-res-new-record hidden" id="mock-res-new-record">✨ 自己ベスト更新！</span>
+          </div>
+
+          <div class="mock-res-main-board">
+            <div class="mock-rank-emblem" id="mock-res-rank-emblem">
+              <div class="mock-rank-sub">JUDGE</div>
+              <div class="mock-rank-letter" id="mock-res-rank-letter">A</div>
+              <div class="mock-rank-caption" id="mock-res-rank-caption">合格安全圏！</div>
+            </div>
+
+            <div class="mock-score-Right">
+              <div class="mock-score-big-box">
+                <span class="mock-score-lbl">総合得点</span>
+                <div class="mock-score-num-row">
+                  <span class="mock-score-val" id="mock-res-score">80</span>
+                  <span class="mock-score-unit">/ 100点</span>
+                </div>
+              </div>
+
+              <div class="mock-sub-metrics-row">
+                <div class="mock-mini-metric">
+                  <span class="mini-m-lbl">推定偏差値</span>
+                  <span class="mini-m-val ss" id="mock-res-deviation">SS 62.0</span>
+                </div>
+                <div class="mock-mini-metric">
+                  <span class="mini-m-lbl">正答数 / タイム</span>
+                  <span class="mini-m-val" id="mock-res-correct-time">8/10問 (01:45)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 弱点診断＆AIアドバイスカード -->
+        <div class="mock-diagnosis-card">
+          <div class="mock-diag-header">
+            <span>🩺</span>
+            <span>実力分析 ＆ 弱点診断レポート</span>
+          </div>
+          <div class="mock-diag-body" id="mock-res-diagnosis-text">
+            <!-- JSで品詞別・出題形式別の診断を生成 -->
+          </div>
+        </div>
+
+        <!-- アクションボタン群 -->
+        <div class="mock-result-actions">
+          <button id="btn-mock-review-mistakes" class="btn-primary mock-review-mistakes-btn pulse-glow hidden">
+            <span>🔥 間違えた問題を今すぐ復習する！</span>
+          </button>
+          <div class="mock-result-sub-btns">
+            <button id="btn-mock-retry" class="btn-secondary">
+              <span>🔄 もう一度模試に挑戦</span>
+            </button>
+            <button id="btn-mock-home" class="btn-secondary">
+              <span>🏠 ホームへ戻る</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 全問見直し・解説リスト（単語タップで辞書起動対応！） -->
+        <div class="mock-review-section">
+          <h3 class="mock-review-heading">
+            <span>📝</span>
+            <span>全問解答・解説の見直し (単語タップで辞書表示)</span>
+          </h3>
+          <div id="mock-res-review-list" class="mock-res-review-list">
+            <!-- JSで全問の正誤・自分の回答・正解・品詞色分け英文・解説を生成 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 難関受験問題チャレンジ（キーボード入力式：単語クイズ・共通語・同音異義語）演習画面 -->
+      <section id="view-challenge" class="view-section">
+        <div class="quiz-top-bar">
+          <button id="btn-challenge-exit-top" class="quiz-exit-btn" type="button" title="トップ画面へ戻る">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span>トップへ戻る</span>
+          </button>
+          <div class="session-progress-info">
+            <span id="challenge-q-indicator">問題 1 / 5</span>
+            <span class="phase-badge green" id="challenge-mode-badge">単語クイズ</span>
+          </div>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-track">
+            <div id="challenge-progress-fill" class="progress-fill" style="width: 20%;"></div>
+          </div>
+        </div>
+
+        <div class="learning-phase-box">
+          <div class="sentence-card challenge-quiz-card" id="challenge-card-box">
+            <div class="sentence-header-row">
+              <div class="step-tag" id="challenge-step-tag">難関受験チャレンジ</div>
+              <div class="sentence-counter" id="challenge-counter-badge">第 1 / 5 問</div>
+            </div>
+
+            <div class="challenge-instruction-banner" id="challenge-instruction-text">
+              空所に当てはまる適切な英単語をキーボードで入力しましょう。
+            </div>
+
+            <!-- 問題表示エリア（モードに応じてJSで動的構築） -->
+            <div id="challenge-prompt-area" class="challenge-prompt-area"></div>
+
+            <!-- 音声＆色分けコントロール行 -->
+            <div class="sentence-audio-row">
+              <div class="sentence-audio-controls">
+                <button id="btn-challenge-audio" class="small-audio-btn" type="button" title="英文を聞く (ヒント)">
+                  <svg class="audio-speaker-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                  <span id="challenge-audio-btn-label">英文を聞く (ヒント)</span>
+                </button>
+                <button id="btn-challenge-audio-slow" class="small-audio-btn slow-audio-btn" type="button" title="ゆっくり発音を聞く (0.75倍速)">
+                  <span>🐢 0.75x</span>
+                </button>
+                <button id="btn-challenge-toggle-pos-color" class="small-audio-btn pos-color-toggle-btn active" type="button" aria-pressed="true" title="単語の色分け表示をオン/オフ切り替え">
+                  <span>🎨 単語の色分け</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- キーボード入力フォームエリア -->
+            <div id="challenge-input-area" class="challenge-input-area">
+              <!-- ① 単語クイズ / ② 共通語 用の1欄入力 -->
+              <div id="chal-single-input-wrap" class="chal-single-input-wrap">
+                <span id="chal-input-prefix-badge" class="chal-input-prefix-badge hidden">s-</span>
+                <input
+                  type="text"
+                  id="chal-input-single"
+                  class="chal-text-input"
+                  placeholder="英単語を入力..."
+                  inputmode="latin"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                />
+              </div>
+
+              <!-- ③ 同音異義語 用の (a)・(b) 2欄入力 -->
+              <div id="chal-dual-input-wrap" class="chal-dual-input-wrap hidden">
+                <div class="chal-dual-row">
+                  <span class="chal-ab-badge">(a)</span>
+                  <input
+                    type="text"
+                    id="chal-input-a"
+                    class="chal-text-input"
+                    placeholder="(a) に入る英単語を入力..."
+                    inputmode="latin"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  />
+                </div>
+                <div class="chal-dual-row">
+                  <span class="chal-ab-badge">(b)</span>
+                  <input
+                    type="text"
+                    id="chal-input-b"
+                    class="chal-text-input"
+                    placeholder="(b) に入る英単語を入力..."
+                    inputmode="latin"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  />
+                </div>
+              </div>
+
+              <div class="chal-action-btns" id="chal-action-btns">
+                <button id="btn-chal-submit" class="btn-primary chal-submit-btn" type="button">
+                  <span>✨ 解答する (Enter)</span>
+                </button>
+                <button id="btn-chal-giveup" class="action-btn-reveal chal-giveup-btn" type="button" title="正解と解説を確認する">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  <span>解答を見る</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 解説＆完成英文（品詞色分け＆辞書連動）表示領域 -->
+            <div id="challenge-explanation-box" class="explanation-box hidden">
+              <div class="explanation-header">
+                <span id="chal-exp-status" class="explanation-status">🟢 正解！</span>
+              </div>
+              <div id="chal-exp-answer-summary" class="chal-exp-answer-summary"></div>
+              <div id="chal-exp-sentences-box" class="chal-exp-sentences-box"></div>
+              <p id="chal-exp-text" class="explanation-text"></p>
+              <button id="btn-chal-next" class="btn-next-step" type="button">
+                <span id="btn-chal-next-label">次の問題へ進む</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 辞書シート枠外タップ閉じ用バックドロップ -->
+    <div id="dictionary-backdrop" class="dictionary-backdrop hidden"></div>
+
+    <!-- 本格英和辞書シート（画面の半分までスライドアップ＆スクロール対応） -->
+    <div id="dictionary-sheet" class="dictionary-sheet hidden">
+      <div class="sheet-handle"></div>
+      <div class="sheet-content">
+        <!-- 辞書ヘッダー (一つ戻る、見出し語、発音、品詞、閉じる) -->
+        <div class="sheet-header">
+          <div class="sheet-header-left">
+            <button id="btn-dict-back" class="sheet-back-btn disabled" disabled title="一つ前の単語に戻る">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span id="dict-back-label">一つ戻る</span>
+            </button>
+            <div class="sheet-word-row">
+              <span class="sheet-word" id="dict-word">apple</span>
+              <span class="sheet-pos" id="dict-pos">名詞</span>
+              <span class="sheet-phonetic" id="dict-phonetic">/ǽpl/</span>
+              <button id="btn-dict-audio" class="sheet-audio-btn" title="発音を聞く">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              </button>
+            </div>
+          </div>
+          <button id="btn-close-dict" class="sheet-close-btn" title="閉じる">&times;</button>
+        </div>
+
+        <!-- スクロール可能な本格辞書本文 -->
+        <div class="sheet-scroll-body" id="dict-scroll-body">
+          <!-- 短縮形解説カード (白バック調) -->
+          <div class="dict-contraction-card hidden" id="dict-contraction-card">
+            <div class="dict-contraction-title" id="dict-contraction-title">
+              <span>✂️</span>
+              <span>短縮形（省略の解説）</span>
+            </div>
+            <div class="dict-contraction-desc" id="dict-contraction-desc"></div>
+            <div class="dict-contraction-original" id="dict-contraction-original"></div>
+          </div>
+
+          <!-- 分詞解説カード (原形の動詞から派生した解説) -->
+          <div class="dict-participle-card hidden" id="dict-participle-card">
+            <div class="dict-participle-title" id="dict-participle-title">
+              <span>💡</span>
+              <span id="dict-participle-type-badge">分詞の解説</span>
+            </div>
+            <div class="dict-participle-desc" id="dict-participle-desc"></div>
+          </div>
+
+          <!-- 主な意味リスト -->
+          <div class="dict-section">
+            <div class="dict-sec-title">📖 主な意味</div>
+            <ol class="dict-meanings-list" id="dict-meanings-list">
+              <!-- JS生成 -->
+            </ol>
+          </div>
+
+          <!-- 語形変化・活用 (三単現、過去形、複数形など) -->
+          <div class="dict-section hidden" id="dict-forms-section">
+            <div class="dict-sec-title">🔄 語形変化・活用</div>
+            <div class="dict-forms-grid" id="dict-forms-grid">
+              <!-- JS生成 -->
+            </div>
+          </div>
+
+          <!-- 例文・用例 -->
+          <div class="dict-section hidden" id="dict-examples-section">
+            <div class="dict-sec-title">💬 例文・用例 <span class="dict-ex-hint-sub">(単語タップで辞書移動)</span></div>
+            <div class="dict-examples-list" id="dict-examples-list">
+              <!-- JS生成 -->
+            </div>
+          </div>
+
+          <!-- ワンポイントメモ・連語 -->
+          <div class="dict-section hidden" id="dict-note-section">
+            <div class="dict-sec-title">💡 語法・ワンポイント</div>
+            <div class="dict-note-text" id="dict-note-text">
+              <!-- JS生成 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <!-- 5問未満時の中央カスタムアナウンスモーダル -->
+    <div id="notice-modal" class="modal-backdrop hidden">
+      <div class="modal-card notice-modal-card">
+        <div class="notice-modal-icon">🎯</div>
+        <h3 class="notice-modal-title" id="notice-modal-title">復習を始めるには</h3>
+        <div class="notice-modal-message" id="notice-modal-message">
+          復習モードには<strong><span id="notice-required-text">5</span>問以上</strong>のストックが必要です。<br>
+          現在 <strong id="notice-current-count" style="color:#38bdf8; font-size:1.2rem;">0</strong> / <span id="notice-required-count">5</span> 問 たまっています。<br>
+          まずは「学習をはじめる！」で問題を解いてみよう！
+        </div>
+        <button id="btn-close-notice" class="btn-primary modal-action-btn">
+          <span>わかった！</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- アプリ専用カスタム確認ダイアログ (画面中央) -->
+    <div id="confirm-modal" class="modal-backdrop hidden">
+      <div class="modal-card confirm-modal-card">
+        <div class="confirm-icon">⚠️</div>
+        <h3 class="confirm-title" id="confirm-modal-title">学習の中断</h3>
+        <p class="confirm-message" id="confirm-modal-message">学習を中断してトップ画面に戻りますか？</p>
+        <div class="confirm-actions">
+          <button id="btn-confirm-cancel" class="btn-confirm-cancel">続ける</button>
+          <button id="btn-confirm-ok" class="btn-confirm-ok">トップへ戻る</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🏆 実戦模試 設定モーダル -->
+    <div id="mock-config-modal" class="modal-backdrop hidden">
+      <div class="modal-card mock-config-modal-card">
+        <div class="modal-header">
+          <div class="modal-title" style="color:#fbbf24;">🏆 高校入試・実戦模試モード</div>
+          <button id="btn-close-mock-config" class="modal-close-btn">&times;</button>
+        </div>
+
+        <p class="mock-config-desc">
+          本番さながらのカウントダウン演習！テスト終了後に<strong>100点満点スコア・推定偏差値（SS）・弱点診断</strong>を判定します。
+        </p>
+
+        <div class="mock-config-group">
+          <label class="config-label"><span>📝</span> 問題数と制限時間を選ぶ</label>
+          <div class="mock-choice-grid" id="mock-count-chips">
+            <button class="mock-choice-btn active" data-qcount="10">
+              <span class="mc-main">10問 (ミニ模試)</span>
+              <span class="mc-sub">⏱️ 制限時間 5分</span>
+            </button>
+            <button class="mock-choice-btn" data-qcount="20">
+              <span class="mc-main">20問 (標準模試)</span>
+              <span class="mc-sub">⏱️ 制限時間 10分</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mock-config-group">
+          <label class="config-label"><span>🎯</span> 出題範囲を選ぶ</label>
+          <div class="chip-group" id="mock-scope-chips">
+            <button class="chip active" data-scope="all">高校入試総合 (全範囲)</button>
+            <button class="chip" data-scope="beginner">中1基礎</button>
+            <button class="chip" data-scope="intermediate">中2標準</button>
+            <button class="chip" data-scope="advanced">中3応用</button>
+            <button class="chip" data-scope="expert">難関・準2級</button>
+          </div>
+        </div>
+
+        <div class="mock-config-actions">
+          <button id="btn-start-mock-exam" class="btn-primary mock-start-btn pulse-glow">
+            <span>🔥 実戦模試をスタート！</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 豆知識（※）モーダル -->
+    <div id="trivia-modal" class="modal-backdrop hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title">💡 ワンポイント豆知識</div>
+          <button id="btn-close-trivia" class="modal-close-btn">&times;</button>
+        </div>
+        <div class="modal-body" id="trivia-modal-text">
+          <!-- 豆知識内容 -->
+        </div>
+        <button id="btn-close-trivia-bottom" class="btn-primary modal-action-btn">
+          <span>わかった！</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 📅 学習カレンダー＆連続日数モーダル -->
+    <div id="calendar-modal" class="modal-backdrop hidden">
+      <div class="modal-card calendar-modal-card">
+        <div class="modal-header">
+          <div class="modal-title">📅 学習カレンダー ＆ 継続記録</div>
+          <button id="btn-close-calendar" class="modal-close-btn">&times;</button>
+        </div>
+
+        <div class="cal-summary-grid">
+          <div class="cal-stat-pill">
+            <span class="cal-stat-lbl">🔥 現在の連続</span>
+            <span id="cal-current-streak" class="cal-stat-val accent-orange">1 日</span>
+          </div>
+          <div class="cal-stat-pill">
+            <span class="cal-stat-lbl">👑 最高連続</span>
+            <span id="cal-best-streak" class="cal-stat-val accent-gold">1 日</span>
+          </div>
+          <div class="cal-stat-pill">
+            <span class="cal-stat-lbl">📝 今月の解答</span>
+            <span id="cal-month-total" class="cal-stat-val accent-sky">0 問</span>
+          </div>
+        </div>
+
+        <div class="cal-nav-bar">
+          <button id="btn-cal-prev" class="cal-nav-btn" type="button">◀ 前月</button>
+          <div id="cal-month-label" class="cal-month-title">2026年 10月</div>
+          <button id="btn-cal-next" class="cal-nav-btn" type="button">次月 ▶</button>
+        </div>
+
+        <div class="cal-weekdays-row">
+          <span class="sun">日</span>
+          <span>月</span>
+          <span>火</span>
+          <span>水</span>
+          <span>木</span>
+          <span>金</span>
+          <span class="sat">土</span>
+        </div>
+
+        <div id="calendar-days-grid" class="cal-days-grid">
+          <!-- JSで日付マスを動的生成 -->
+        </div>
+
+        <div class="cal-legend-note">
+          <span>💡 マスの数字はその日に解いた問題数です（10問以上で🔥点灯＆連続・合計日数にカウント！）</span>
+        </div>
+
+        <button id="btn-close-calendar-bottom" class="btn-primary modal-action-btn">
+          <span>閉じる</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 💡 使い方 ＆ 品詞カラー早見表モーダル -->
+    <div id="help-guide-modal" class="modal-backdrop hidden">
+      <div class="modal-card help-guide-modal-card">
+        <div class="modal-header">
+          <div class="modal-title">💡 アプリの使い方 ＆ 品詞カラー早見表</div>
+          <button id="btn-close-help" class="modal-close-btn">&times;</button>
+        </div>
+
+        <!-- 3タブ切り替え -->
+        <div class="help-tabs-bar" id="help-guide-tabs">
+          <button class="help-tab-btn active" data-helptab="pos" type="button">🎨 品詞カラー</button>
+          <button class="help-tab-btn" data-helptab="flow" type="button">🚀 学習の流れ</button>
+          <button class="help-tab-btn" data-helptab="dict" type="button">📖 辞書の裏ワザ</button>
+        </div>
+
+        <div class="help-guide-body">
+          <!-- タブ1: 🎨 品詞カラー＆模様早見表 -->
+          <div id="helptab-panel-pos" class="help-tab-panel active">
+            <p class="help-lead-text">
+              このアプリでは、すべての英単語が<strong>文の中での働き（品詞）ごとの色と模様</strong>で表示されます。色を見るだけで英語の語順ルールが自然に身につきます！
+            </p>
+
+            <div class="help-section-heading">🌈 基本の品詞カラー（8種類）</div>
+            <div class="pos-guide-grid">
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-noun pos-sample-chip">apple</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#10b981;">🟩 名詞（緑）</div>
+                  <div class="pos-guide-desc">人・モノ・事柄の名前。文の<strong>主語(S)</strong>や<strong>目的語(O)</strong>になります。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-verb pos-sample-chip">play</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#f43f5e;">🟥 動詞（赤）</div>
+                  <div class="pos-guide-desc">動作や状態（〜する・〜です）。英語では<strong>主語のすぐ後ろ</strong>に来ます。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-adj pos-sample-chip">happy</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#f59e0b;">🟨 形容詞（黄）</div>
+                  <div class="pos-guide-desc">名詞の性質や状態（どんな〜）を詳しく説明します。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-adv pos-sample-chip">fast</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#0ea5e9;">🟦 副詞（水色）</div>
+                  <div class="pos-guide-desc">動詞や形容詞（どのように・どれくらい・いつ）を詳しく説明します。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-aux pos-sample-chip">can</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#ec4899;">🩷 助動詞（ピンク）</div>
+                  <div class="pos-guide-desc">動詞の前に置いて「できる・〜だろう・〜すべき」などの意味を添えます。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-prep pos-sample-chip">with</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#f97316;">🟧 前置詞（オレンジ）</div>
+                  <div class="pos-guide-desc">名詞の前に置いて、場所・時・方向・手段などを表すカタマリを作ります。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-interrogative pos-sample-chip">Where</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#a855f7;">🟪 疑問詞（紫）</div>
+                  <div class="pos-guide-desc">疑問文の先頭で「いつ・どこで・なぜ・どのように」を尋ねます。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-conj pos-sample-chip">because</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#94a3b8;">⬜ 冠詞・接続詞（グレー）</div>
+                  <div class="pos-guide-desc">名詞につく冠詞（a, the）や、語句・文をつなぐ接続詞（and, if, because）です。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="help-section-heading" style="margin-top:16px;">✨ 特別な模様チップ（高校入試の重要文法！）</div>
+            <div class="pos-guide-grid">
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-pron pos-sample-chip">they</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#34d399;">🟩 代名詞（緑＋縦ストライプ）</div>
+                  <div class="pos-guide-desc">I, you, this, which など、名詞の代わりをする言葉です。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-participle_pres pos-sample-chip">playing</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#fb7185;">🟥 現在分詞（赤＋横ストライプ）</div>
+                  <div class="pos-guide-desc">進行形（be + ~ing）や未来表現（be going to）、名詞を修飾する「〜している…」です。※動名詞（〜すること）の時は名詞の緑色になります！</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-participle_past pos-sample-chip">written</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#fb7185;">🟥 過去分詞（赤＋縦ストライプ）</div>
+                  <div class="pos-guide-desc">受動態（be + 過去分詞）や現在完了形（have + 過去分詞）などで使われる形です。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-infinitive pos-sample-chip">to study</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#fb7185;">🟥 不定詞（赤＋ドット模様）</div>
+                  <div class="pos-guide-desc">「to ＋ 動詞の原形」で、名詞・形容詞・副詞の働きに変身した形です。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-verb_aux_have pos-sample-chip">have</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#f472b6;">🟥/🩷 完了の have（赤×ピンク2色）</div>
+                  <div class="pos-guide-desc">現在完了形（have / has ＋ 過去分詞）で、過去分詞とセットで働く特別な have です。</div>
+                </div>
+              </div>
+
+              <div class="pos-guide-item">
+                <span class="token-pos-badge token-pos-adj_comp pos-sample-chip">better</span>
+                <div class="pos-guide-info">
+                  <div class="pos-guide-name" style="color:#fbbf24;">🟨/🟦 比較級・最上級（輝き枠）</div>
+                  <div class="pos-guide-desc">-er / more（より〜）、-est / most（最も〜）の比較表現です。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- タブ2: 🚀 学習の流れ -->
+          <div id="helptab-panel-flow" class="help-tab-panel">
+            <div class="help-step-card">
+              <div class="help-step-badge">STEP 1</div>
+              <div class="help-step-title">🔤 スペル穴埋めで「音と綴り」をインプット</div>
+              <p class="help-step-desc">
+                1回の学習は集中しやすい<strong>「3単語」セット</strong>！まずは発音を聞きながら文字パネルをタップしてスペルを完成させます。
+              </p>
+            </div>
+
+            <div class="help-step-card">
+              <div class="help-step-badge green">STEP 2</div>
+              <div class="help-step-title">📝 生きた例文4択 ＆「なぜ？」が分かる誤答解説</div>
+              <p class="help-step-desc">
+                覚えたばかりの単語を実際の英文の中で使います。もし間違えた選択肢を選んでも、<strong>「なぜその選択肢だとダメなのか・そのダミー単語はどういう意味なのか」</strong>がその場で個別に解説されます！
+              </p>
+            </div>
+
+            <div class="help-step-card">
+              <div class="help-step-badge purple">STEP 3</div>
+              <div class="help-step-title">📔 自動復習ノート ＆ 語順並べ替え特訓</div>
+              <p class="help-step-desc">
+                間違えた単語・例文は自動的に<strong>「My単語帳」「My復習ノート」</strong>へ登録！<br>
+                さらに例文復習モードでは、品詞カラー付きの<strong>「語順並べ替え（整序問題）」</strong>で文の組み立て力を徹底トレーニングできます。
+              </p>
+            </div>
+
+            <div class="help-step-card">
+              <div class="help-step-badge gold">模試・分析</div>
+              <div class="help-step-title">🏆 高校入試・実戦模試 ＆ 6大能力レーダー</div>
+              <p class="help-step-desc">
+                制限時間付きの本番テストで<strong>100点満点スコア・推定偏差値（SS）・ランク（S〜D）</strong>を判定！「学習の記録」では品詞別のマスター率をレーダーチャートで確認できます。
+              </p>
+            </div>
+          </div>
+
+          <!-- タブ3: 📖 辞書の裏ワザ -->
+          <div id="helptab-panel-dict" class="help-tab-panel">
+            <div class="help-step-card">
+              <div class="help-step-badge">ワザ ①</div>
+              <div class="help-step-title">👆 どの英文の単語もタップで即・辞書起動！</div>
+              <p class="help-step-desc">
+                クイズの問題文、まとめ画面の連語、模試の見直し画面など、<strong>色分けされた英単語はどれでもタップするだけで本格的な辞書シートが開きます。</strong>気になる単語はその場ですぐ調べられます！
+              </p>
+            </div>
+
+            <div class="help-step-card">
+              <div class="help-step-badge green">ワザ ②</div>
+              <div class="help-step-title">🔗 辞書の中の例文から「連鎖ジャンプ」＆「⬅ 一つ戻る」</div>
+              <p class="help-step-desc">
+                開いた辞書シートの中にある例文の英単語も、すべて色分けされており<strong>タップでさらに次の単語の辞書へジャンプ</strong>できます！<br>
+                辞書左上の<strong>「⬅ 一つ戻る」</strong>ボタンで前の単語に戻れるほか、シートの外側（暗い背景）をタップするだけでサッと閉じられます。
+              </p>
+            </div>
+
+            <div class="help-step-card">
+              <div class="help-step-badge gold">ワザ ③</div>
+              <div class="help-step-title">💡「この文での品詞と働き」自動解析システム</div>
+              <p class="help-step-desc">
+                英語には <strong>study</strong>（名詞/動詞）、<strong>fast</strong>（形容詞/副詞）、<strong>before</strong>（前置詞/接続詞/副詞）のように複数の品詞を持つ単語がたくさんあります。<br>
+                このアプリの辞書は前後の単語を自動解析し、<strong>「なぜこの文では名詞（または動詞・形容詞など）として働いているのか」</strong>を一番上にわかりやすく表示します！
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button id="btn-close-help-bottom" class="btn-primary modal-action-btn">
+          <span>わかった！学習をはじめる</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ⚙️ 各種設定 ＆ 公式ホームページ・アプリ評価モーダル -->
+    <div id="settings-modal" class="modal-backdrop hidden">
+      <div class="modal-card settings-modal-card">
+        <div class="modal-header">
+          <div class="modal-title">⚙️ 各種設定 ＆ ご案内</div>
+          <button id="btn-close-settings" class="modal-close-btn" type="button">&times;</button>
+        </div>
+
+        <div class="settings-modal-body">
+          <!-- 1. 音声の速さの設定 -->
+          <div class="settings-section-card">
+            <div class="settings-sec-header">
+              <div class="settings-sec-title">🔊 音声の速さの設定</div>
+              <button id="btn-settings-sound-toggle" class="settings-sound-pill active" type="button">
+                <span id="settings-sound-label">音声 ON</span>
+              </button>
+            </div>
+            <p class="settings-sec-desc">英語の読み上げスピードを選択できます（タップで試聴できます）。</p>
+            <div class="settings-speed-grid" id="settings-speed-group">
+              <button type="button" class="settings-speed-btn" data-rate="0.8">
+                <span class="spd-num">0.8x</span>
+                <span class="spd-sub">ゆっくり</span>
+              </button>
+              <button type="button" class="settings-speed-btn active" data-rate="0.9">
+                <span class="spd-num">0.9x</span>
+                <span class="spd-sub">ややゆっくり</span>
+              </button>
+              <button type="button" class="settings-speed-btn" data-rate="1">
+                <span class="spd-num">1.0x</span>
+                <span class="spd-sub">標準</span>
+              </button>
+              <button type="button" class="settings-speed-btn" data-rate="1.2">
+                <span class="spd-num">1.2x</span>
+                <span class="spd-sub">速め</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. 品詞の色分けのオンオフ設定 -->
+          <div class="settings-section-card">
+            <div class="settings-sec-header">
+              <div class="settings-sec-title">🎨 品詞の色分けのオンオフ設定</div>
+            </div>
+            <p class="settings-sec-desc">問題文や単語パネルの品詞カラー表示を切り替えます。</p>
+            <div class="settings-toggle-pair" id="settings-pos-color-group">
+              <button type="button" class="settings-choice-btn active" data-poscolor="on">
+                <span>🎨 オン（品詞カラー表示）</span>
+              </button>
+              <button type="button" class="settings-choice-btn" data-poscolor="off">
+                <span>📄 オフ（シンプル表示）</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. 我々の公式ホームページ -->
+          <div class="settings-section-card">
+            <div class="settings-sec-header">
+              <div class="settings-sec-title">🌐 我々の公式ホームページ</div>
+            </div>
+            <p class="settings-sec-desc">シリーズの他の中学学習アプリや最新情報をご覧いただけます。</p>
+            <a href="https://hiroking4orikara-art.github.io/" target="_blank" rel="noopener noreferrer" class="settings-link-btn portal-link-btn">
+              <span>🌐 公式ホームページを開く</span>
+              <span class="ext-arrow">↗</span>
+            </a>
+          </div>
+
+          <!-- 4. このアプリを評価する -->
+          <div class="settings-section-card rate-highlight-card">
+            <div class="settings-sec-header">
+              <div class="settings-sec-title">⭐ このアプリを評価する</div>
+              <span class="rate-stars-badge" aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="settings-sec-desc">
+              「単語が覚えやすくなった！」「テスト対策に役立った！」と感じていただけたら、ぜひ Google Play で温かい評価・レビューをお願いします✨<br>
+              皆さまからの応援が、今後の改善や開発の大きな励みになります！
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=sentence.vocab.com" target="_blank" rel="noopener noreferrer" class="settings-link-btn rate-app-btn">
+              <span>⭐ Google Play で評価・レビューを送る</span>
+              <span class="ext-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <button id="btn-close-settings-bottom" class="btn-primary modal-action-btn" type="button">
+          <span>閉じる</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./promo/promo-widget.js" defer></script>
+</body>
+</html>

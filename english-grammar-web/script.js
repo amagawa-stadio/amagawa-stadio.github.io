@@ -42,34 +42,6 @@ const UNIT_NAMES = {
   "phrase_idiom_other": "熟語（形・副）③"
 };
 
-const VIDEO_LINKS = {
-  "jhs1_be_1": "https://youtube.com/shorts/YQjEiYveSG0",
-  "jhs1_be_2": "https://youtube.com/shorts/JKdic3UI6LU",
-  "jhs1_general_1": "https://youtube.com/shorts/eKQ9-WEh_1g",
-  "jhs1_general_2": "https://youtube.com/shorts/vaQJbkAYVok",
-  "jhs1_can": "https://youtube.com/shorts/WGmxQJODBpA",
-  "jhs1_prog": "https://youtube.com/shorts/SlF7ro4O1i4",
-  "jhs1_past": "https://youtube.com/shorts/2jv_-abF0mA",
-  "jhs1_imperative": "https://youtube.com/shorts/Za239S5mn80",
-  "jhs1_interrogative": "https://youtube.com/shorts/a4vsPDe3abM",
-  "jhs2_future": "https://youtube.com/shorts/dtTnkPIRr6c",
-  "jhs2_aux": "https://youtube.com/shorts/jFhxtvP_jI4",
-  "jhs2_inf_1": "https://youtube.com/shorts/Hyx5Nj4C4wA",
-  "jhs2_inf_2": "https://youtube.com/shorts/zf6sduSuw0Q",
-  "jhs2_comp": "https://youtube.com/shorts/xN_w_J4Df9E",
-  "jhs2_passive": "https://youtube.com/shorts/9bLUK5ZtjVY",
-  "jhs2_svoo": "https://youtube.com/shorts/OYHjkrUGxe4",
-  "jhs2_conjunction": "https://youtube.com/shorts/fDfJ90z0cdo",
-  "jhs3_perfect_1": "https://youtube.com/shorts/7eLaGWGuMBo",
-  "jhs3_perfect_2": "https://youtube.com/shorts/D0n95kFnGzw",
-  "jhs3_participle": "https://youtube.com/shorts/vIVCqHvCsb0",
-  "jhs3_relative": "https://youtube.com/shorts/AcdtpUGcjhc",
-  "jhs3_indirect_1": "https://youtube.com/shorts/K30tL7ZUIS0",
-  "jhs3_indirect_2": "https://youtube.com/shorts/OgakNsuoaMQ",
-  "jhs3_subjunctive": "https://youtube.com/shorts/eFYZpFE7HPY",
-  "jhs3_causative": "https://youtube.com/shorts/yp0o7hQyLZU",
-  "jhs3_it_for_to": "https://youtube.com/shorts/QAVMGdnLjxI"
-};
 
 // DOM elements
 const startBtn = document.getElementById('startBtn');
@@ -130,7 +102,6 @@ function init() {
   // Load initial user selection
   loadUserSelection();
   attachUnitListeners();
-  attachVideoListeners();
 
   startBtn.addEventListener('click', startQuiz);
   submitBtn.addEventListener('click', handleSubmitOrNext);
@@ -517,23 +488,6 @@ function updateSelectAllState(changedCheckbox) {
 
   const allChecked = gradeBoxes.every(cb => cb.checked);
   selectAll.checked = allChecked;
-}
-
-function attachVideoListeners() {
-  const videoBtns = document.querySelectorAll('.video-btn');
-  videoBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const unit = btn.dataset.unit;
-      const url = VIDEO_LINKS[unit];
-      if (url && !url.includes("DummyLink")) {
-        window.open(url, '_blank');
-      } else {
-        alert("ただいまこの単元の動画を準備・アップロード中です！\n完了までしばらくお待ちください。");
-      }
-    });
-  });
 }
 
 function showHelp(type) {

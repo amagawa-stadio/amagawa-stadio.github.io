@@ -1,1 +1,2 @@
-google.com, pub-6979818021800533, DIRECT, f08c47fec0942fa0
+# ads.txt
+# 第三者広告配信事業者・メディア登録時に追加

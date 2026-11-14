@@ -1,0 +1,68 @@
+{
+  "updatedAt": "2026-10-30",
+  "heading": "＼ 姉妹アプリやサイトもよろしくね！ ／",
+  "apps": [
+    {
+      "id": "com.hiroking4orikara.knightscommander",
+      "isNew": true,
+      "badgeText": "NEW",
+      "title": "The Knight Commander",
+      "subtitle": "勉強の息抜きにおすすめの戦略ゲーム！",
+      "borderColor": "#E74C3C",
+      "icon": "https://hiroking4orikara-art.github.io/promo/icons/knights_commander_icon.png",
+      "localIcon": "promo/icons/knights_commander_icon.png",
+      "url": "https://play.google.com/store/apps/details?id=com.hiroking4orikara.knightscommander"
+    },
+    {
+      "id": "com.sakkusaku.englishvocab",
+      "isNew": false,
+      "title": "中学英語 教科書単語",
+      "subtitle": "教科書準拠でサクサク覚える！",
+      "borderColor": "#4CAF50",
+      "icon": "https://hiroking4orikara-art.github.io/promo/icons/vocab_icon.png",
+      "localIcon": "promo/icons/vocab_icon.png",
+      "url": "https://play.google.com/store/apps/details?id=com.sakkusaku.englishvocab"
+    },
+    {
+      "id": "com.hiroki.grammar",
+      "isNew": false,
+      "title": "中学英語 並べ替え300",
+      "subtitle": "語順並べ替えで英文法をマスター！",
+      "borderColor": "#8E44AD",
+      "icon": "https://hiroking4orikara-art.github.io/promo/icons/grammar_icon.png",
+      "localIcon": "promo/icons/grammar_icon.png",
+      "url": "https://play.google.com/store/apps/details?id=com.hiroki.grammar"
+    },
+    {
+      "id": "com.teambits.socialstudies",
+      "isNew": false,
+      "title": "中学社会 これ一本！",
+      "subtitle": "歴史・地理・公民を完全網羅！",
+      "borderColor": "#2196F3",
+      "icon": "https://hiroking4orikara-art.github.io/promo/icons/social_icon.png",
+      "localIcon": "promo/icons/social_icon.png",
+      "url": "https://play.google.com/store/apps/details?id=com.teambits.socialstudies"
+    },
+    {
+      "id": "com.hiroking4orikara.subsubjects",
+      "isNew": false,
+      "title": "中学副教科 これ一本！",
+      "subtitle": "音・美・保体・技家を網羅！",
+      "borderColor": "#E91E63",
+      "icon": "https://hiroking4orikara-art.github.io/promo/icons/sub_subjects_icon.png",
+      "localIcon": "promo/icons/sub_subjects_icon.png",
+      "url": "https://play.google.com/store/apps/details?id=com.hiroking4orikara.subsubjects"
+    },
+    {
+      "id": "portal",
+      "isNew": false,
+      "title": "公式ポータルサイト",
+      "subtitle": "他の無料学習アプリもチェック！",
+      "borderColor": "#FF9800",
+      "icon": "https://hiroking4orikara-art.github.io/promo/icons/portal_icon.png",
+      "localIcon": "promo/icons/portal_icon.png",
+      "url": "https://hiroking4orikara-art.github.io/"
+    }
+  ]
+}
+

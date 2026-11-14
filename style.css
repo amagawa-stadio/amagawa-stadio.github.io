@@ -1,14 +1,24 @@
-/* style.css - 総合ポータル用共通スタイル */
+/* style.css - 中学英語学習 公式ポータルサイト 豪華ネオンダークテーマ */
 :root {
-    --primary-color: #4CAF50;
-    --primary-dark: #388E3C;
-    --secondary-color: #2196F3;
-    --text-color: #333333;
-    --text-light: #666666;
-    --bg-color: #f9fdfa;
-    --white: #ffffff;
-    --border-radius: 8px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --bg-black: #07090e;
+    --bg-surface: #0f1523;
+    --bg-card: rgba(18, 26, 43, 0.82);
+    --bg-card-hover: rgba(25, 36, 60, 0.95);
+    
+    /* ビビッド＆蛍光ネオンカラー */
+    --neon-cyan: #00f0ff;
+    --neon-emerald: #10b981;
+    --neon-amber: #f59e0b;
+    --neon-pink: #f43f5e;
+    --neon-purple: #a855f7;
+    --neon-violet: #8b5cf6;
+    --neon-gold: #fbbf24;
+    
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dark: #64748b;
+    
+    --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'BIZ UDPGothic', Meiryo, sans-serif;
 }
 
 * {
@@ -18,597 +28,492 @@
 }
 
 body {
-    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--bg-black);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+/* ヘッダー */
 header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1.5rem 0;
+    background: rgba(11, 17, 30, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+    padding: 2.5rem 1rem 2rem;
     text-align: center;
-    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+.header-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--neon-cyan);
+    background: rgba(0, 240, 255, 0.12);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
 }
 
 header h1 {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #00f0ff 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
 header p {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 1.05rem;
+    color: var(--text-muted);
 }
 
+/* メインコンテナ */
 main {
     flex: 1;
     width: 100%;
-    max-width: 800px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.25rem 4rem;
 }
 
-/* ヒーローセクション（AdSense向け長文テキストエリア） */
-.hero-section {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
-}
-
-.hero-section h2 {
-    color: var(--primary-dark);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-}
-
-.hero-section p {
-    margin-bottom: 1rem;
-}
-
-/* アプリ紹介セクション */
-.app-card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+/* カテゴリ大見出し */
+.category-heading {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border-left: 5px solid var(--secondary-color);
-    transition: transform 0.2s ease-in-out;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 3rem 0 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.category-heading:first-of-type {
+    margin-top: 0.5rem;
+}
+
+.category-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* 単語カテゴリ見出し */
+.cat-vocab-heading {
+    color: #fbbf24;
+    text-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+}
+.cat-vocab-heading::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.8), transparent);
+    margin-left: 0.5rem;
+}
+
+/* 長文カテゴリ見出し */
+.cat-reading-heading {
+    color: #00f0ff;
+    text-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+}
+.cat-reading-heading::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0, 240, 255, 0.8), transparent);
+    margin-left: 0.5rem;
+}
+
+/* 文法カテゴリ見出し */
+.cat-grammar-heading {
+    color: #c084fc;
+    text-shadow: 0 0 16px rgba(168, 85, 247, 0.4);
+}
+.cat-grammar-heading::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.8), transparent);
+    margin-left: 0.5rem;
+}
+
+/* アプリカード基本構造 */
+.app-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+}
+
+/* ネオン蛍光枠：長文カード */
+.neon-card-reading {
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.08);
+}
+.neon-card-reading:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.5), inset 0 0 25px rgba(0, 240, 255, 0.15);
+}
+
+/* ネオン蛍光枠：単語カード（オレンジ＆ゴールド） */
+.neon-card-vocab {
+    border: 2px solid var(--neon-amber);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.25), inset 0 0 15px rgba(245, 158, 11, 0.08);
+}
+.neon-card-vocab:hover {
+    border-color: #fde047;
+    box-shadow: 0 0 35px rgba(245, 158, 11, 0.5), inset 0 0 25px rgba(245, 158, 11, 0.15);
+}
+
+/* ネオン蛍光枠：文法カード（パープル＆バイオレット） */
+.neon-card-grammar {
+    border: 2px solid var(--neon-purple);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25), inset 0 0 15px rgba(168, 85, 247, 0.08);
+}
+.neon-card-grammar:hover {
+    border-color: #d8b4fe;
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.5), inset 0 0 25px rgba(168, 85, 247, 0.15);
+}
+
+/* 単語の2択グリッド */
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.vocab-grid .app-card {
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* アプリアイコン */
+.app-icon-wrapper {
+    flex-shrink: 0;
+    width: 104px;
+    height: 104px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #0b111e;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vocab-grid .app-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    align-self: center;
+    margin-bottom: 0.5rem;
+}
+
+.app-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* カードコンテンツ */
+.app-card-content {
+    flex: 1;
+}
+
+.app-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.badge-cyan {
+    background: rgba(0, 240, 255, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(0, 240, 255, 0.4);
+}
+
+.badge-amber {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.badge-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
 }
 
 .app-card h3 {
-    color: var(--secondary-color);
-    font-size: 1.3rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
 }
 
 .app-card p {
-    color: var(--text-light);
+    color: var(--text-muted);
     font-size: 0.95rem;
+    margin-bottom: 0.75rem;
 }
 
-/* ボタンとリンク */
+.app-card p strong {
+    color: #f1f5f9;
+}
+
+.app-features {
+    list-style: none;
+    margin: 0.6rem 0 1rem;
+    padding: 0;
+}
+
+.app-features li {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* アクションボタン */
+.app-card-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.vocab-grid .app-card-action {
+    width: 100%;
+    margin-top: auto;
+}
+
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.2s, transform 0.1s;
     cursor: pointer;
     border: none;
-}
-
-.btn-primary {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.3);
-}
-
-.btn-primary:hover {
-    background-color: #1976D2;
-}
-
-.btn-primary:active {
-    transform: scale(0.98);
-}
-
-/* フォーム関連 */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: var(--primary-dark);
-}
-
-.form-control {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.2s;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-}
-
-/* AdSense広告エリア */
-.ad-container {
-    margin: 2rem 0;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
     text-align: center;
-    width: 100%;
-    overflow: hidden;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* シアンネオンボタン */
+.btn-neon-cyan {
+    background: linear-gradient(135deg, #00f0ff 0%, #0284c7 100%);
+    color: #06090e !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.45);
+}
+.btn-neon-cyan:hover {
+    background: linear-gradient(135deg, #38bdf8 0%, #0369a1 100%);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.75);
+    color: #000 !important;
+}
+
+/* アンバーネオンボタン */
+.btn-neon-amber {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    color: #06090e !important;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
+}
+.btn-neon-amber:hover {
+    background: linear-gradient(135deg, #fde047 0%, #b45309 100%);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.75);
+    color: #000 !important;
+}
+
+/* パープルネオンボタン */
+.btn-neon-purple {
+    background: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.45);
+}
+.btn-neon-purple:hover {
+    background: linear-gradient(135deg, #d8b4fe 0%, #6d28d9 100%);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.75);
+}
+
+/* ポータル概要・学習の進め方セクション */
+.portal-guide-section {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 2.2rem;
+    margin-top: 3.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.portal-guide-section h2 {
+    font-size: 1.4rem;
+    color: var(--neon-cyan);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.guide-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.guide-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.2rem;
+}
+
+.guide-card-num {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--neon-cyan);
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.guide-card h4 {
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+}
+
+.guide-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* フッター */
 footer {
-    background-color: #2c3e50;
-    color: var(--white);
+    background: #05070b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.5rem 1rem 3rem;
     text-align: center;
-    padding: 1.5rem 0;
     margin-top: auto;
 }
 
-footer .footer-links {
+.footer-links {
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-footer .footer-links a {
-    color: var(--white);
+.footer-links a {
+    color: var(--text-muted);
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    transition: color 0.2s;
 }
 
-footer .footer-links a:hover {
-    text-decoration: underline;
+.footer-links a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
 }
 
 footer p {
-    font-size: 0.8rem;
-    opacity: 0.7;
+    color: var(--text-dark);
+    font-size: 0.85rem;
 }
 
-/* レスポンシブ対応 */
-@media (min-width: 768px) {
+/* モバイル対応（レスポンシブ） */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.65rem;
+    }
+    
     .app-card {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .app-card-content {
-        flex: 1;
-        padding-right: 1.5rem;
-    }
-    .app-card-action {
-        flex-shrink: 0;
-    }
-}
-
-
-/* ===================================================
-   ゲーム紹介用特別カード（The knight commander）
-   勉強アプリと明確に差別化し、リフレッシュ用として目立たせる
-   =================================================== */
-.game-card {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    border: 2px solid #f59e0b;
-    border-left: 6px solid #f59e0b;
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25), 0 4px 12px rgba(0, 0, 0, 0.35);
-    position: relative;
-    overflow: hidden;
-}
-
-.game-card::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.game-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.35), 0 6px 16px rgba(0, 0, 0, 0.45);
-}
-
-.game-card-main {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    flex: 1;
-}
-
-.game-icon-wrapper {
-    flex-shrink: 0;
-    width: 180px;
-    height: 180px;
-    max-width: 15em;
-    max-height: 15em;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(245, 158, 11, 0.45);
-    background: #1e293b;
-}
-
-.game-icon-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.game-card-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.game-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 8px;
-}
-
-.badge-refresh {
-    display: inline-block;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 0.78rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(217, 119, 6, 0.4);
-}
-
-.badge-free {
-    display: inline-block;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 0.78rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(5, 150, 105, 0.4);
-}
-
-.badge-genre {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.12);
-    color: #e2e8f0;
-    font-size: 0.78rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-}
-
-.game-title {
-    color: #fbbf24 !important;
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.game-desc {
-    color: #f1f5f9 !important;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 6px;
-}
-
-.game-desc strong {
-    color: #fef08a;
-}
-
-.game-subdesc {
-    color: #94a3b8 !important;
-    font-size: 0.88rem;
-    line-height: 1.5;
-}
-
-.game-card-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-top: 12px;
-}
-
-.game-action-subtext {
-    font-size: 0.82rem;
-    color: #fbbf24;
-    font-weight: bold;
-    text-align: center;
-}
-
-.btn-googleplay {
-    width: 10em;
-    max-width: 160px;
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
-    color: #ffffff !important;
-    padding: 0.75rem 0.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.45);
-    transition: all 0.2s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    white-space: nowrap;
-    box-sizing: border-box;
-}
-
-.btn-googleplay:hover {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.55);
-}
-
-.play-svg-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-    .game-card {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .game-card-action {
-        margin-top: 0;
-        flex-shrink: 0;
+        flex-direction: column;
         align-items: stretch;
+        padding: 1.4rem;
+        gap: 1.2rem;
     }
-}
-
-@media (max-width: 520px) {
-    .game-card-main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    
+    .app-icon-wrapper {
+        align-self: center;
+        width: 88px;
+        height: 88px;
     }
-    .game-badges {
-        justify-content: center;
-    }
-    .game-card-action {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn-googleplay {
-        width: 10em;
-        max-width: 160px;
-    }
-}
-    .game-badges {
-        justify-content: center;
-    }
-    .game-card-action {
+    
+    .app-card-action {
         width: 100%;
     }
-    .btn-googleplay {
-    width: 10em;
-    max-width: 160px;
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
-    color: #ffffff !important;
-    padding: 0.75rem 0.5rem;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.45);
-    transition: all 0.2s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    white-space: nowrap;
-    box-sizing: border-box;
-}
-}
-
-
-/* ===================================================
-   ゲーム紹介用特別カード（The knight commander）
-   勉強アプリと明確に差別化し、リフレッシュ用として目立たせる
-   =================================================== */
-.game-card {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    border: 2px solid #f59e0b;
-    border-left: 6px solid #f59e0b;
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25), 0 4px 12px rgba(0, 0, 0, 0.35);
-    position: relative;
-    overflow: hidden;
-}
-
-.game-card::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.game-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.35), 0 6px 16px rgba(0, 0, 0, 0.45);
-}
-
-.game-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 8px;
-}
-
-.badge-refresh {
-    display: inline-block;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 0.78rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(217, 119, 6, 0.4);
-}
-
-.badge-free {
-    display: inline-block;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 0.78rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(5, 150, 105, 0.4);
-}
-
-.badge-genre {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.12);
-    color: #e2e8f0;
-    font-size: 0.78rem;
-    padding: 3px 10px;
-    border-radius: 12px;
-}
-
-.game-title {
-    color: #fbbf24 !important;
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.game-desc {
-    color: #f1f5f9 !important;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-.game-desc strong {
-    color: #fef08a;
-}
-
-.game-subdesc {
-    color: #94a3b8 !important;
-    font-size: 0.88rem;
-    line-height: 1.5;
-}
-
-.game-card-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.action-game-icon {
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(245, 158, 11, 0.45);
-    background: #1e293b;
-    flex-shrink: 0;
-}
-
-.action-game-icon img,
-.game-icon-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.game-action-subtext {
-    font-size: 0.82rem;
-    color: #fbbf24;
-    font-weight: bold;
-    text-align: center;
-}
-
-.btn-googleplay {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
-    color: #ffffff !important;
-    padding: 0.75rem 1.2rem;
-    border-radius: 25px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.45);
-    transition: all 0.2s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    white-space: nowrap;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-}
-
-.btn-googleplay:hover {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.55);
-}
-
-.play-svg-icon {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    flex-shrink: 0;
-}
-
-@media (max-width: 767px) {
-    .game-card-action {
-        margin-top: 15px;
+    
+    .btn {
         width: 100%;
     }
-    .action-game-icon {
-        width: 130px;
-        height: 130px;
+    
+    .vocab-grid {
+        grid-template-columns: 1fr;
     }
 }

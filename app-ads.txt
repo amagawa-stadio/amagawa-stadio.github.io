@@ -1,1 +1,2 @@
-google.com, pub-6979818021800533, DIRECT, f08c47fec0942fa0
+# app-ads.txt
+# アプリ向け広告配信事業者登録時に追加
