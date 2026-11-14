@@ -1076,26 +1076,51 @@ async function initAdMob() {
   }
 }
 
-async function checkAndShowAd() {
+function checkAndShowAd() {
   try {
-    let count = parseInt(localStorage.getItem('adQuizCounter') || '0');
-    count++;
-    localStorage.setItem('adQuizCounter', count);
-
-    if (count % 3 === 0) {
-      if (typeof Capacitor !== 'undefined' && Capacitor.Plugins && Capacitor.Plugins.AdMob) {
-        const { AdMob } = Capacitor.Plugins;
-        await AdMob.showInterstitial();
-        await AdMob.prepareInterstitial({
-          adId: ADMOB_AD_UNIT_ID,
-          isTesting: false
-        });
-      }
+    let adModalHost = document.getElementById('ad-modal-host');
+    if (!adModalHost) {
+      adModalHost = document.createElement('div');
+      adModalHost.id = 'ad-modal-host';
+      document.body.appendChild(adModalHost);
     }
+
+    adModalHost.innerHTML = `
+      <div class="ad-modal-backdrop" id="grammarAdModalBackdrop" onclick="closeAdModal()">
+        <div class="ad-modal-card" onclick="event.stopPropagation()">
+          <div class="ad-modal-header">
+            <span class="ad-modal-label">SPONSOR / 広告</span>
+            <button type="button" class="ad-modal-close-btn" onclick="closeAdModal()" aria-label="閉じる">✕</button>
+          </div>
+          <div class="ad-modal-body">
+            <iframe
+              srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&lt;style&gt;* { box-sizing: border-box; } html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: transparent; display: flex; justify-content: center; align-items: center; overflow: hidden; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;!-- admax --&gt;&lt;script src=&quot;https://adm.shinobi.jp/s/459e0fef7b870420fd9b2c0bc0da847d&quot;&gt;&lt;/script&gt;&lt;!-- admax --&gt;&lt;/body&gt;&lt;/html&gt;"
+              width="300"
+              height="250"
+              loading="lazy"
+              scrolling="no"
+              style="border:none; overflow:hidden; width:300px; height:250px; display:block; margin:0 auto; max-width:100%; border-radius:8px; background:rgba(0,0,0,0.25);"
+              title="広告"
+            ></iframe>
+          </div>
+          <button type="button" class="ad-modal-dismiss-btn" onclick="closeAdModal()">
+            結果・解説を見る →
+          </button>
+        </div>
+      </div>
+    `;
   } catch (e) {
     console.error("Ad show failed", e);
   }
 }
+
+function closeAdModal() {
+  const adModalHost = document.getElementById('ad-modal-host');
+  if (adModalHost) {
+    adModalHost.innerHTML = '';
+  }
+}
+window.closeAdModal = closeAdModal;
 
 window.addEventListener('DOMContentLoaded', () => {
   init();

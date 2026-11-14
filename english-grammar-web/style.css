@@ -1656,3 +1656,114 @@ body {
     margin-bottom: 6px !important;
   }
 }
+
+/* ============================================================
+   広告モーダル（結果発表時 300x250 レクタングル安全ローダー）
+   ============================================================ */
+.ad-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: adModalFadeIn 0.22s ease-out;
+}
+
+@keyframes adModalFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.ad-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  background: #0d1527;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 18px;
+  padding: 16px 14px 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 229, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ad-modal-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.ad-modal-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ad-modal-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ad-modal-close-btn:hover,
+.ad-modal-close-btn:active {
+  background: rgba(239, 68, 68, 0.4);
+  border-color: #ef4444;
+  transform: scale(1.08);
+}
+
+.ad-modal-body {
+  width: 300px;
+  height: 250px;
+  min-height: 250px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.ad-modal-dismiss-btn {
+  width: 100%;
+  padding: 11px 16px;
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.ad-modal-dismiss-btn:hover,
+.ad-modal-dismiss-btn:active {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
