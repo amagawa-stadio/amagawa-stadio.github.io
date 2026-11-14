@@ -1,4 +1,4 @@
-const app = {
+﻿const app = {
     state: {
         currentSubject: null, 
         currentBranch: null, 
@@ -305,7 +305,7 @@ const app = {
                 let textbookListHtml = '';
                 if (window.TEXTBOOK_MAP && window.TEXTBOOK_MAP[unit.id] && Array.isArray(window.TEXTBOOK_MAP[unit.id])) {
                     window.TEXTBOOK_MAP[unit.id].forEach(item => {
-                        const url = `https://hiroking4orikara-art.github.io/social-studies-web-textbook/${item.file}`;
+                        const url = `https://amagawa-stadio.github.io/social-studies-web-textbook/${item.file}`;
                         textbookListHtml += `
                             <div class="textbook-row" style="display: flex; align-items: center; margin-top: 8px; gap: 10px; width: 100%;">
                                 <button class="unit-btn btn-material" onclick="app.openMaterial('${url}')" style="margin: 0; padding: 6px 12px; font-size: 0.9rem; flex-shrink: 0; background-color: #2ecc71; color: white;">
@@ -335,7 +335,7 @@ const app = {
                 // 地理・歴史の表示レイアウト（「動画」ボタンのすぐ左に「教科書」ボタンを設置）
                 let textbookBtnHtml = '';
                 if (window.TEXTBOOK_MAP && window.TEXTBOOK_MAP[unit.id] && typeof window.TEXTBOOK_MAP[unit.id] === 'string') {
-                    const url = `https://hiroking4orikara-art.github.io/social-studies-web-textbook/${window.TEXTBOOK_MAP[unit.id]}`;
+                    const url = `https://amagawa-stadio.github.io/social-studies-web-textbook/${window.TEXTBOOK_MAP[unit.id]}`;
                     textbookBtnHtml = `
                         <button class="unit-btn btn-material" onclick="app.openMaterial('${url}')" style="background-color: #2ecc71; color: white; margin-right: 4px;">
                             <i class="fas fa-book-open"></i> 教科書

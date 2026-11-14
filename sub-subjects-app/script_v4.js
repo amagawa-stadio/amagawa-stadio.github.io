@@ -1,4 +1,4 @@
-// --- AdMob Configuration ---
+﻿// --- AdMob Configuration ---
 const AdMob = window.Capacitor?.Plugins?.AdMob;
 const IS_TESTING = false;
 const ANDROID_BANNER_ID = 'ca-app-pub-6979818021800533/9268598502';
@@ -309,7 +309,7 @@ var app = {
 
                 let textbookButtonHtml = '';
                 if (window.TEXTBOOK_MAP && window.TEXTBOOK_MAP[unit.id]) {
-                    const url = `https://hiroking4orikara-art.github.io/sub-subjects-web-textbook/${window.TEXTBOOK_MAP[unit.id]}`;
+                    const url = `https://amagawa-stadio.github.io/sub-subjects-web-textbook/${window.TEXTBOOK_MAP[unit.id]}`;
                     textbookButtonHtml = `
                         <button class="unit-btn btn-material" style="margin: 0; background-color: #4CAF50; color: white; width: 100%;" onclick="app.openMaterial('${url}')">
                             <i class="fas fa-book-open"></i> web教科書を見る
@@ -357,7 +357,7 @@ var app = {
                     
                     let textbookBtnHtml = '';
                     if (window.TEXTBOOK_MAP && window.TEXTBOOK_MAP[unit.id]) {
-                        const url = `https://hiroking4orikara-art.github.io/sub-subjects-web-textbook/${window.TEXTBOOK_MAP[unit.id]}`;
+                        const url = `https://amagawa-stadio.github.io/sub-subjects-web-textbook/${window.TEXTBOOK_MAP[unit.id]}`;
                         textbookBtnHtml = `
                             <button class="unit-btn btn-material" onclick="app.openMaterial('${url}')" style="margin: 0 10px 0 0; background-color: #4CAF50; color: white; padding: 8px 20px; font-size: 1.1rem;">
                                 <i class="fas fa-book-open"></i> web教科書を見る

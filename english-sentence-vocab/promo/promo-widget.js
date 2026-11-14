@@ -1,14 +1,14 @@
-/**
+﻿/**
  * 雨川の旦那 公式シリーズ共通「姉妹アプリ＆サイト宣伝ウィジェット」
- * 配信元: https://hiroking4orikara-art.github.io/promo/promo-widget.js
- * データ元: https://hiroking4orikara-art.github.io/promo/sister-apps.json
+ * 配信元: https://amagawa-stadio.github.io/promo/promo-widget.js
+ * データ元: https://amagawa-stadio.github.io/promo/sister-apps.json
  *
  * 使い方（各アプリのHTML内）:
  * <div id="sister-apps-promo" data-current-app="com.hiroki.grammar"></div>
- * <script src="https://hiroking4orikara-art.github.io/promo/promo-widget.js" defer></script>
+ * <script src="https://amagawa-stadio.github.io/promo/promo-widget.js" defer></script>
  */
 (function () {
-  const REMOTE_JSON_URL = 'https://hiroking4orikara-art.github.io/promo/sister-apps.json';
+  const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
   const CACHE_KEY = 'amakawa_sister_apps_promo_v1';
 
   const FALLBACK_DATA = {
@@ -22,7 +22,7 @@
         title: 'The Knight Commander',
         subtitle: '勉強の息抜きにおすすめの戦略ゲーム！',
         borderColor: '#E74C3C',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/knights_commander_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/knights_commander_icon.png',
         localIcon: 'promo/icons/knights_commander_icon.png',
         url: 'https://play.google.com/store/apps/details?id=com.hiroking4orikara.knightscommander'
       },
@@ -32,7 +32,7 @@
         title: '中学英語 教科書単語',
         subtitle: '教科書準拠でサクサク覚える！',
         borderColor: '#4CAF50',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/vocab_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/vocab_icon.png',
         localIcon: 'promo/icons/vocab_icon.png',
         url: 'https://play.google.com/store/apps/details?id=com.sakkusaku.englishvocab'
       },
@@ -42,7 +42,7 @@
         title: '中学英語 並べ替え300',
         subtitle: '語順並べ替えで英文法をマスター！',
         borderColor: '#8E44AD',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/grammar_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/grammar_icon.png',
         localIcon: 'promo/icons/grammar_icon.png',
         url: 'https://play.google.com/store/apps/details?id=com.hiroki.grammar'
       },
@@ -52,7 +52,7 @@
         title: '中学社会 これ一本！',
         subtitle: '歴史・地理・公民を完全網羅！',
         borderColor: '#2196F3',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/social_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/social_icon.png',
         localIcon: 'promo/icons/social_icon.png',
         url: 'https://play.google.com/store/apps/details?id=com.teambits.socialstudies'
       },
@@ -62,7 +62,7 @@
         title: '中学副教科 これ一本！',
         subtitle: '音・美・保体・技家を網羅！',
         borderColor: '#E91E63',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/sub_subjects_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/sub_subjects_icon.png',
         localIcon: 'promo/icons/sub_subjects_icon.png',
         url: 'https://play.google.com/store/apps/details?id=com.hiroking4orikara.subsubjects'
       },
@@ -72,9 +72,9 @@
         title: '公式ポータルサイト',
         subtitle: '他の無料学習アプリもチェック！',
         borderColor: '#FF9800',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/portal_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',
         localIcon: 'promo/icons/portal_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/'
+        url: 'https://amagawa-stadio.github.io/'
       }
     ]
   };

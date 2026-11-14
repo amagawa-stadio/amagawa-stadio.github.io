@@ -1,14 +1,14 @@
-/**
+﻿/**
  * 雨川の旦那 公式シリーズ共通「姉妹アプリ＆サイト宣伝ウィジェット」
- * 配信元: https://hiroking4orikara-art.github.io/promo/promo-widget.js
- * データ元: https://hiroking4orikara-art.github.io/promo/sister-apps.json
+ * 配信元: https://amagawa-stadio.github.io/promo/promo-widget.js
+ * データ元: https://amagawa-stadio.github.io/promo/sister-apps.json
  *
  * 使い方（各アプリのHTML内）:
  * <div id="sister-apps-promo" data-current-app="com.hiroki.grammar"></div>
- * <script src="https://hiroking4orikara-art.github.io/promo/promo-widget.js" defer></script>
+ * <script src="https://amagawa-stadio.github.io/promo/promo-widget.js" defer></script>
  */
 (function () {
-  const REMOTE_JSON_URL = 'https://hiroking4orikara-art.github.io/promo/sister-apps.json';
+  const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
   const CACHE_KEY = 'amakawa_sister_apps_promo_v1';
 
   const FALLBACK_DATA = {
@@ -22,9 +22,9 @@
         title: '段階別！中学英語長文！',
         subtitle: '習った文法だけで1段ずつステップアップ！',
         borderColor: '#00f0ff',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/reading_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/reading_icon.png',
         localIcon: 'promo/icons/reading_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/english-reading-app/'
+        url: 'https://amagawa-stadio.github.io/english-reading-app/'
       },
       {
         id: 'english-sentence-vocab',
@@ -33,9 +33,9 @@
         title: '例文で英単語！',
         subtitle: '生きた例文で使える語彙力を身につける！',
         borderColor: '#f59e0b',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/sentence_vocab_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/sentence_vocab_icon.png',
         localIcon: 'promo/icons/sentence_vocab_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/english-sentence-vocab/'
+        url: 'https://amagawa-stadio.github.io/english-sentence-vocab/'
       },
       {
         id: 'com.hiroki.grammar',
@@ -43,9 +43,9 @@
         title: '中学 英語 文法 サックサク',
         subtitle: '語順並べ替えで英文法をマスター！',
         borderColor: '#a855f7',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/grammar_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/grammar_icon.png',
         localIcon: 'promo/icons/grammar_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/english-grammar-web/'
+        url: 'https://amagawa-stadio.github.io/english-grammar-web/'
       },
       {
         id: 'com.sakkusaku.englishvocab',
@@ -53,9 +53,9 @@
         title: '中学英語 教科書単語',
         subtitle: '教科書準拠で定期テスト対策！',
         borderColor: '#10b981',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/textbook_vocab_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/textbook_vocab_icon.png',
         localIcon: 'promo/icons/textbook_vocab_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/english-textbook-vocab/'
+        url: 'https://amagawa-stadio.github.io/english-textbook-vocab/'
       },
       {
         id: 'portal',
@@ -63,9 +63,9 @@
         title: '公式ポータルサイト',
         subtitle: '単語・長文・文法の総合ポータル！',
         borderColor: '#00f0ff',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/portal_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',
         localIcon: 'promo/icons/portal_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/'
+        url: 'https://amagawa-stadio.github.io/'
       }
     ]
   };
