@@ -1770,3 +1770,12 @@ body {
   filter: brightness(1.1);
 }
 
+/* モーダルダイアログ最前面保障（下部固定バー・ヘッダー・全UIの上） */
+#helpModal,
+#calendarModal,
+#printConfigModal,
+#interstitialAdModal,
+.modal {
+  z-index: 99999 !important;
+}
+

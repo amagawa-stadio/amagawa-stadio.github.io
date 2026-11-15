@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>英語文法並べ替え３００</title>
-  <link rel="stylesheet" href="style.css?v=20261115_modal_zindex" />
+  <link rel="stylesheet" href="style.css?v=20261115_modal_top_fixed" />
 </head>
 
 <body>
@@ -132,30 +132,30 @@
       <div class="medal">🥇</div>
       <button id="closeCelebrationBtn" class="btn">トップに戻る</button>
     </section>
-
-    <!-- Generic Modal -->
-    <div id="helpModal" class="modal hidden">
-      <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-        <div id="modalText"></div>
-      </div>
-    </div>
-
-    <!-- Calendar Modal -->
-    <div id="calendarModal" class="modal hidden">
-      <div class="modal-content" style="max-width: 400px;">
-        <span id="closeCalendarModal" class="close">&times;</span>
-        <h2>学習カレンダー</h2>
-        <div id="calendarControls" style="display:flex; justify-content:space-between; margin-bottom:10px;">
-          <button id="prevMonthBtn" class="btn-small">&lt;</button>
-          <span id="currentMonthLabel" style="font-weight:bold; font-size:1.2em;"></span>
-          <button id="nextMonthBtn" class="btn-small">&gt;</button>
-        </div>
-        <div id="calendarGrid" class="calendar-grid"></div>
-        <p style="text-align:right; font-size:0.8em; margin-top:5px;">数字は挑戦した問題数です</p>
-      </div>
-    </div>
   </main>
+
+  <!-- Generic Modal -->
+  <div id="helpModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
+
+  <!-- Calendar Modal -->
+  <div id="calendarModal" class="modal hidden">
+    <div class="modal-content" style="max-width: 400px;">
+      <span id="closeCalendarModal" class="close">&times;</span>
+      <h2>学習カレンダー</h2>
+      <div id="calendarControls" style="display:flex; justify-content:space-between; margin-bottom:10px;">
+        <button id="prevMonthBtn" class="btn-small">&lt;</button>
+        <span id="currentMonthLabel" style="font-weight:bold; font-size:1.2em;"></span>
+        <button id="nextMonthBtn" class="btn-small">&gt;</button>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+      <p style="text-align:right; font-size:0.8em; margin-top:5px;">数字は挑戦した問題数です</p>
+    </div>
+  </div>
   <!-- Fixed Bottom Control Bar for Setup/Home Screen -->
   <div id="setupBottomBar" class="setup-bottom-bar">
     <button id="startBtn" class="btn large-start-btn">クイズ開始</button>
