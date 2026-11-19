@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 雨川の旦那 公式シリーズ共通「姉妹アプリ＆サイト宣伝ウィジェット」
  * 配信元: https://amagawa-stadio.github.io/promo/promo-widget.js
  * データ元: https://amagawa-stadio.github.io/promo/sister-apps.json
