@@ -8,6 +8,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- 段階別！英語リスニング！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-listening-app/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- 段階別！中学英語長文！ -->
   <url>
     <loc>https://amagawa-stadio.github.io/english-reading-app/</loc>

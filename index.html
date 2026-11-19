@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Ehu1_O1uStzk_LUEzhnpEGtMduFdCaNV1U-RFe1hh24" />
-    <meta name="description" content="中学英語の「単語」「長文」「文法」を完全網羅した無料の学習Webアプリポータルサイト。段階別中学英語長文、例文で英単語、教科書単語、文法並べ替えで定期テスト＆高校入試対策！">
+    <meta name="description" content="中学英語の「単語」「長文」「文法」「リスニング」を完全網羅した無料の学習Webアプリポータルサイト。段階別英語リスニング、段階別中学英語長文、例文で英単語、教科書単語、中学生文法並べ替え700で定期テスト＆高校入試対策！">
     <title>中学英語学習 公式ポータルサイト | 雨川の旦那</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="promo/icons/portal_icon.png">
@@ -13,167 +13,289 @@
     <header>
         <span class="header-badge">JHS English Learning Portal</span>
         <h1>中学英語 公式ポータルサイト</h1>
-        <p>単語・長文・文法を完全制覇！キミの英語力を1段ずつ引き上げる無料Web学習ツール</p>
+        <p>単語・長文・文法・リスニングを完全制覇！キミの英語力を1段ずつ引き上げる無料Web学習ツール</p>
     </header>
 
     <main>
-        <!-- ① 単語セクション -->
-        <h2 class="category-heading cat-vocab-heading">
-            <span class="category-icon">📖</span> 単語 (Vocabulary)
-        </h2>
-        <p style="color: #94a3b8; margin-bottom: 1.2rem; font-size: 0.95rem;">
-            目的に合わせて選べる2つの英単語学習ツール！「文脈で覚える例文学習」と「学校の定期テスト対策」のどちらでも自由に学べます。
-        </p>
+        <!-- ============================================================
+             What's New（最新お知らせ・最大3件／タップで全文展開）
+             ============================================================ -->
+        <section class="whats-new-box" aria-label="最新のお知らせ">
+            <div class="whats-new-header">
+                <h2 class="whats-new-title">
+                    <span class="whats-new-dot" aria-hidden="true"></span>
+                    <span>What's New</span>
+                </h2>
+                <span class="whats-new-hint">タップで全文を表示</span>
+            </div>
+            <ul class="whats-new-list" id="whatsNewList">
+                <li class="news-item">
+                    <button type="button" class="news-item-btn" aria-expanded="false">
+                        <span class="news-meta">
+                            <span class="news-date">2026.11.19</span>
+                            <span class="news-tag news-tag-new">NEW</span>
+                        </span>
+                        <span class="news-text">新アプリ『段階別！英語リスニング！』を公開しました！中1〜中3の全21ステップ（150問）＋クスッと笑える「おまけコント」6本を収録。10分割グリーン波形で音声の長さがひと目でわかり、全単語タップ辞書（例文音声・連語・連鎖ジャンプ対応）や学習カレンダーも完備しています！</span>
+                        <span class="news-chevron" aria-hidden="true">▼</span>
+                    </button>
+                </li>
+                <li class="news-item">
+                    <button type="button" class="news-item-btn" aria-expanded="false">
+                        <span class="news-meta">
+                            <span class="news-date">2026.11.19</span>
+                            <span class="news-tag news-tag-update">更新</span>
+                        </span>
+                        <span class="news-text">公式ポータルサイトを「単語」「長文」「文法」「リスニング」の4カテゴリタブ形式にリニューアルしました！学びたい分野をワンタップで切り替えられ、いつでも最新ニュースをここからチェックできます。</span>
+                        <span class="news-chevron" aria-hidden="true">▼</span>
+                    </button>
+                </li>
+                <li class="news-item">
+                    <button type="button" class="news-item-btn" aria-expanded="false">
+                        <span class="news-meta">
+                            <span class="news-date">2026.11.16</span>
+                            <span class="news-tag news-tag-feature">機能追加</span>
+                        </span>
+                        <span class="news-text">『段階別！中学英語長文！』に「文字1.2倍拡大」ボタンを追加し、『中学生文法　並べ替え７００！』および『中学英語 教科書単語』のA4プリント出力機能もさらに快適にアップデートしました！</span>
+                        <span class="news-chevron" aria-hidden="true">▼</span>
+                    </button>
+                </li>
+            </ul>
+        </section>
 
-        <div class="vocab-grid">
-            <!-- 例文で英単語！ -->
-            <article class="app-card neon-card-vocab">
-                <div class="app-icon-wrapper">
-                    <img src="promo/icons/sentence_vocab_icon.png" alt="例文で英単語！ アイコン" class="app-icon-img">
+        <!-- ============================================================
+             4カテゴリタブ切替ナビ（単語 / 長文 / 文法 / リスニング）
+             ============================================================ -->
+        <nav class="category-tabs-nav" role="tablist" aria-label="学習カテゴリ選択">
+            <button type="button" class="cat-tab-btn is-active" id="tab-vocab" role="tab" aria-selected="true" aria-controls="panel-vocab" data-tab="vocab">
+                <span class="cat-tab-icon" aria-hidden="true">📖</span>
+                <span class="cat-tab-label">単語</span>
+            </button>
+            <button type="button" class="cat-tab-btn" id="tab-reading" role="tab" aria-selected="false" aria-controls="panel-reading" data-tab="reading">
+                <span class="cat-tab-icon" aria-hidden="true">🪜</span>
+                <span class="cat-tab-label">長文</span>
+            </button>
+            <button type="button" class="cat-tab-btn" id="tab-grammar" role="tab" aria-selected="false" aria-controls="panel-grammar" data-tab="grammar">
+                <span class="cat-tab-icon" aria-hidden="true">🧩</span>
+                <span class="cat-tab-label">文法</span>
+            </button>
+            <button type="button" class="cat-tab-btn" id="tab-listening" role="tab" aria-selected="false" aria-controls="panel-listening" data-tab="listening">
+                <span class="cat-tab-new-pill">NEW</span>
+                <span class="cat-tab-icon" aria-hidden="true">🎧</span>
+                <span class="cat-tab-label">リスニング</span>
+            </button>
+        </nav>
+
+        <!-- ============================================================
+             ① 単語パネル
+             ============================================================ -->
+        <section class="tab-panel is-active" id="panel-vocab" role="tabpanel" aria-labelledby="tab-vocab" data-panel="vocab">
+            <h2 class="category-heading cat-vocab-heading">
+                <span class="category-icon">📖</span> 単語 (Vocabulary)
+            </h2>
+            <p class="category-desc">
+                目的に合わせて選べる2つの英単語学習ツール！「文脈で覚える例文学習」と「学校の定期テスト対策」のどちらでも自由に学べます。
+            </p>
+
+            <div class="vocab-grid">
+                <!-- 例文で英単語！ -->
+                <article class="app-card neon-card-vocab">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/sentence_vocab_icon.png" alt="例文で英単語！ アイコン" class="app-icon-img">
+                    </div>
+                    <div class="app-card-content">
+                        <div class="app-badges">
+                            <span class="badge badge-amber">🌟 おすすめ</span>
+                            <span class="badge badge-emerald">Web版・無料</span>
+                        </div>
+                        <h3>例文で英単語！</h3>
+                        <p><strong>生きた例文の文脈で単語がみるみる定着！</strong></p>
+                        <p>単語を1語ずつ丸暗記するのではなく、自然な英文フレーズと一緒に学習することで、読解や英作文で本当に使える語彙力が身につきます。</p>
+                        <ul class="app-features">
+                            <li>⚡ 例文とセットで効率よくインプット</li>
+                            <li>🔊 全例文ネイティブ音声読み上げ対応</li>
+                            <li>🎯 多彩な品詞色分けと解説付き</li>
+                        </ul>
+                    </div>
+                    <div class="app-card-action">
+                        <a href="english-sentence-vocab/index.html" class="btn btn-neon-amber">
+                            <span>▶ 例文で英単語を勉強する</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 中学英語 教科書単語 -->
+                <article class="app-card neon-card-vocab">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/textbook_vocab_icon.png" alt="教科書単語 アイコン" class="app-icon-img">
+                    </div>
+                    <div class="app-card-content">
+                        <div class="app-badges">
+                            <span class="badge badge-amber">📚 定期テスト対策</span>
+                            <span class="badge badge-emerald">Web版・無料</span>
+                        </div>
+                        <h3>中学英語 教科書単語</h3>
+                        <p><strong>学校の教科書準拠でテスト範囲を完全攻略！</strong></p>
+                        <p>全国の中学校で採用されている主要英語教科書（New Crown, Here We Go等）や学年を選ぶだけで、テストに出る単語をピンポイント暗記できます。</p>
+                        <ul class="app-features">
+                            <li>🏫 教科書・学年ごとの単元別出題</li>
+                            <li>👂 音声リスニング＆スペル並べ替え問題</li>
+                            <li>🖨️ A4プリント出力＆学習カレンダー対応</li>
+                        </ul>
+                    </div>
+                    <div class="app-card-action">
+                        <a href="english-textbook-vocab/index.html" class="btn btn-neon-amber">
+                            <span>▶ 教科書単語を勉強する</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             ② 長文パネル
+             ============================================================ -->
+        <section class="tab-panel" id="panel-reading" role="tabpanel" aria-labelledby="tab-reading" data-panel="reading">
+            <h2 class="category-heading cat-reading-heading">
+                <span class="category-icon">🪜</span> 長文 (Reading Comprehension)
+            </h2>
+            <p class="category-desc">
+                「長文が苦手…」を克服！習った文法だけで1段ずつ階段を上がるように読解力を鍛える新感覚アプリです。
+            </p>
+
+            <!-- 段階別！中学英語長文！ -->
+            <article class="app-card neon-card-reading">
+                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
+                    <img src="promo/icons/reading_icon.png" alt="段階別！中学英語長文！ アイコン" class="app-icon-img">
                 </div>
                 <div class="app-card-content">
                     <div class="app-badges">
-                        <span class="badge badge-amber">🌟 おすすめ</span>
+                        <span class="badge badge-cyan">🔥 大人気</span>
                         <span class="badge badge-emerald">Web版・無料</span>
+                        <span class="badge badge-cyan">全21ステップ・315本収録</span>
                     </div>
-                    <h3>例文で英単語！</h3>
-                    <p><strong>生きた例文の文脈で単語がみるみる定着！</strong></p>
-                    <p>単語を1語ずつ丸暗記するのではなく、自然な英文フレーズと一緒に学習することで、読解や英作文で本当に使える語彙力が身につきます。</p>
+                    <h3>段階別！中学英語長文！</h3>
+                    <p><strong>習った文法だけで1段ずつステップアップ！読めないストレスゼロの長文演習！</strong></p>
+                    <p>中1のbe動詞から中3の仮定法まで、中学3年間の学習順に沿った全21ステップ累積式カリキュラム。各単元では未習文法を使わないため、つまずかずに自分のペースで実力を伸ばせます。</p>
                     <ul class="app-features">
-                        <li>⚡ 例文とセットで効率よくインプット</li>
-                        <li>🔊 全例文ネイティブ音声読み上げ対応</li>
-                        <li>🎯 多彩な品詞色分けと解説付き</li>
+                        <li>📚 「説明文」「会話文」「図表・グラフ」の3タイプ（全315本）</li>
+                        <li>🔍 <strong>全単語タップ辞書</strong>：本文の英単語をタップするだけで意味・品詞・発音・例文を即座に確認</li>
+                        <li>🥪 <strong>サンドイッチ和訳＆全訳</strong>：解き終わった後は1文ごとの対訳でスッキリ復習</li>
+                        <li>💡 <strong>即採点＆根拠ハイライト</strong>：設問を解いた瞬間に本文の該当根拠箇所が光る</li>
                     </ul>
                 </div>
                 <div class="app-card-action">
-                    <a href="english-sentence-vocab/index.html" class="btn btn-neon-amber">
-                        <span>▶ 例文で英単語を勉強する</span>
+                    <a href="english-reading-app/index.html" class="btn btn-neon-cyan">
+                        <span>🚀 段階別！長文に挑戦する</span>
                     </a>
                 </div>
             </article>
+        </section>
 
-            <!-- 中学英語 教科書単語 サックサク！ -->
-            <article class="app-card neon-card-vocab">
-                <div class="app-icon-wrapper">
-                    <img src="promo/icons/textbook_vocab_icon.png" alt="教科書単語 アイコン" class="app-icon-img">
+        <!-- ============================================================
+             ③ 文法パネル
+             ============================================================ -->
+        <section class="tab-panel" id="panel-grammar" role="tabpanel" aria-labelledby="tab-grammar" data-panel="grammar">
+            <h2 class="category-heading cat-grammar-heading">
+                <span class="category-icon">🧩</span> 文法 (Grammar)
+            </h2>
+            <p class="category-desc">
+                英語の骨格となる「語順」を感覚的にマスター！ゲーム感覚で英文法が得意になる並べ替えトレーニング。
+            </p>
+
+            <!-- 中学生文法　並べ替え７００！ -->
+            <article class="app-card neon-card-grammar">
+                <div class="app-icon-wrapper" style="width: 112px; height: 112px;">
+                    <img src="promo/icons/grammar_icon.png" alt="中学生文法　並べ替え７００！ アイコン" class="app-icon-img">
                 </div>
                 <div class="app-card-content">
                     <div class="app-badges">
-                        <span class="badge badge-amber">📚 定期テスト対策</span>
+                        <span class="badge badge-purple">✨ 定番人気</span>
                         <span class="badge badge-emerald">Web版・無料</span>
+                        <span class="badge badge-purple">全700問以上</span>
                     </div>
-                    <h3>中学英語 教科書単語</h3>
-                    <p><strong>学校の教科書準拠でテスト範囲を完全攻略！</strong></p>
-                    <p>全国の中学校で採用されている主要英語教科書（New Crown, Here We Go等）や学年を選ぶだけで、テストに出る単語をピンポイント暗記できます。</p>
+                    <h3>中学生文法　並べ替え７００！</h3>
+                    <p><strong>タップして並べ替えるだけ！語順のルールが自然と身につく！</strong></p>
+                    <p>中学3年間で習う全重要英文法と頻出連語・会話表現を網羅。バラバラになった単語チップを正しい語順に並べることで、高校入試の英作文や定期テストの並べ替え問題に圧倒的に強くなります。</p>
                     <ul class="app-features">
-                        <li>🏫 教科書・学年ごとの単元別出題</li>
-                        <li>👂 音声リスニング＆スペル並べ替え問題</li>
-                        <li>📅 学習カレンダーで日々の継続をサポート</li>
+                        <li>🧩 中1〜中3の全文法単元を単元別にピンポイント演習</li>
+                        <li>💡 困ったときの「ヒント」＆単語マウスオーバー辞書機能</li>
+                        <li>🖨️ A4プリント作成・印刷機能搭載で紙でのテスト学習も可能</li>
                     </ul>
                 </div>
                 <div class="app-card-action">
-                    <a href="english-textbook-vocab/index.html" class="btn btn-neon-amber">
-                        <span>▶ 教科書単語を勉強する</span>
+                    <a href="english-grammar-web/index.html" class="btn btn-neon-purple">
+                        <span>▶ 文法並べ替え７００！を始める</span>
                     </a>
                 </div>
             </article>
-        </div>
+        </section>
 
+        <!-- ============================================================
+             ④ リスニングパネル
+             ============================================================ -->
+        <section class="tab-panel" id="panel-listening" role="tabpanel" aria-labelledby="tab-listening" data-panel="listening">
+            <h2 class="category-heading cat-listening-heading">
+                <span class="category-icon">🎧</span> リスニング (Listening)
+            </h2>
+            <p class="category-desc">
+                習った文法だけで「耳から」英語をステップアップ！高校入試・英検形式の実戦リスニングから、思わず笑えるおまけコントまで楽しく聴き取れます。
+            </p>
 
-        <!-- ② 長文セクション -->
-        <h2 class="category-heading cat-reading-heading">
-            <span class="category-icon">🪜</span> 長文 (Reading Comprehension)
-        </h2>
-        <p style="color: #94a3b8; margin-bottom: 1.2rem; font-size: 0.95rem;">
-            「長文が苦手…」を克服！習った文法だけで1段ずつ階段を上がるように読解力を鍛える新感覚アプリです。
-        </p>
-
-        <!-- 段階別！中学英語長文！ -->
-        <article class="app-card neon-card-reading">
-            <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
-                <img src="promo/icons/reading_icon.png" alt="段階別！中学英語長文！ アイコン" class="app-icon-img">
-            </div>
-            <div class="app-card-content">
-                <div class="app-badges">
-                    <span class="badge badge-cyan">🔥 最新作</span>
-                    <span class="badge badge-emerald">Web版・無料</span>
-                    <span class="badge badge-cyan">全21ステップ・315本収録</span>
+            <!-- 段階別！英語リスニング！ -->
+            <article class="app-card neon-card-listening">
+                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
+                    <img src="promo/icons/listening_icon.png" alt="段階別！英語リスニング！ シーズー犬アイコン" class="app-icon-img">
                 </div>
-                <h3>段階別！中学英語長文！</h3>
-                <p><strong>習った文法だけで1段ずつステップアップ！読めないストレスゼロの長文演習！</strong></p>
-                <p>中1のbe動詞から中3の仮定法まで、中学3年間の学習順に沿った全21ステップ累積式カリキュラム。各単元では未習文法を使わないため、つまずかずに自分のペースで実力を伸ばせます。</p>
-                <ul class="app-features">
-                    <li>📚 「説明文」「会話文」「図表・グラフ」の3タイプ（全315本）</li>
-                    <li>🔍 <strong>全単語タップ辞書</strong>：本文の英単語をタップするだけで意味・品詞・発音・例文を即座に確認</li>
-                    <li>🥪 <strong>サンドイッチ和訳＆全訳</strong>：解き終わった後は1文ごとの対訳でスッキリ復習</li>
-                    <li>💡 <strong>即採点＆根拠ハイライト</strong>：設問を解いた瞬間に本文の該当根拠箇所が光る</li>
-                </ul>
-            </div>
-            <div class="app-card-action">
-                <a href="english-reading-app/index.html" class="btn btn-neon-cyan">
-                    <span>🚀 段階別！長文に挑戦する</span>
-                </a>
-            </div>
-        </article>
-
-
-        <!-- ③ 文法セクション -->
-        <h2 class="category-heading cat-grammar-heading">
-            <span class="category-icon">🧩</span> 文法 (Grammar)
-        </h2>
-        <p style="color: #94a3b8; margin-bottom: 1.2rem; font-size: 0.95rem;">
-            英語の骨格となる「語順」を感覚的にマスター！ゲーム感覚で英文法が得意になる並べ替えトレーニング。
-        </p>
-
-        <!-- 中学生文法　並べ替え７００！ -->
-        <article class="app-card neon-card-grammar">
-            <div class="app-icon-wrapper" style="width: 110px; height: 110px;">
-                <img src="promo/icons/grammar_icon.png" alt="中学生文法　並べ替え７００！ アイコン" class="app-icon-img">
-            </div>
-            <div class="app-card-content">
-                <div class="app-badges">
-                    <span class="badge badge-purple">✨ 定番人気</span>
-                    <span class="badge badge-emerald">Web版・無料</span>
-                    <span class="badge badge-purple">全700問以上</span>
+                <div class="app-card-content">
+                    <div class="app-badges">
+                        <span class="badge badge-rose">🆕 NEW 公開！</span>
+                        <span class="badge badge-emerald">Web版・無料</span>
+                        <span class="badge badge-cyan">全21ステップ・150問＋おまけコント</span>
+                    </div>
+                    <h3>段階別！英語リスニング！</h3>
+                    <p><strong>習った文法だけで1段ずつ耳からステップアップ！聴き取れる楽しさを実感！</strong></p>
+                    <p>中1のbe動詞から中3の仮定法まで、既習文法だけで聴ける全21ステップ累積式リスニング。中1・中2は各タイプ2問、受験生の中3は各タイプ3問のたっぷり150問に加え、クスッと笑える「おまけコント」も収録しています。</p>
+                    <ul class="app-features">
+                        <li>🎧 <strong>入試・英検仕様の3タイプ</strong>：「会話文」「資料・条件」「スピーチ・放送」＋「🎭 おまけコント」6本</li>
+                        <li>🌊 <strong>10分割グリーン波形</strong>：音声の長さと進み具合が目で見てすぐわかる（2回/1回再生・速度変更対応）</li>
+                        <li>📖 <strong>全単語タップ辞書</strong>：スクリプトの全単語をタップで意味・例文音声・連語・連鎖ジャンプに対応</li>
+                        <li>📅 <strong>連続ログイン＆学習カレンダー</strong>：毎日の挑戦記録と👑王冠コレクションで楽しく継続</li>
+                    </ul>
                 </div>
-                <h3>中学生文法　並べ替え７００！</h3>
-                <p><strong>タップして並べ替えるだけ！語順のルールが自然と身につく！</strong></p>
-                <p>中学3年間で習う全重要英文法と頻出連語・会話表現を網羅。バラバラになった単語チップを正しい語順に並べることで、高校入試の英作文や定期テストの並べ替え問題に圧倒的に強くなります。</p>
-                <ul class="app-features">
-                    <li>🧩 中1〜中3の全文法単元を単元別にピンポイント演習</li>
-                    <li>💡 困ったときの「ヒント」＆単語マウスオーバー辞書機能</li>
-                    <li>🖨️ A4プリント作成・印刷機能搭載で紙でのテスト学習も可能</li>
-                </ul>
-            </div>
-            <div class="app-card-action">
-                <a href="english-grammar-web/index.html" class="btn btn-neon-purple">
-                    <span>▶ 文法並べ替え７００！を始める</span>
-                </a>
-            </div>
-        </article>
-
+                <div class="app-card-action">
+                    <a href="english-listening-app/index.html" class="btn btn-neon-listening">
+                        <span>🎧 段階別！リスニングに挑戦する</span>
+                    </a>
+                </div>
+            </article>
+        </section>
 
         <!-- ポータル学習ガイド -->
         <section class="portal-guide-section">
             <h2>🎓 おすすめの英語学習サイクル</h2>
-            <p style="color: #94a3b8; font-size: 0.95rem;">
-                当サイトの3つのツールを組み合わせることで、定期テストでの高得点から高校入試の長文読解まで、最短距離で英語の総合力を養うことができます。
+            <p style="color: #94a3b8; font-size: 0.94rem;">
+                当サイトの4つのカテゴリを組み合わせることで、定期テストでの高得点から高校入試の読解・リスニング対策まで、最短距離で英語の総合力を養うことができます。
             </p>
             <div class="guide-steps">
                 <div class="guide-card">
                     <div class="guide-card-num">STEP 1</div>
-                    <h4>単語で基礎語彙を蓄える</h4>
-                    <p>『例文で英単語』や『教科書単語』で、重要語句の意味と発音をインプット。文脈の中で単語の使われ方を掴みます。</p>
+                    <h4>📖 単語で基礎語彙を蓄える</h4>
+                    <p>『例文で英単語！』や『中学英語 教科書単語』で、重要語句の意味と発音をインプット。文脈の中で単語の使われ方を掴みます。</p>
                 </div>
                 <div class="guide-card">
                     <div class="guide-card-num">STEP 2</div>
-                    <h4>文法で英文の型を覚える</h4>
-                    <p>『文法サックサク』で語順並べ替えに挑戦。主語・動詞・目的語などの基本語順を身体に染み込ませます。</p>
+                    <h4>🧩 文法で英文の型を覚える</h4>
+                    <p>『中学生文法　並べ替え７００！』で語順並べ替えに挑戦。主語・動詞・目的語などの基本語順を身体に染み込ませます。</p>
                 </div>
                 <div class="guide-card">
                     <div class="guide-card-num">STEP 3</div>
-                    <h4>長文で総合読解力を磨く</h4>
+                    <h4>🪜 長文で総合読解力を磨く</h4>
                     <p>『段階別！中学英語長文！』で実戦演習。習った文法だけで書かれた長文を読み、全単語タップ辞書で疑問を残さず読破します。</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-card-num">STEP 4</div>
+                    <h4>🎧 リスニングで耳を鍛える</h4>
+                    <p>『段階別！英語リスニング！』で習った文法を音から定着。1文リピート再生と全単語タップ辞書で聴き取れない箇所をゼロにします。</p>
                 </div>
             </div>
         </section>
@@ -188,5 +310,71 @@
         </div>
         <p>&copy; 2026 雨川の旦那 (Mikumo Amagawa). All rights reserved.</p>
     </footer>
+
+    <script>
+        (function () {
+            // 1. What's New: 最新3件表示を保証し、タップで全文展開／折りたたみ
+            var newsList = document.getElementById('whatsNewList');
+            if (newsList) {
+                var items = Array.prototype.slice.call(newsList.querySelectorAll('.news-item'));
+                items.forEach(function (item, idx) {
+                    if (idx >= 3) {
+                        item.style.display = 'none';
+                        return;
+                    }
+                    var btn = item.querySelector('.news-item-btn');
+                    if (!btn) return;
+                    btn.onclick = function () {
+                        var expanded = item.classList.toggle('is-expanded');
+                        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                    };
+                });
+            }
+
+            // 2. 4カテゴリタブ切替（単語 / 長文 / 文法 / リスニング）
+            var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.cat-tab-btn'));
+            var tabPanels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+            var validTabs = ['vocab', 'reading', 'grammar', 'listening'];
+
+            function activateTab(tabId, updateHash) {
+                if (validTabs.indexOf(tabId) === -1) tabId = 'vocab';
+                tabButtons.forEach(function (btn) {
+                    var active = btn.getAttribute('data-tab') === tabId;
+                    btn.classList.toggle('is-active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                tabPanels.forEach(function (panel) {
+                    var active = panel.getAttribute('data-panel') === tabId;
+                    panel.classList.toggle('is-active', active);
+                });
+                try {
+                    sessionStorage.setItem('amagawa_portal_active_tab', tabId);
+                } catch (e) {}
+                if (updateHash && history && history.replaceState) {
+                    history.replaceState(null, '', '#' + tabId);
+                }
+            }
+
+            tabButtons.forEach(function (btn) {
+                btn.onclick = function () {
+                    activateTab(btn.getAttribute('data-tab'), true);
+                };
+            });
+
+            // ハッシュまたは直前タブの復元（初回訪問時は「単語」タブ）
+            var hashTab = (window.location.hash || '').replace(/^#/, '');
+            if (validTabs.indexOf(hashTab) !== -1) {
+                activateTab(hashTab, false);
+            } else {
+                var savedTab = '';
+                try {
+                    savedTab = sessionStorage.getItem('amagawa_portal_active_tab') || '';
+                } catch (e) {}
+                if (validTabs.indexOf(savedTab) !== -1) {
+                    activateTab(savedTab, false);
+                }
+            }
+        })();
+    </script>
 </body>
 </html>

@@ -2,22 +2,23 @@
 :root {
     --bg-black: #07090e;
     --bg-surface: #0f1523;
-    --bg-card: rgba(18, 26, 43, 0.82);
-    --bg-card-hover: rgba(25, 36, 60, 0.95);
-    
+    --bg-card: rgba(18, 26, 43, 0.84);
+    --bg-card-hover: rgba(25, 36, 60, 0.96);
+
     /* ビビッド＆蛍光ネオンカラー */
     --neon-cyan: #00f0ff;
     --neon-emerald: #10b981;
+    --neon-teal: #2dd4bf;
     --neon-amber: #f59e0b;
     --neon-pink: #f43f5e;
     --neon-purple: #a855f7;
     --neon-violet: #8b5cf6;
     --neon-gold: #fbbf24;
-    
+
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --text-dark: #64748b;
-    
+
     --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'BIZ UDPGothic', Meiryo, sans-serif;
 }
 
@@ -25,6 +26,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -32,10 +34,10 @@ body {
     line-height: 1.7;
     color: var(--text-main);
     background-color: var(--bg-black);
-    background-image: 
+    background-image:
         radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.07) 0%, transparent 50%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -44,22 +46,21 @@ body {
 
 /* ヘッダー */
 header {
-    background: rgba(11, 17, 30, 0.85);
+    background: rgba(11, 17, 30, 0.9);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 240, 255, 0.25);
-    padding: 2.5rem 1rem 2rem;
+    padding: 2rem 1rem 1.7rem;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.55);
 }
 
 .header-badge {
     display: inline-block;
-    padding: 0.35rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.3rem 0.95rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -67,24 +68,26 @@ header {
     background: rgba(0, 240, 255, 0.12);
     border: 1px solid rgba(0, 240, 255, 0.4);
     border-radius: 9999px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.65rem;
     box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
 }
 
 header h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: 0.5px;
     background: linear-gradient(135deg, #ffffff 0%, #00f0ff 50%, #38bdf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
 header p {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto;
 }
 
 /* メインコンテナ */
@@ -93,7 +96,289 @@ main {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    padding: 2.5rem 1.25rem 4rem;
+    padding: 1.75rem 1.25rem 4rem;
+}
+
+/* ============================================================
+   What's New（最新お知らせボックス・最大3件）
+   ============================================================ */
+.whats-new-box {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(19, 31, 56, 0.88) 100%);
+    border: 1px solid rgba(0, 240, 255, 0.32);
+    border-radius: 18px;
+    padding: 1.05rem 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.42), inset 0 0 16px rgba(0, 240, 255, 0.05);
+}
+
+.whats-new-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.whats-new-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.96rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+}
+
+.whats-new-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    animation: newsPulse 2.2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes newsPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(0.85); }
+}
+
+.whats-new-hint {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.whats-new-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.news-item {
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.2s ease, background 0.2s ease;
+    overflow: hidden;
+}
+
+.news-item:hover {
+    background: rgba(0, 240, 255, 0.06);
+    border-color: rgba(0, 240, 255, 0.28);
+}
+
+.news-item.is-expanded {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.45);
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.14);
+}
+
+.news-item-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+    padding: 0.62rem 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    touch-action: manipulation;
+    min-height: 42px;
+}
+
+.news-item.is-expanded .news-item-btn {
+    align-items: flex-start;
+    padding-bottom: 0.72rem;
+}
+
+.news-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+}
+
+.news-date {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #94a3b8;
+    font-variant-numeric: tabular-nums;
+}
+
+.news-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.news-tag-new {
+    background: rgba(244, 63, 94, 0.2);
+    color: #fda4af;
+    border: 1px solid rgba(244, 63, 94, 0.55);
+}
+
+.news-tag-update {
+    background: rgba(0, 240, 255, 0.15);
+    color: #67e8f9;
+    border: 1px solid rgba(0, 240, 255, 0.45);
+}
+
+.news-tag-feature {
+    background: rgba(16, 185, 129, 0.16);
+    color: #6ee7b7;
+    border: 1px solid rgba(16, 185, 129, 0.45);
+}
+
+.news-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.89rem;
+    color: #e2e8f0;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-item.is-expanded .news-text {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    color: #ffffff;
+}
+
+.news-chevron {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    color: #67e8f9;
+    transition: transform 0.2s ease;
+    margin-top: 2px;
+}
+
+.news-item.is-expanded .news-chevron {
+    transform: rotate(180deg);
+}
+
+/* ============================================================
+   4カテゴリ切替タブ（単語・長文・文法・リスニング）
+   ============================================================ */
+.category-tabs-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.65rem;
+    margin-bottom: 1.65rem;
+    padding: 0.45rem;
+    background: rgba(13, 21, 39, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cat-tab-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid transparent;
+    border-radius: 13px;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 0.82rem 0.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    touch-action: manipulation;
+    min-height: 52px;
+}
+
+.cat-tab-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.cat-tab-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.cat-tab-label {
+    white-space: nowrap;
+}
+
+.cat-tab-new-pill {
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    background: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+    color: #ffffff;
+    font-size: 0.62rem;
+    font-weight: 900;
+    padding: 1px 7px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 10px rgba(244, 63, 94, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+/* タブ別アクティブ発光カラー */
+.cat-tab-btn[data-tab="vocab"].is-active {
+    color: #fef3c7;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.16) 100%);
+    border-color: var(--neon-amber);
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.35), inset 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.cat-tab-btn[data-tab="reading"].is-active {
+    color: #e0f2fe;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.24) 0%, rgba(2, 132, 199, 0.18) 100%);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.35), inset 0 0 12px rgba(0, 240, 255, 0.15);
+}
+
+.cat-tab-btn[data-tab="grammar"].is-active {
+    color: #f3e8ff;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(124, 58, 237, 0.18) 100%);
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.35), inset 0 0 12px rgba(168, 85, 247, 0.15);
+}
+
+.cat-tab-btn[data-tab="listening"].is-active {
+    color: #ccfbf1;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.28) 0%, rgba(0, 229, 255, 0.2) 100%);
+    border-color: var(--neon-teal);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.42), inset 0 0 12px rgba(16, 185, 129, 0.18);
+}
+
+/* タブパネル */
+.tab-panel {
+    display: none;
+    animation: tabFadeIn 0.22s ease;
+}
+
+.tab-panel.is-active {
+    display: block;
+}
+
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* カテゴリ大見出し */
@@ -101,17 +386,19 @@ main {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin: 3rem 0 1.5rem;
-    font-size: 1.6rem;
+    margin: 0 0 0.85rem;
+    font-size: 1.5rem;
     font-weight: 800;
 }
 
-.category-heading:first-of-type {
-    margin-top: 0.5rem;
+.category-desc {
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+    font-size: 0.94rem;
 }
 
 .category-icon {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
     line-height: 1;
 }
 
@@ -154,6 +441,19 @@ main {
     margin-left: 0.5rem;
 }
 
+/* リスニングカテゴリ見出し */
+.cat-listening-heading {
+    color: #2dd4bf;
+    text-shadow: 0 0 16px rgba(45, 212, 191, 0.45);
+}
+.cat-listening-heading::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(45, 212, 191, 0.85), transparent);
+    margin-left: 0.5rem;
+}
+
 /* アプリカード基本構造 */
 .app-card {
     background: var(--bg-card);
@@ -161,7 +461,7 @@ main {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 1.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -172,7 +472,7 @@ main {
 }
 
 .app-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 /* ネオン蛍光枠：長文カード */
@@ -205,12 +505,22 @@ main {
     box-shadow: 0 0 35px rgba(168, 85, 247, 0.5), inset 0 0 25px rgba(168, 85, 247, 0.15);
 }
 
+/* ネオン蛍光枠：リスニングカード（エメラルド＆アクア） */
+.neon-card-listening {
+    border: 2px solid var(--neon-teal);
+    box-shadow: 0 0 22px rgba(45, 212, 191, 0.3), inset 0 0 18px rgba(16, 185, 129, 0.1);
+}
+.neon-card-listening:hover {
+    border-color: #5eead4;
+    box-shadow: 0 0 38px rgba(45, 212, 191, 0.55), inset 0 0 26px rgba(0, 240, 255, 0.16);
+}
+
 /* 単語の2択グリッド */
 .vocab-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 1.5rem;
 }
 
 .vocab-grid .app-card {
@@ -223,13 +533,13 @@ main {
 /* アプリアイコン */
 .app-icon-wrapper {
     flex-shrink: 0;
-    width: 104px;
-    height: 104px;
-    border-radius: 22px;
+    width: 112px;
+    height: 112px;
+    border-radius: 24px;
     overflow: hidden;
     background: #0b111e;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+    border: 2px solid rgba(255, 255, 255, 0.16);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,7 +549,7 @@ main {
     width: 90px;
     height: 90px;
     align-self: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .app-icon-img {
@@ -296,6 +606,12 @@ main {
     border: 1px solid rgba(16, 185, 129, 0.4);
 }
 
+.badge-rose {
+    background: rgba(244, 63, 94, 0.2);
+    color: #fda4af;
+    border: 1px solid rgba(244, 63, 94, 0.55);
+}
+
 .app-card h3 {
     font-size: 1.45rem;
     font-weight: 800;
@@ -305,8 +621,8 @@ main {
 
 .app-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.94rem;
+    margin-bottom: 0.7rem;
 }
 
 .app-card p strong {
@@ -315,17 +631,18 @@ main {
 
 .app-features {
     list-style: none;
-    margin: 0.6rem 0 1rem;
+    margin: 0.6rem 0 0.8rem;
     padding: 0;
 }
 
 .app-features li {
     font-size: 0.88rem;
     color: #cbd5e1;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
     display: flex;
-    align-items: center;
-    gap: 0.4rem;
+    align-items: flex-start;
+    gap: 0.45rem;
+    line-height: 1.5;
 }
 
 /* アクションボタン */
@@ -348,16 +665,17 @@ main {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.85rem 1.8rem;
+    padding: 0.85rem 1.7rem;
     border-radius: 9999px;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.98rem;
+    font-weight: 800;
     text-decoration: none;
     cursor: pointer;
     border: none;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
     text-align: center;
+    touch-action: manipulation;
 }
 
 .btn:active {
@@ -399,20 +717,32 @@ main {
     box-shadow: 0 0 30px rgba(168, 85, 247, 0.75);
 }
 
+/* リスニングネオンボタン（エメラルド×アクア） */
+.btn-neon-listening {
+    background: linear-gradient(135deg, #34d399 0%, #06b6d4 100%);
+    color: #041016 !important;
+    box-shadow: 0 0 22px rgba(45, 212, 191, 0.5);
+}
+.btn-neon-listening:hover {
+    background: linear-gradient(135deg, #6ee7b7 0%, #22d3ee 100%);
+    box-shadow: 0 0 34px rgba(45, 212, 191, 0.8);
+    color: #000 !important;
+}
+
 /* ポータル概要・学習の進め方セクション */
 .portal-guide-section {
     background: rgba(15, 23, 42, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
-    padding: 2.2rem;
-    margin-top: 3.5rem;
+    padding: 2rem;
+    margin-top: 2.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .portal-guide-section h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--neon-cyan);
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.9rem;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -420,20 +750,20 @@ main {
 
 .guide-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.2rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.35rem;
 }
 
 .guide-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
-    padding: 1.2rem;
+    padding: 1.15rem;
 }
 
 .guide-card-num {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 800;
     color: var(--neon-cyan);
     letter-spacing: 1px;
@@ -441,9 +771,9 @@ main {
 }
 
 .guide-card h4 {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: #ffffff;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
 }
 
 .guide-card p {
@@ -456,13 +786,13 @@ main {
 footer {
     background: #05070b;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 2.5rem 1rem 3rem;
+    padding: 2.2rem 1rem 2.8rem;
     text-align: center;
     margin-top: auto;
 }
 
 .footer-links {
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -472,7 +802,7 @@ footer {
 .footer-links a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     transition: color 0.2s;
 }
 
@@ -483,37 +813,104 @@ footer {
 
 footer p {
     color: var(--text-dark);
-    font-size: 0.85rem;
+    font-size: 0.84rem;
 }
 
 /* モバイル対応（レスポンシブ） */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.65rem;
+    header {
+        padding: 1.5rem 1rem 1.35rem;
     }
-    
+
+    header h1 {
+        font-size: 1.55rem;
+    }
+
+    header p {
+        font-size: 0.88rem;
+    }
+
+    main {
+        padding: 1.2rem 0.9rem 3.2rem;
+    }
+
+    .whats-new-box {
+        padding: 0.9rem 0.95rem;
+    }
+
+    .whats-new-hint {
+        display: none;
+    }
+
+    .news-item-btn {
+        padding: 0.58rem 0.65rem;
+        gap: 0.5rem;
+    }
+
+    .news-date {
+        font-size: 0.72rem;
+    }
+
+    .news-text {
+        font-size: 0.84rem;
+    }
+
+    .category-tabs-nav {
+        gap: 0.35rem;
+        padding: 0.35rem;
+        border-radius: 15px;
+    }
+
+    .cat-tab-btn {
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 0.62rem 0.25rem;
+        font-size: 0.78rem;
+        min-height: 58px;
+        border-radius: 11px;
+    }
+
+    .cat-tab-icon {
+        font-size: 1.25rem;
+    }
+
+    .cat-tab-new-pill {
+        top: -7px;
+        right: 4px;
+        font-size: 0.56rem;
+        padding: 1px 5px;
+    }
+
     .app-card {
         flex-direction: column;
         align-items: stretch;
-        padding: 1.4rem;
-        gap: 1.2rem;
+        padding: 1.35rem;
+        gap: 1.15rem;
     }
-    
+
     .app-icon-wrapper {
         align-self: center;
-        width: 88px;
-        height: 88px;
+        width: 96px;
+        height: 96px;
     }
-    
+
     .app-card-action {
         width: 100%;
     }
-    
+
     .btn {
         width: 100%;
     }
-    
+
     .vocab-grid {
         grid-template-columns: 1fr;
+    }
+
+    .guide-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .portal-guide-section {
+        padding: 1.4rem;
     }
 }

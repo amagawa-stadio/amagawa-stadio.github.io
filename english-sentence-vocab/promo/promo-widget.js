@@ -9,16 +9,27 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v3';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v4';
 
   const FALLBACK_DATA = {
-    updatedAt: '2026-11-14',
+    updatedAt: '2026-11-19',
     heading: '＼ 雨川の旦那 公式学習アプリシリーズ ／',
     apps: [
       {
-        id: 'english-reading',
+        id: 'english-listening',
         isNew: true,
         badgeText: 'NEW',
+        title: '段階別！英語リスニング！',
+        subtitle: '習った文法だけで耳から1段ずつステップアップ！',
+        borderColor: '#10b981',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/listening_icon.png',
+        localIcon: 'promo/icons/listening_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-listening-app/'
+      },
+      {
+        id: 'english-reading',
+        isNew: false,
+        badgeText: '人気',
         title: '段階別！中学英語長文！',
         subtitle: '習った文法だけで1段ずつステップアップ！',
         borderColor: '#00f0ff',
@@ -28,7 +39,7 @@
       },
       {
         id: 'english-sentence-vocab',
-        isNew: true,
+        isNew: false,
         badgeText: '人気',
         title: '例文で英単語！',
         subtitle: '生きた例文で使える語彙力を身につける！',
@@ -61,7 +72,7 @@
         id: 'portal',
         isNew: false,
         title: '公式ポータルサイト',
-        subtitle: '単語・長文・文法の総合ポータル！',
+        subtitle: '単語・長文・文法・リスニングの総合ポータル！',
         borderColor: '#00f0ff',
         icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',
         localIcon: 'promo/icons/portal_icon.png',
@@ -265,6 +276,7 @@
     try {
       localStorage.removeItem('amakawa_sister_apps_promo_v1');
       localStorage.removeItem('amakawa_sister_apps_promo_v2');
+      localStorage.removeItem('amakawa_sister_apps_promo_v3');
       const raw = localStorage.getItem(CACHE_KEY);
       if (raw && !raw.includes('hiroking4orikara-art.github.io') && !raw.includes('文法 サックサク')) {
         cachedData = JSON.parse(raw);
