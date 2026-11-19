@@ -9,7 +9,7 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v2';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v3';
 
   const FALLBACK_DATA = {
     updatedAt: '2026-11-14',
@@ -40,7 +40,7 @@
       {
         id: 'com.hiroki.grammar',
         isNew: false,
-        title: '中学 英語 文法 サックサク',
+        title: '中学生文法　並べ替え７００！',
         subtitle: '語順並べ替えで英文法をマスター！',
         borderColor: '#a855f7',
         icon: 'https://amagawa-stadio.github.io/promo/icons/grammar_icon.png',
@@ -264,8 +264,9 @@
     let cachedData = null;
     try {
       localStorage.removeItem('amakawa_sister_apps_promo_v1');
+      localStorage.removeItem('amakawa_sister_apps_promo_v2');
       const raw = localStorage.getItem(CACHE_KEY);
-      if (raw && !raw.includes('hiroking4orikara-art.github.io')) {
+      if (raw && !raw.includes('hiroking4orikara-art.github.io') && !raw.includes('文法 サックサク')) {
         cachedData = JSON.parse(raw);
       }
     } catch (e) {}

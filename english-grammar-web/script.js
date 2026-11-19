@@ -1488,7 +1488,7 @@ function generateAndDisplayPrintSheets(config) {
       <div class="print-page">
         <div class="print-header">
           <div class="print-title">
-            <span>英語文法並べ替え問題プリント</span>
+            <span>中学生文法 並べ替え７００！ 問題プリント</span>
           </div>
           <p class="print-instruction">日本文の意味を表すように、(　)内の語句を並べかえなさい。</p>
         </div>
@@ -1539,7 +1539,7 @@ function generateAndDisplayPrintSheets(config) {
       <div class="print-answer-page">
         <div class="print-header">
           <div class="print-title">
-            <span>英語文法並べ替え問題プリント 【解答・解説】</span>
+            <span>中学生文法 並べ替え７００！ 問題プリント 【解答・解説】</span>
           </div>
         </div>
 
