@@ -372,6 +372,10 @@ main {
     animation: tabFadeIn 0.22s ease;
 }
 
+.tab-panel[hidden] {
+    display: none !important;
+}
+
 .tab-panel.is-active {
     display: block;
 }
