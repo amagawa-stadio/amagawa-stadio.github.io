@@ -9,7 +9,7 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v1';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v2';
 
   const FALLBACK_DATA = {
     updatedAt: '2026-11-14',
@@ -184,7 +184,17 @@
       ''
     ).trim();
 
-    const visibleApps = data.apps.filter(app => app.id !== currentAppId);
+    const isSameApp = (appId) => {
+      if (!currentAppId) return false;
+      if (appId === currentAppId) return true;
+      if ((appId === 'english-sentence-vocab' || appId === 'com.hiroki.sentencevocab') &&
+          (currentAppId === 'english-sentence-vocab' || currentAppId === 'com.hiroki.sentencevocab')) {
+        return true;
+      }
+      return false;
+    };
+
+    const visibleApps = data.apps.filter(app => !isSameApp(app.id));
 
     const wrap = document.createElement('div');
     wrap.className = 'amakawa-promo-wrap';
@@ -198,7 +208,7 @@
       const isTopNew = Boolean(app.isNew || idx === 0);
       const a = document.createElement('a');
       a.className = 'amakawa-promo-link';
-      a.href = app.url;
+      a.href = String(app.url || 'https://amagawa-stadio.github.io/').replace('hiroking4orikara-art.github.io', 'amagawa-stadio.github.io');
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
 
@@ -253,8 +263,11 @@
 
     let cachedData = null;
     try {
+      localStorage.removeItem('amakawa_sister_apps_promo_v1');
       const raw = localStorage.getItem(CACHE_KEY);
-      if (raw) cachedData = JSON.parse(raw);
+      if (raw && !raw.includes('hiroking4orikara-art.github.io')) {
+        cachedData = JSON.parse(raw);
+      }
     } catch (e) {}
 
     const initialData = cachedData || FALLBACK_DATA;

@@ -1,80 +1,71 @@
-/**
+﻿/**
  * 雨川の旦那 公式シリーズ共通「姉妹アプリ＆サイト宣伝ウィジェット」
- * 配信元: https://hiroking4orikara-art.github.io/promo/promo-widget.js
- * データ元: https://hiroking4orikara-art.github.io/promo/sister-apps.json
+ * 配信元: https://amagawa-stadio.github.io/promo/promo-widget.js
+ * データ元: https://amagawa-stadio.github.io/promo/sister-apps.json
  *
  * 使い方（各アプリのHTML内）:
  * <div id="sister-apps-promo" data-current-app="com.hiroki.grammar"></div>
- * <script src="https://hiroking4orikara-art.github.io/promo/promo-widget.js" defer></script>
+ * <script src="https://amagawa-stadio.github.io/promo/promo-widget.js" defer></script>
  */
 (function () {
-  const REMOTE_JSON_URL = 'https://hiroking4orikara-art.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v1';
+  const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v2';
 
   const FALLBACK_DATA = {
-    updatedAt: '2026-10-30',
-    heading: '＼ 姉妹アプリやサイトもよろしくね！ ／',
+    updatedAt: '2026-11-14',
+    heading: '＼ 雨川の旦那 公式学習アプリシリーズ ／',
     apps: [
       {
-        id: 'com.hiroking4orikara.knightscommander',
+        id: 'english-reading',
         isNew: true,
         badgeText: 'NEW',
-        title: 'The Knight Commander',
-        subtitle: '勉強の息抜きにおすすめの戦略ゲーム！',
-        borderColor: '#E74C3C',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/knights_commander_icon.png',
-        localIcon: 'promo/icons/knights_commander_icon.png',
-        url: 'https://play.google.com/store/apps/details?id=com.hiroking4orikara.knightscommander'
+        title: '段階別！中学英語長文！',
+        subtitle: '習った文法だけで1段ずつステップアップ！',
+        borderColor: '#00f0ff',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/reading_icon.png',
+        localIcon: 'promo/icons/reading_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-reading-app/'
+      },
+      {
+        id: 'english-sentence-vocab',
+        isNew: true,
+        badgeText: '人気',
+        title: '例文で英単語！',
+        subtitle: '生きた例文で使える語彙力を身につける！',
+        borderColor: '#f59e0b',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/sentence_vocab_icon.png',
+        localIcon: 'promo/icons/sentence_vocab_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-sentence-vocab/'
+      },
+      {
+        id: 'com.hiroki.grammar',
+        isNew: false,
+        title: '中学 英語 文法 サックサク',
+        subtitle: '語順並べ替えで英文法をマスター！',
+        borderColor: '#a855f7',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/grammar_icon.png',
+        localIcon: 'promo/icons/grammar_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-grammar-web/'
       },
       {
         id: 'com.sakkusaku.englishvocab',
         isNew: false,
         title: '中学英語 教科書単語',
-        subtitle: '教科書準拠でサクサク覚える！',
-        borderColor: '#4CAF50',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/vocab_icon.png',
-        localIcon: 'promo/icons/vocab_icon.png',
-        url: 'https://play.google.com/store/apps/details?id=com.sakkusaku.englishvocab'
-      },
-      {
-        id: 'com.hiroki.grammar',
-        isNew: false,
-        title: '中学英語 並べ替え300',
-        subtitle: '語順並べ替えで英文法をマスター！',
-        borderColor: '#8E44AD',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/grammar_icon.png',
-        localIcon: 'promo/icons/grammar_icon.png',
-        url: 'https://play.google.com/store/apps/details?id=com.hiroki.grammar'
-      },
-      {
-        id: 'com.teambits.socialstudies',
-        isNew: false,
-        title: '中学社会 これ一本！',
-        subtitle: '歴史・地理・公民を完全網羅！',
-        borderColor: '#2196F3',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/social_icon.png',
-        localIcon: 'promo/icons/social_icon.png',
-        url: 'https://play.google.com/store/apps/details?id=com.teambits.socialstudies'
-      },
-      {
-        id: 'com.hiroking4orikara.subsubjects',
-        isNew: false,
-        title: '中学副教科 これ一本！',
-        subtitle: '音・美・保体・技家を網羅！',
-        borderColor: '#E91E63',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/sub_subjects_icon.png',
-        localIcon: 'promo/icons/sub_subjects_icon.png',
-        url: 'https://play.google.com/store/apps/details?id=com.hiroking4orikara.subsubjects'
+        subtitle: '教科書準拠で定期テスト対策！',
+        borderColor: '#10b981',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/textbook_vocab_icon.png',
+        localIcon: 'promo/icons/textbook_vocab_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-textbook-vocab/'
       },
       {
         id: 'portal',
         isNew: false,
         title: '公式ポータルサイト',
-        subtitle: '他の無料学習アプリもチェック！',
-        borderColor: '#FF9800',
-        icon: 'https://hiroking4orikara-art.github.io/promo/icons/portal_icon.png',
+        subtitle: '単語・長文・文法の総合ポータル！',
+        borderColor: '#00f0ff',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',
         localIcon: 'promo/icons/portal_icon.png',
-        url: 'https://hiroking4orikara-art.github.io/'
+        url: 'https://amagawa-stadio.github.io/'
       }
     ]
   };
@@ -193,7 +184,17 @@
       ''
     ).trim();
 
-    const visibleApps = data.apps.filter(app => app.id !== currentAppId);
+    const isSameApp = (appId) => {
+      if (!currentAppId) return false;
+      if (appId === currentAppId) return true;
+      if ((appId === 'english-sentence-vocab' || appId === 'com.hiroki.sentencevocab') &&
+          (currentAppId === 'english-sentence-vocab' || currentAppId === 'com.hiroki.sentencevocab')) {
+        return true;
+      }
+      return false;
+    };
+
+    const visibleApps = data.apps.filter(app => !isSameApp(app.id));
 
     const wrap = document.createElement('div');
     wrap.className = 'amakawa-promo-wrap';
@@ -207,7 +208,7 @@
       const isTopNew = Boolean(app.isNew || idx === 0);
       const a = document.createElement('a');
       a.className = 'amakawa-promo-link';
-      a.href = app.url;
+      a.href = String(app.url || 'https://amagawa-stadio.github.io/').replace('hiroking4orikara-art.github.io', 'amagawa-stadio.github.io');
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
 
@@ -262,8 +263,11 @@
 
     let cachedData = null;
     try {
+      localStorage.removeItem('amakawa_sister_apps_promo_v1');
       const raw = localStorage.getItem(CACHE_KEY);
-      if (raw) cachedData = JSON.parse(raw);
+      if (raw && !raw.includes('hiroking4orikara-art.github.io')) {
+        cachedData = JSON.parse(raw);
+      }
     } catch (e) {}
 
     const initialData = cachedData || FALLBACK_DATA;
