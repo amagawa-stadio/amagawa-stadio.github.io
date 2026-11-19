@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- ポータルサイト トップページ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 段階別！中学英語長文！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-reading-app/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 例文で英単語！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-sentence-vocab/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 中学生文法　並べ替え７００！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-grammar-web/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 中学英語 教科書単語 -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-textbook-vocab/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 中学社会 これ一本！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/social-studies-app/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 中学社会Web教科書 -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/social-studies-web-textbook/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 中学実技4科 これ一本！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/sub-subjects-app/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 中学実技4科Web教科書 -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/sub-subjects-web-textbook/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- プライバシーポリシー -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/privacy.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- お問い合わせ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/contact.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
