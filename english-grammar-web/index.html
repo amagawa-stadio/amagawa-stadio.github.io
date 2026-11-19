@@ -218,19 +218,20 @@
     </div>
   </div>
 
-  <!-- Interstitial Ad Modal -->
-  <div id="interstitialAdModal" class="modal hidden" style="background:rgba(0,0,0,0.85); z-index:99999;">
-    <div class="ad-modal-card" style="background:#ffffff; border-radius:14px; max-width:400px; width:90%; padding:20px; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,0.5); position:relative;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:8px;">
-        <span style="font-size:0.75rem; color:#aaa; font-weight:bold; letter-spacing:1px;">SPONSORED ADVERTISEMENT</span>
-        <button id="closeAdBtn" style="background:#dfe6e9; border:none; border-radius:50%; width:28px; height:28px; font-size:14px; cursor:pointer; font-weight:bold; color:#2d3436;" title="広告を閉じる">✕</button>
+  <!-- Interstitial Ad Modal (Print Ad with Ninja AdMax) -->
+  <div id="interstitialAdModal" class="modal hidden" style="background:rgba(3,7,18,0.85); z-index:99999;">
+    <div class="ad-modal-card" style="background:#0d1527; border:1px solid rgba(0,229,255,0.4); border-radius:18px; max-width:340px; width:92%; padding:16px 14px 14px; text-align:center; box-shadow:0 16px 36px rgba(0,0,0,0.7), 0 0 24px rgba(0,229,255,0.16); position:relative;">
+      <div class="ad-modal-header" style="width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span class="ad-modal-label" style="font-size:0.75rem; color:#94a3b8; letter-spacing:0.08em; font-weight:bold;">SPONSOR / 広告</span>
+        <button id="closeAdBtn" class="ad-modal-close-btn" type="button" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25); color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1.1rem; touch-action:manipulation;" title="閉じて印刷画面へ進む" aria-label="閉じる">✕</button>
       </div>
-      <div style="background:linear-gradient(135deg, #6c5ce7, #a29bfe); border-radius:10px; padding:25px 15px; color:#fff; margin-bottom:15px;">
-        <div style="font-size:2rem; margin-bottom:8px;">📖✨</div>
-        <h4 style="margin:0 0 8px 0; font-size:1.15rem; color:#fff;">中学英語 学習アプリシリーズ好評配信中！</h4>
-        <p style="font-size:0.85rem; line-height:1.5; margin:0; opacity:0.95;">単語・文法・リスニングまでサクサク学べる！<br>スキマ時間の学習で定期テスト＆高校入試も安心！</p>
+      <div id="printAdBody" class="ad-modal-body" style="width:300px; height:250px; min-height:250px; background:rgba(0,0,0,0.35); border-radius:10px; overflow:hidden; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; border:1px dashed rgba(255,255,255,0.12);">
+        <!-- Dynamic iframe injected via script.js -->
       </div>
-      <div style="font-size:0.9rem; color:#636e72; font-weight:bold;" id="adCountdownText">まもなく印刷画面へ移動します (3)...</div>
+      <div style="font-size:0.82rem; color:#94a3b8; margin-bottom:8px;" id="adCountdownText">まもなく印刷画面へ移動します (3)...</div>
+      <button id="proceedToPrintBtn" class="ad-modal-dismiss-btn" type="button" style="width:100%; padding:11px 16px; background:linear-gradient(135deg, #0284c7, #06b6d4); color:#fff; border:none; border-radius:12px; font-weight:700; font-size:0.92rem; cursor:pointer; box-shadow:0 4px 14px rgba(2,132,199,0.4); touch-action:manipulation;">
+        🖨️ 閉じて印刷画面へ進む →
+      </button>
     </div>
   </div>
 

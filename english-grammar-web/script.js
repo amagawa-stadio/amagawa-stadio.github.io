@@ -1253,6 +1253,8 @@ function initPrintFeature() {
   const closePrintConfigBtn = document.getElementById('closePrintConfigBtn');
   const startPrintJobBtn = document.getElementById('startPrintJobBtn');
   const closeAdBtn = document.getElementById('closeAdBtn');
+  const proceedToPrintBtn = document.getElementById('proceedToPrintBtn');
+  const interstitialAdModal = document.getElementById('interstitialAdModal');
   const printExecuteBtn = document.getElementById('printExecuteBtn');
   const exitPrintViewBtn = document.getElementById('exitPrintViewBtn');
 
@@ -1261,7 +1263,13 @@ function initPrintFeature() {
     printConfigModal.classList.add('hidden');
   });
   if (startPrintJobBtn) startPrintJobBtn.addEventListener('click', startPrintJob);
-  if (closeAdBtn) closeAdBtn.addEventListener('click', finishAdAndShowPrint);
+  if (closeAdBtn) closeAdBtn.addEventListener('click', () => finishAdAndShowPrint());
+  if (proceedToPrintBtn) proceedToPrintBtn.addEventListener('click', () => finishAdAndShowPrint());
+  if (interstitialAdModal) {
+    interstitialAdModal.addEventListener('click', (e) => {
+      if (e.target === interstitialAdModal) finishAdAndShowPrint();
+    });
+  }
   if (printExecuteBtn) printExecuteBtn.addEventListener('click', executePrintAction);
   if (exitPrintViewBtn) exitPrintViewBtn.addEventListener('click', exitPrintView);
 }
@@ -1353,9 +1361,28 @@ async function showPrintInterstitialAd(onComplete) {
   showWebSimulationAd(onComplete);
 }
 
+let currentPrintAdCallback = null;
+
 function showWebSimulationAd(onComplete) {
+  currentPrintAdCallback = onComplete;
   const adModal = document.getElementById('interstitialAdModal');
+  const printAdBody = document.getElementById('printAdBody');
   const countdownText = document.getElementById('adCountdownText');
+
+  if (printAdBody) {
+    printAdBody.innerHTML = `
+      <iframe
+        srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&lt;style&gt;* { box-sizing: border-box; } html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: transparent; display: flex; justify-content: center; align-items: center; overflow: hidden; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;!-- admax --&gt;&lt;script src=&quot;https://adm.shinobi.jp/s/459e0fef7b870420fd9b2c0bc0da847d&quot;&gt;&lt;/script&gt;&lt;!-- admax --&gt;&lt;/body&gt;&lt;/html&gt;"
+        width="300"
+        height="250"
+        loading="lazy"
+        scrolling="no"
+        style="border:none; overflow:hidden; width:300px; height:250px; display:block; margin:0 auto; max-width:100%; border-radius:8px; background:rgba(0,0,0,0.25);"
+        title="広告"
+      ></iframe>
+    `;
+  }
+
   if (adModal) adModal.classList.remove('hidden');
 
   let secondsLeft = 3;
@@ -1367,7 +1394,7 @@ function showWebSimulationAd(onComplete) {
     if (secondsLeft > 0) {
       if (countdownText) countdownText.textContent = `まもなく印刷画面へ移動します (${secondsLeft})...`;
     } else {
-      finishAdAndShowPrint(onComplete);
+      finishAdAndShowPrint();
     }
   }, 1000);
 }
@@ -1381,8 +1408,14 @@ function finishAdAndShowPrint(callback) {
   const adModal = document.getElementById('interstitialAdModal');
   if (adModal) adModal.classList.add('hidden');
 
-  if (typeof callback === 'function') {
-    callback();
+  const printAdBody = document.getElementById('printAdBody');
+  if (printAdBody) printAdBody.innerHTML = '';
+
+  const cb = (typeof callback === 'function') ? callback : currentPrintAdCallback;
+  currentPrintAdCallback = null;
+
+  if (typeof cb === 'function') {
+    cb();
   } else if (currentPrintJobConfig) {
     generateAndDisplayPrintSheets(currentPrintJobConfig);
   }
