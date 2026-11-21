@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-22",
   "heading": "＼ 雨川の旦那 公式学習アプリシリーズ ／",
   "apps": [
+    {
+      "id": "english-step-grammar",
+      "isNew": true,
+      "badgeText": "NEW",
+      "title": "段階別！並べ替え英文法！",
+      "subtitle": "全842問＆全単語タップ辞書で語順を完全攻略！",
+      "borderColor": "#a855f7",
+      "icon": "https://amagawa-stadio.github.io/promo/icons/step_grammar_icon.png",
+      "localIcon": "promo/icons/step_grammar_icon.png",
+      "url": "https://amagawa-stadio.github.io/english-step-grammar-app/"
+    },
     {
       "id": "english-listening",
       "isNew": true,
@@ -34,16 +45,6 @@
       "icon": "https://amagawa-stadio.github.io/promo/icons/sentence_vocab_icon.png",
       "localIcon": "promo/icons/sentence_vocab_icon.png",
       "url": "https://amagawa-stadio.github.io/english-sentence-vocab/"
-    },
-    {
-      "id": "com.hiroki.grammar",
-      "isNew": false,
-      "title": "中学生文法　並べ替え７００！",
-      "subtitle": "語順並べ替えで英文法をマスター！",
-      "borderColor": "#a855f7",
-      "icon": "https://amagawa-stadio.github.io/promo/icons/grammar_icon.png",
-      "localIcon": "promo/icons/grammar_icon.png",
-      "url": "https://amagawa-stadio.github.io/english-grammar-web/"
     },
     {
       "id": "com.sakkusaku.englishvocab",

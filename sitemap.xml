@@ -8,6 +8,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- 段階別！並べ替え英文法！ -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-step-grammar-app/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- 段階別！英語リスニング！ -->
   <url>
     <loc>https://amagawa-stadio.github.io/english-listening-app/</loc>

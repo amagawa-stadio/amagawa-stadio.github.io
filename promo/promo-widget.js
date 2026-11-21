@@ -9,12 +9,23 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v4';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v5';
 
   const FALLBACK_DATA = {
-    updatedAt: '2026-11-19',
+    updatedAt: '2026-11-22',
     heading: '＼ 雨川の旦那 公式学習アプリシリーズ ／',
     apps: [
+      {
+        id: 'english-step-grammar',
+        isNew: true,
+        badgeText: 'NEW',
+        title: '段階別！並べ替え英文法！',
+        subtitle: '全842問＆全単語タップ辞書で語順を完全攻略！',
+        borderColor: '#a855f7',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/step_grammar_icon.png',
+        localIcon: 'promo/icons/step_grammar_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-step-grammar-app/'
+      },
       {
         id: 'english-listening',
         isNew: true,
@@ -47,16 +58,6 @@
         icon: 'https://amagawa-stadio.github.io/promo/icons/sentence_vocab_icon.png',
         localIcon: 'promo/icons/sentence_vocab_icon.png',
         url: 'https://amagawa-stadio.github.io/english-sentence-vocab/'
-      },
-      {
-        id: 'com.hiroki.grammar',
-        isNew: false,
-        title: '中学生文法　並べ替え７００！',
-        subtitle: '語順並べ替えで英文法をマスター！',
-        borderColor: '#a855f7',
-        icon: 'https://amagawa-stadio.github.io/promo/icons/grammar_icon.png',
-        localIcon: 'promo/icons/grammar_icon.png',
-        url: 'https://amagawa-stadio.github.io/english-grammar-web/'
       },
       {
         id: 'com.sakkusaku.englishvocab',
@@ -277,6 +278,7 @@
       localStorage.removeItem('amakawa_sister_apps_promo_v1');
       localStorage.removeItem('amakawa_sister_apps_promo_v2');
       localStorage.removeItem('amakawa_sister_apps_promo_v3');
+      localStorage.removeItem('amakawa_sister_apps_promo_v4');
       const raw = localStorage.getItem(CACHE_KEY);
       if (raw && !raw.includes('hiroking4orikara-art.github.io') && !raw.includes('文法 サックサク')) {
         cachedData = JSON.parse(raw);
