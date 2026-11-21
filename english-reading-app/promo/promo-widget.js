@@ -9,7 +9,7 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v5';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v6';
 
   const FALLBACK_DATA = {
     updatedAt: '2026-11-22',
@@ -72,7 +72,7 @@
       {
         id: 'portal',
         isNew: false,
-        title: '公式ポータルサイト',
+        title: '中学英語 学習支援ポータルサイト',
         subtitle: '単語・長文・文法・リスニングの総合ポータル！',
         borderColor: '#00f0ff',
         icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',

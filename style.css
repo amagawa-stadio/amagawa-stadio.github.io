@@ -807,6 +807,162 @@ main {
     line-height: 1.6;
 }
 
+/* このホームページを知り合いに教える（共有セクション） */
+.portal-share-section {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(10, 15, 29, 0.94));
+    border: 1px solid rgba(0, 240, 255, 0.32);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 1.75rem;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.55),
+        0 0 22px rgba(0, 240, 255, 0.12);
+    text-align: center;
+}
+
+.share-section-header h2 {
+    font-size: 1.35rem;
+    color: #ffffff;
+    margin-bottom: 0.65rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+.share-section-header p {
+    color: #94a3b8;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0 auto 1.35rem;
+}
+
+.share-primary-row {
+    margin-bottom: 0.95rem;
+}
+
+.share-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.82rem 1rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-family: inherit;
+}
+
+.share-btn:active {
+    transform: scale(0.97);
+}
+
+.share-btn-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.share-btn-native {
+    width: 100%;
+    max-width: 560px;
+    padding: 0.95rem 1.4rem;
+    font-size: 0.96rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(59, 130, 246, 0.28));
+    border: 1.5px solid rgba(0, 240, 255, 0.65);
+    color: #f0f9ff;
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.28);
+}
+
+.share-btn-native:hover {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.35), rgba(59, 130, 246, 0.42));
+    box-shadow: 0 0 26px rgba(0, 240, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.share-btn-line {
+    background: rgba(6, 199, 85, 0.18);
+    border-color: rgba(6, 199, 85, 0.55);
+    color: #bbf7d0;
+}
+.share-btn-line:hover {
+    background: rgba(6, 199, 85, 0.32);
+    box-shadow: 0 0 18px rgba(6, 199, 85, 0.4);
+    transform: translateY(-1px);
+}
+
+.share-btn-x {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.38);
+    color: #f8fafc;
+}
+.share-btn-x:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+.share-btn-instagram {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(168, 85, 247, 0.24), rgba(245, 158, 11, 0.2));
+    border-color: rgba(236, 72, 153, 0.55);
+    color: #fbcfe8;
+}
+.share-btn-instagram:hover {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.34), rgba(168, 85, 247, 0.38), rgba(245, 158, 11, 0.34));
+    box-shadow: 0 0 18px rgba(236, 72, 153, 0.45);
+    transform: translateY(-1px);
+}
+
+.share-btn-mail {
+    background: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.5);
+    color: #bae6fd;
+}
+.share-btn-mail:hover {
+    background: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+    transform: translateY(-1px);
+}
+
+.share-btn-copy {
+    background: rgba(245, 158, 11, 0.16);
+    border-color: rgba(245, 158, 11, 0.5);
+    color: #fde68a;
+}
+.share-btn-copy:hover {
+    background: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.4);
+    transform: translateY(-1px);
+}
+
+.share-toast {
+    margin-top: 1rem;
+    padding: 0.72rem 1.1rem;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.6);
+    color: #a7f3d0;
+    font-size: 0.88rem;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+}
+
 /* フッター */
 footer {
     background: #05070b;
@@ -937,5 +1093,17 @@ footer p {
 
     .portal-guide-section {
         padding: 1.4rem;
+    }
+
+    .portal-share-section {
+        padding: 1.4rem 1.1rem;
+    }
+
+    .share-buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .share-btn-copy {
+        grid-column: 1 / -1;
     }
 }
