@@ -280,12 +280,33 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.65rem;
-    margin-bottom: 1.65rem;
-    padding: 0.45rem;
-    background: rgba(13, 21, 39, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 1.75rem;
+    padding: 0.55rem;
+    background: rgba(13, 21, 39, 0.94);
+    border: 2px solid #ff2e55;
     border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 0 16px rgba(255, 46, 85, 0.6),
+        0 0 34px rgba(244, 63, 94, 0.32),
+        inset 0 0 14px rgba(255, 46, 85, 0.16);
+    animation: tabsRedNeonGlow 3s ease-in-out infinite;
+}
+
+@keyframes tabsRedNeonGlow {
+    0%, 100% {
+        border-color: #ff2e55;
+        box-shadow:
+            0 0 15px rgba(255, 46, 85, 0.58),
+            0 0 32px rgba(244, 63, 94, 0.28),
+            inset 0 0 12px rgba(255, 46, 85, 0.15);
+    }
+    50% {
+        border-color: #ff5c7c;
+        box-shadow:
+            0 0 22px rgba(255, 46, 85, 0.82),
+            0 0 44px rgba(244, 63, 94, 0.45),
+            inset 0 0 18px rgba(255, 46, 85, 0.24);
+    }
 }
 
 .cat-tab-btn {
