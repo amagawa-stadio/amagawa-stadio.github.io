@@ -9,11 +9,11 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v7';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v8';
 
   const FALLBACK_DATA = {
     updatedAt: '2026-11-22',
-    heading: '＼ 雨川の旦那 公式学習アプリシリーズ ／',
+    heading: '＼ 雨川の旦那 学習アプリシリーズ ／',
     apps: [
       {
         id: 'english-step-grammar',
