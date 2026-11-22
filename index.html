@@ -6,7 +6,7 @@
     <meta name="google-site-verification" content="Ehu1_O1uStzk_LUEzhnpEGtMduFdCaNV1U-RFe1hh24" />
     <meta name="description" content="中学英語の「単語」「長文」「文法」「リスニング」を完全網羅した無料の学習Webアプリポータルサイト。段階別並べ替え英文法、段階別英語リスニング、段階別中学英語長文、例文で英単語、教科書単語で定期テスト＆高校入試対策！">
     <title>中学英語 学習支援ポータルサイト | 雨川の旦那</title>
-    <link rel="stylesheet" href="style.css?v=20261122c">
+    <link rel="stylesheet" href="style.css?v=20261122d">
     <link rel="icon" type="image/png" href="promo/icons/portal_icon.png">
 </head>
 <body>
@@ -328,19 +328,19 @@
                 <h2>📣 このホームページを知り合いに教える</h2>
                 <p>
                     お友達やご家族、クラスメイトにこのサイトをシェアして、一緒に楽しく英語力をアップしましょう！<br>
-                    お使いの端末の共有機能や、LINE・X・Instagram・メールからワンタップでアドレスを送れます。
+                    お使いの端末の共有機能や、LINE・X・メールからワンタップでアドレスを送れます。
                 </p>
             </div>
 
-            <!-- 端末ネイティブ共有ボタン（iPhone / Android / 対応PCブラウザでOS標準の共有シートを起動） -->
+            <!-- 1段目：端末ネイティブ共有ボタン -->
             <div class="share-primary-row">
                 <button type="button" class="share-btn share-btn-native" id="btnShareNative">
                     <span class="share-btn-icon" aria-hidden="true">📲</span>
-                    <span>端末の共有メニューを開く（AirDrop・メッセージ・各種アプリ）</span>
+                    <span>端末の共有を使用する</span>
                 </button>
             </div>
 
-            <!-- 各SNS・メール・URLコピーボタン -->
+            <!-- 2段目（LINE / X）・3段目（メール / アドレスをコピー） -->
             <div class="share-buttons-grid">
                 <a href="https://line.me/R/share?text=%E4%B8%AD%E5%AD%A6%E8%8B%B1%E8%AA%9E%20%E5%AD%A6%E7%BF%92%E6%94%AF%E6%8F%B4%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C%E5%8D%98%E8%AA%9E%E3%83%BB%E6%96%87%E6%B3%95%E3%83%BB%E9%95%B7%E6%96%87%E3%83%BB%E3%83%AA%E3%82%B9%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E7%84%A1%E6%96%99%E3%81%A7%E5%AD%A6%E3%81%B9%E3%82%8BWeb%E5%AD%A6%E7%BF%92%E3%83%84%E3%83%BC%E3%83%AB%EF%BC%81%0Ahttps%3A%2F%2Famagawa-stadio.github.io%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-line" id="btnShareLine">
                     <span class="share-btn-icon" aria-hidden="true">💬</span>
@@ -351,11 +351,6 @@
                     <span class="share-btn-icon" aria-hidden="true">𝕏</span>
                     <span>X (旧Twitter)</span>
                 </a>
-
-                <button type="button" class="share-btn share-btn-instagram" id="btnShareInstagram">
-                    <span class="share-btn-icon" aria-hidden="true">📸</span>
-                    <span>Instagramで共有</span>
-                </button>
 
                 <a href="mailto:?subject=%E3%80%90%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%80%91%E4%B8%AD%E5%AD%A6%E8%8B%B1%E8%AA%9E%20%E5%AD%A6%E7%BF%92%E6%94%AF%E6%8F%B4%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%88&body=%E4%B8%AD%E5%AD%A6%E8%8B%B1%E8%AA%9E%E3%81%AE%E5%8D%98%E8%AA%9E%E3%83%BB%E6%96%87%E6%B3%95%E3%83%BB%E9%95%B7%E6%96%87%E3%83%BB%E3%83%AA%E3%82%B9%E3%83%8B%E3%83%B3%E3%82%B0%E3%81%8C%E7%84%A1%E6%96%99%E3%81%A7%E5%AD%A6%E3%81%B9%E3%82%8B%E5%AD%A6%E7%BF%92%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E3%81%99%EF%BC%81%0D%0A%0D%0A%E4%B8%AD%E5%AD%A6%E8%8B%B1%E8%AA%9E%20%E5%AD%A6%E7%BF%92%E6%94%AF%E6%8F%B4%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%88%0D%0Ahttps%3A%2F%2Famagawa-stadio.github.io%2F" class="share-btn share-btn-mail" id="btnShareMail">
                     <span class="share-btn-icon" aria-hidden="true">✉️</span>
@@ -506,22 +501,6 @@
                         }).catch(function () {});
                     } else {
                         copyToClipboard(fullShareString, '✅ 紹介文とアドレスをコピーしました！お好きなアプリに貼り付けてシェアできます。');
-                    }
-                };
-            }
-
-            var btnInsta = document.getElementById('btnShareInstagram');
-            if (btnInsta) {
-                btnInsta.onclick = function () {
-                    if (navigator.share) {
-                        navigator.share({
-                            title: shareTitle,
-                            text: shareText,
-                            url: shareUrl
-                        }).catch(function () {});
-                    } else {
-                        copyToClipboard(fullShareString, '📸 紹介文とアドレスをコピーしました！InstagramのDMやストーリーに貼り付けて共有できます✨');
-                        window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer');
                     }
                 };
             }

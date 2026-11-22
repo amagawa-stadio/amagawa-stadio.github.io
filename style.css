@@ -840,12 +840,15 @@ main {
 }
 
 .share-primary-row {
-    margin-bottom: 0.95rem;
+    max-width: 560px;
+    margin: 0 auto 0.85rem;
 }
 
 .share-buttons-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+    margin: 0 auto;
     gap: 0.75rem;
 }
 
@@ -854,9 +857,9 @@ main {
     align-items: center;
     justify-content: center;
     gap: 0.42rem;
-    padding: 0.82rem 0.65rem;
+    padding: 0.85rem 0.75rem;
     border-radius: 14px;
-    font-size: 0.86rem;
+    font-size: 0.9rem;
     font-weight: 800;
     text-decoration: none;
     cursor: pointer;
@@ -867,6 +870,8 @@ main {
     color: #ffffff;
     font-family: inherit;
     white-space: nowrap;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .share-btn:active {
@@ -880,8 +885,7 @@ main {
 
 .share-btn-native {
     width: 100%;
-    max-width: 560px;
-    padding: 0.95rem 1.4rem;
+    padding: 0.95rem 1.2rem;
     font-size: 0.96rem;
     border-radius: 9999px;
     background: linear-gradient(135deg, rgba(0, 240, 255, 0.22), rgba(59, 130, 246, 0.28));
@@ -915,17 +919,6 @@ main {
 .share-btn-x:hover {
     background: rgba(255, 255, 255, 0.18);
     box-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
-    transform: translateY(-1px);
-}
-
-.share-btn-instagram {
-    background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(168, 85, 247, 0.24), rgba(245, 158, 11, 0.2));
-    border-color: rgba(236, 72, 153, 0.55);
-    color: #fbcfe8;
-}
-.share-btn-instagram:hover {
-    background: linear-gradient(135deg, rgba(244, 63, 94, 0.34), rgba(168, 85, 247, 0.38), rgba(245, 158, 11, 0.34));
-    box-shadow: 0 0 18px rgba(236, 72, 153, 0.45);
     transform: translateY(-1px);
 }
 
@@ -1105,14 +1098,20 @@ footer p {
     }
 
     .portal-share-section {
-        padding: 1.4rem 1.1rem;
+        padding: 1.4rem 1.05rem;
     }
 
     .share-buttons-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
     }
 
-    .share-btn-copy {
-        grid-column: 1 / -1;
+    .share-btn {
+        font-size: 0.84rem;
+        padding: 0.82rem 0.5rem;
+    }
+
+    .share-btn-native {
+        font-size: 0.92rem;
+        padding: 0.92rem 1rem;
     }
 }
