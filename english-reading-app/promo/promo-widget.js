@@ -9,7 +9,7 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v6';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v7';
 
   const FALLBACK_DATA = {
     updatedAt: '2026-11-22',
@@ -20,7 +20,7 @@
         isNew: true,
         badgeText: 'NEW',
         title: '段階別！並べ替え英文法！',
-        subtitle: '全842問＆全単語タップ辞書で語順を完全攻略！',
+        subtitle: '全21単元「教科書」＆842問＆全単語辞書で完全攻略！',
         borderColor: '#a855f7',
         icon: 'https://amagawa-stadio.github.io/promo/icons/step_grammar_icon.png',
         localIcon: 'promo/icons/step_grammar_icon.png',
