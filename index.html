@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Ehu1_O1uStzk_LUEzhnpEGtMduFdCaNV1U-RFe1hh24" />
-    <meta name="description" content="中学英語の「単語」「長文」「文法」「リスニング」を完全網羅した無料の学習Webアプリポータルサイト。段階別並べ替え英文法、段階別英語リスニング、段階別中学英語長文、例文で英単語、教科書単語で定期テスト＆高校入試対策！">
+    <meta name="description" content="中学英語の「単語」「長文」「文法」「リスニング」「エンタメ」を完全網羅した無料の学習Webアプリポータルサイト。英文で謎解き、段階別並べ替え英文法、段階別英語リスニング、段階別中学英語長文、例文で英単語、教科書単語で楽しく英語力アップ！">
     <title>中学英語 学習支援ポータルサイト | 雨川の旦那</title>
-    <link rel="stylesheet" href="style.css?v=20261122e">
+    <link rel="stylesheet" href="style.css?v=20261123a">
     <link rel="icon" type="image/png" href="promo/icons/portal_icon.png">
 </head>
 <body>
     <header>
         <span class="header-badge">JHS English Learning Portal</span>
         <h1>中学英語 学習支援ポータルサイト</h1>
-        <p>単語・長文・文法・リスニングを完全制覇！キミの英語力を1段ずつ引き上げる無料Web学習ツール</p>
+        <p>単語・長文・文法・リスニング・エンタメを完全制覇！キミの英語力を1段ずつ楽しく引き上げる無料Web学習ツール</p>
     </header>
 
     <main>
@@ -29,6 +29,16 @@
                 <span class="whats-new-hint">タップで全文を表示</span>
             </div>
             <ul class="whats-new-list" id="whatsNewList">
+                <li class="news-item">
+                    <button type="button" class="news-item-btn" aria-expanded="false">
+                        <span class="news-meta">
+                            <span class="news-date">2026.11.23</span>
+                            <span class="news-tag news-tag-new">NEW</span>
+                        </span>
+                        <span class="news-text">新カテゴリ「🎭 エンタメ」タブを新設し、新アプリ『英文で謎解き！— 鶴川えいなの放課後ミステリー』（全100問）を公開しました！英語の証言とパステルカラー証拠イラストから日常の謎を解明！Rank 3でヒント英語化、Rank 4で選択肢英語化、Rank 5で質問文まで完全オール英語へステップアップでき、全単語タップ辞書・1文翻訳・探偵の通り名コレクションも搭載しています！</span>
+                        <span class="news-chevron" aria-hidden="true">▼</span>
+                    </button>
+                </li>
                 <li class="news-item">
                     <button type="button" class="news-item-btn" aria-expanded="false">
                         <span class="news-meta">
@@ -49,21 +59,11 @@
                         <span class="news-chevron" aria-hidden="true">▼</span>
                     </button>
                 </li>
-                <li class="news-item">
-                    <button type="button" class="news-item-btn" aria-expanded="false">
-                        <span class="news-meta">
-                            <span class="news-date">2026.11.22</span>
-                            <span class="news-tag news-tag-new">NEW</span>
-                        </span>
-                        <span class="news-text">新アプリ『段階別！並べ替え英文法！』を公開しました！中1〜中3の全21文法単元＋重要表現・熟語5単元の計842問を収録。英検準2級レベルの重要語彙や応用問題も追加し、語群横の「📖 辞書モード」から例文音声・連語・連鎖ジャンプ対応の右スライド全単語辞書をいつでも引けます！</span>
-                        <span class="news-chevron" aria-hidden="true">▼</span>
-                    </button>
-                </li>
             </ul>
         </section>
 
         <!-- ============================================================
-             4カテゴリタブ切替ナビ（単語 / 長文 / 文法 / リスニング）
+             5カテゴリタブ切替ナビ（単語 / 長文 / 文法 / リスニング / エンタメ）
              ============================================================ -->
         <nav class="category-tabs-nav" role="tablist" aria-label="学習カテゴリ選択">
             <button type="button" class="cat-tab-btn is-active" id="tab-vocab" role="tab" aria-selected="true" aria-controls="panel-vocab" data-tab="vocab">
@@ -80,9 +80,13 @@
                 <span class="cat-tab-label">文法</span>
             </button>
             <button type="button" class="cat-tab-btn" id="tab-listening" role="tab" aria-selected="false" aria-controls="panel-listening" data-tab="listening">
-                <span class="cat-tab-new-pill">NEW</span>
                 <span class="cat-tab-icon" aria-hidden="true">🎧</span>
                 <span class="cat-tab-label">リスニング</span>
+            </button>
+            <button type="button" class="cat-tab-btn" id="tab-entame" role="tab" aria-selected="false" aria-controls="panel-entame" data-tab="entame">
+                <span class="cat-tab-new-pill">NEW</span>
+                <span class="cat-tab-icon" aria-hidden="true">🎭</span>
+                <span class="cat-tab-label">エンタメ</span>
             </button>
         </nav>
 
@@ -292,11 +296,57 @@
             </article>
         </section>
 
+        <!-- ============================================================
+             ⑤ エンタメパネル（『英文で謎解き！』＆ 今後の英文小説など）
+             ============================================================ -->
+        <section class="tab-panel" id="panel-entame" role="tabpanel" aria-labelledby="tab-entame" data-panel="entame" hidden>
+            <h2 class="category-heading cat-entame-heading">
+                <span class="category-icon">🎭</span> エンタメ (Entertainment)
+            </h2>
+            <p class="category-desc">
+                英語を「勉強」から「夢中になれる体験」へ！小学生〜高校生まで楽しみながら自然と英文読解力が伸びる、ストーリー＆謎解き系コンテンツをお届けします。
+            </p>
+
+            <!-- 英文で謎解き！— 鶴川えいなの放課後ミステリー -->
+            <article class="app-card neon-card-entame">
+                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
+                    <img src="promo/icons/mystery_icon.png" alt="英文で謎解き！ 鶴川えいなアイコン" class="app-icon-img">
+                </div>
+                <div class="app-card-content">
+                    <div class="app-badges">
+                        <span class="badge badge-rose">🆕 NEW 公開！</span>
+                        <span class="badge badge-emerald">Web版・無料</span>
+                        <span class="badge badge-pink">全5ランク・100事件収録</span>
+                    </div>
+                    <h3>英文で謎解き！<span style="display:block; font-size:0.88rem; font-weight:700; color:#f9a8d4; margin-top:2px;">— 鶴川えいなの放課後ミステリー</span></h3>
+                    <p><strong>英語の証言と手がかりイラストから日常の謎を解明！楽しく遊んで読解力アップ！</strong></p>
+                    <p>ヘッドホンがトレードマークの女子高生・鶴川えいなと一緒に、街や学校で起きる100のちょっとした事件を解き明かす新感覚英語ミステリー。消去法でスッキリ解ける納得感100%の推理パズルです。</p>
+                    <ul class="app-features">
+                        <li>🪜 <strong>5段階の英語レベルアップ</strong>：Rank 1〜2（日本語ヒント）→ Rank 3（ヒント画像＆導入文も英語）→ Rank 4（選択肢も英語）→ Rank 5（質問文まで完全オール英語！）</li>
+                        <li>🔥 <strong>2段階W推理（全63問）＆ 多彩なジャンル</strong>：イラスト観察・犯人さがし・買い物計算・すれ違い・正直者＆嘘つき論理など全100問</li>
+                        <li>📖 <strong>全単語タップ辞書 ＆ 1文翻訳・1文音声</strong>：本文・ヒント・選択肢・質問文の5,022語をすべてタップで辞書引きでき、挫折ゼロ！</li>
+                        <li>👑 <strong>探偵の通り名コレクション ＆ ランク別探偵ノート</strong>：連続ログインカレンダーと解決記録で「伝説の英語名探偵」を目指そう</li>
+                    </ul>
+                </div>
+                <div class="app-card-action">
+                    <a href="english-mystery-app/index.html?v=20261123a" class="btn btn-neon-pink">
+                        <span>🔍 英文で謎解きに挑戦する</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- エンタメ枠の今後の予定予告 -->
+            <div class="entame-coming-soon">
+                <span class="entame-soon-badge">📚 COMING SOON</span>
+                <p>エンタメ枠には、今後<strong>「英文小説」</strong>など物語を楽しみながら英語に親しめる新コンテンツも続々追加予定です！お楽しみに！</p>
+            </div>
+        </section>
+
         <!-- ポータル学習ガイド -->
         <section class="portal-guide-section">
             <h2>🎓 おすすめの英語学習サイクル</h2>
             <p style="color: #94a3b8; font-size: 0.94rem;">
-                当サイトの4つのカテゴリを組み合わせることで、定期テストでの高得点から高校入試の読解・リスニング対策まで、最短距離で英語の総合力を養うことができます。
+                当サイトの学習カテゴリとエンタメ枠を組み合わせることで、定期テストでの高得点から高校入試の読解・リスニング対策、英語を楽しむ習慣づくりまで最短距離で総合力を養うことができます。
             </p>
             <div class="guide-steps">
                 <div class="guide-card">
@@ -397,10 +447,10 @@
                 });
             }
 
-            // 2. 4カテゴリタブ切替（単語 / 長文 / 文法 / リスニング）
+            // 2. 5カテゴリタブ切替（単語 / 長文 / 文法 / リスニング / エンタメ）
             var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.cat-tab-btn'));
             var tabPanels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
-            var validTabs = ['vocab', 'reading', 'grammar', 'listening'];
+            var validTabs = ['vocab', 'reading', 'grammar', 'listening', 'entame'];
 
             function activateTab(tabId, updateHash) {
                 if (validTabs.indexOf(tabId) === -1) tabId = 'vocab';

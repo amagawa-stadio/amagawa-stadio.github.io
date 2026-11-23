@@ -9,12 +9,23 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v8';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v9';
 
   const FALLBACK_DATA = {
-    updatedAt: '2026-11-22',
+    updatedAt: '2026-11-23',
     heading: '＼ 雨川の旦那 学習アプリシリーズ ／',
     apps: [
+      {
+        id: 'english-mystery',
+        isNew: true,
+        badgeText: 'NEW',
+        title: '英文で謎解き！',
+        subtitle: '名探偵・鶴川えいなと挑む全100問の英語ミステリー！',
+        borderColor: '#f472b6',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/mystery_icon.png',
+        localIcon: 'promo/icons/mystery_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-mystery-app/'
+      },
       {
         id: 'english-step-grammar',
         isNew: true,
@@ -28,8 +39,8 @@
       },
       {
         id: 'english-listening',
-        isNew: true,
-        badgeText: 'NEW',
+        isNew: false,
+        badgeText: '人気',
         title: '段階別！英語リスニング！',
         subtitle: '習った文法だけで耳から1段ずつステップアップ！',
         borderColor: '#10b981',
@@ -73,7 +84,7 @@
         id: 'portal',
         isNew: false,
         title: '中学英語 学習支援ポータルサイト',
-        subtitle: '単語・長文・文法・リスニングの総合ポータル！',
+        subtitle: '単語・長文・文法・リスニング・エンタメの総合ポータル！',
         borderColor: '#00f0ff',
         icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',
         localIcon: 'promo/icons/portal_icon.png',

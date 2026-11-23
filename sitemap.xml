@@ -3,9 +3,17 @@
   <!-- ポータルサイト トップページ -->
   <url>
     <loc>https://amagawa-stadio.github.io/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- 英文で謎解き！— 鶴川えいなの放課後ミステリー -->
+  <url>
+    <loc>https://amagawa-stadio.github.io/english-mystery-app/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- 段階別！並べ替え英文法！ -->

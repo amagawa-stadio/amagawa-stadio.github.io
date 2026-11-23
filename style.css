@@ -274,12 +274,12 @@ main {
 }
 
 /* ============================================================
-   4カテゴリ切替タブ（単語・長文・文法・リスニング）
+   5カテゴリ切替タブ（単語・長文・文法・リスニング・エンタメ）
    ============================================================ */
 .category-tabs-nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.65rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.55rem;
     margin-bottom: 1.75rem;
     padding: 0.55rem;
     background: rgba(13, 21, 39, 0.94);
@@ -387,6 +387,13 @@ main {
     box-shadow: 0 0 20px rgba(45, 212, 191, 0.42), inset 0 0 12px rgba(16, 185, 129, 0.18);
 }
 
+.cat-tab-btn[data-tab="entame"].is-active {
+    color: #fce7f3;
+    background: linear-gradient(135deg, rgba(244, 114, 182, 0.3) 0%, rgba(244, 63, 94, 0.22) 100%);
+    border-color: #f472b6;
+    box-shadow: 0 0 20px rgba(244, 114, 182, 0.45), inset 0 0 12px rgba(244, 114, 182, 0.2);
+}
+
 /* タブパネル */
 .tab-panel {
     display: none;
@@ -479,6 +486,19 @@ main {
     margin-left: 0.5rem;
 }
 
+/* エンタメカテゴリ見出し */
+.cat-entame-heading {
+    color: #f472b6;
+    text-shadow: 0 0 16px rgba(244, 114, 182, 0.48);
+}
+.cat-entame-heading::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(244, 114, 182, 0.85), transparent);
+    margin-left: 0.5rem;
+}
+
 /* アプリカード基本構造 */
 .app-card {
     background: var(--bg-card);
@@ -538,6 +558,50 @@ main {
 .neon-card-listening:hover {
     border-color: #5eead4;
     box-shadow: 0 0 38px rgba(45, 212, 191, 0.55), inset 0 0 26px rgba(0, 240, 255, 0.16);
+}
+
+/* ネオン蛍光枠：エンタメカード（ピンク＆ローズ） */
+.neon-card-entame {
+    border: 2px solid #f472b6;
+    box-shadow: 0 0 24px rgba(244, 114, 182, 0.32), inset 0 0 18px rgba(244, 63, 94, 0.1);
+}
+.neon-card-entame:hover {
+    border-color: #f9a8d4;
+    box-shadow: 0 0 40px rgba(244, 114, 182, 0.58), inset 0 0 26px rgba(244, 114, 182, 0.18);
+}
+
+.entame-coming-soon {
+    background: rgba(244, 114, 182, 0.08);
+    border: 1.5px dashed rgba(244, 114, 182, 0.45);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+.entame-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.22rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(244, 114, 182, 0.22);
+    border: 1px solid rgba(244, 114, 182, 0.55);
+    color: #fbcfe8;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    flex-shrink: 0;
+}
+.entame-coming-soon p {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+}
+.entame-coming-soon strong {
+    color: #f9a8d4;
 }
 
 /* 単語の2択グリッド */
@@ -635,6 +699,12 @@ main {
     background: rgba(244, 63, 94, 0.2);
     color: #fda4af;
     border: 1px solid rgba(244, 63, 94, 0.55);
+}
+
+.badge-pink {
+    background: rgba(244, 114, 182, 0.18);
+    color: #f9a8d4;
+    border: 1px solid rgba(244, 114, 182, 0.5);
 }
 
 .app-card h3 {
@@ -752,6 +822,18 @@ main {
     background: linear-gradient(135deg, #6ee7b7 0%, #22d3ee 100%);
     box-shadow: 0 0 34px rgba(45, 212, 191, 0.8);
     color: #000 !important;
+}
+
+/* エンタメネオンボタン（ピンク×ローズ） */
+.btn-neon-pink {
+    background: linear-gradient(135deg, #f472b6 0%, #f43f5e 100%);
+    color: #ffffff !important;
+    box-shadow: 0 0 22px rgba(244, 114, 182, 0.52);
+}
+.btn-neon-pink:hover {
+    background: linear-gradient(135deg, #f9a8d4 0%, #fb7185 100%);
+    box-shadow: 0 0 34px rgba(244, 114, 182, 0.82);
+    color: #ffffff !important;
 }
 
 /* ポータル概要・学習の進め方セクション */
@@ -1040,29 +1122,30 @@ footer p {
     }
 
     .category-tabs-nav {
-        gap: 0.35rem;
-        padding: 0.35rem;
-        border-radius: 15px;
+        gap: 0.25rem;
+        padding: 0.3rem;
+        border-radius: 14px;
     }
 
     .cat-tab-btn {
         flex-direction: column;
-        gap: 0.2rem;
-        padding: 0.62rem 0.25rem;
-        font-size: 0.78rem;
-        min-height: 58px;
-        border-radius: 11px;
+        gap: 0.16rem;
+        padding: 0.56rem 0.1rem;
+        font-size: 0.68rem;
+        min-height: 54px;
+        border-radius: 10px;
+        min-width: 0;
     }
 
     .cat-tab-icon {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
 
     .cat-tab-new-pill {
         top: -7px;
-        right: 4px;
-        font-size: 0.56rem;
-        padding: 1px 5px;
+        right: 2px;
+        font-size: 0.52rem;
+        padding: 1px 4px;
     }
 
     .app-card {
