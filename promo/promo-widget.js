@@ -9,10 +9,10 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v9';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v10';
 
   const FALLBACK_DATA = {
-    updatedAt: '2026-11-23',
+    updatedAt: '2026-11-26',
     heading: '＼ 雨川の旦那 学習アプリシリーズ ／',
     apps: [
       {
@@ -86,7 +86,7 @@
         title: '中学英語 学習支援ポータルサイト',
         subtitle: '単語・長文・文法・リスニング・エンタメの総合ポータル！',
         borderColor: '#00f0ff',
-        icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/portal_icon.png?v=20261126',
         localIcon: 'promo/icons/portal_icon.png',
         url: 'https://amagawa-stadio.github.io/'
       }

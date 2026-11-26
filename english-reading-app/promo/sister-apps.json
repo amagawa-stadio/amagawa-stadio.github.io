@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23",
+  "updatedAt": "2026-11-26",
   "heading": "＼ 雨川の旦那 学習アプリシリーズ ／",
   "apps": [
     {
@@ -73,7 +73,7 @@
       "title": "中学英語 学習支援ポータルサイト",
       "subtitle": "単語・長文・文法・リスニング・エンタメの総合ポータル！",
       "borderColor": "#00f0ff",
-      "icon": "https://amagawa-stadio.github.io/promo/icons/portal_icon.png",
+      "icon": "https://amagawa-stadio.github.io/promo/icons/portal_icon.png?v=20261126",
       "localIcon": "promo/icons/portal_icon.png",
       "url": "https://amagawa-stadio.github.io/"
     }
