@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Ehu1_O1uStzk_LUEzhnpEGtMduFdCaNV1U-RFe1hh24" />
-    <meta name="description" content="中学英語の「単語」「長文」「文法」「リスニング」「エンタメ」を完全網羅した無料の学習Webアプリポータルサイト。英文で謎解き、段階別並べ替え英文法、段階別英語リスニング、段階別中学英語長文、例文で英単語、教科書単語で楽しく英語力アップ！">
+    <meta name="description" content="中学英語の「単語」「長文」「文法」「リスニング」「エンタメ」を完全網羅した無料の学習Webアプリポータルサイト。英文で社会基礎、英文で謎解き、段階別並べ替え英文法、段階別英語リスニング、段階別中学英語長文、例文で英単語、教科書単語で楽しく英語力アップ！">
     <title>中学英語 学習支援ポータルサイト | 雨川の旦那</title>
     <meta name="theme-color" content="#07090e">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="中学英語ポータル">
-    <link rel="stylesheet" href="style.css?v=20261123a">
+    <link rel="stylesheet" href="style.css?v=20261126b">
     <link rel="manifest" href="manifest.webmanifest?v=20261126">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=20261126">
     <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=20261126">
@@ -39,6 +39,16 @@
                 <li class="news-item">
                     <button type="button" class="news-item-btn" aria-expanded="false">
                         <span class="news-meta">
+                            <span class="news-date">2026.11.26</span>
+                            <span class="news-tag news-tag-new">NEW</span>
+                        </span>
+                        <span class="news-text">「🪜 長文」タブに新アプリ『英文で社会基礎！— 英語で読んで覚える 中学歴史・地理・公民』（全50章）を公開しました！すべての重要語句にふりがな付き漢字と「🔴 赤シート暗記」を搭載し、英語を読み解きながら入試必須の社会知識も同時に定着できます！あわせてトップページの各アプリカードをワンタップで始めやすいコンパクト開閉式（▽）にリニューアルしました！</span>
+                        <span class="news-chevron" aria-hidden="true">▼</span>
+                    </button>
+                </li>
+                <li class="news-item">
+                    <button type="button" class="news-item-btn" aria-expanded="false">
+                        <span class="news-meta">
                             <span class="news-date">2026.11.23</span>
                             <span class="news-tag news-tag-new">NEW</span>
                         </span>
@@ -56,16 +66,6 @@
                         <span class="news-chevron" aria-hidden="true">▼</span>
                     </button>
                 </li>
-                <li class="news-item">
-                    <button type="button" class="news-item-btn" aria-expanded="false">
-                        <span class="news-meta">
-                            <span class="news-date">2026.11.22</span>
-                            <span class="news-tag news-tag-new">NEW</span>
-                        </span>
-                        <span class="news-text">『段階別！並べ替え英文法！』のStep 01〜21全単元に「📘 電子教科書」を新搭載しました！見やすく・わかりやすく・奥深い解説に加え、全例文の音声再生（通常/0.75x）・全単語タップ辞書・品詞や文法用語のタップ解説（53語）・文字1.2倍拡大に対応し、予習から復習まで1台で完結します！</span>
-                        <span class="news-chevron" aria-hidden="true">▼</span>
-                    </button>
-                </li>
             </ul>
         </section>
 
@@ -78,6 +78,7 @@
                 <span class="cat-tab-label">単語</span>
             </button>
             <button type="button" class="cat-tab-btn" id="tab-reading" role="tab" aria-selected="false" aria-controls="panel-reading" data-tab="reading">
+                <span class="cat-tab-new-pill">NEW</span>
                 <span class="cat-tab-icon" aria-hidden="true">🪜</span>
                 <span class="cat-tab-label">長文</span>
             </button>
@@ -111,83 +112,108 @@
             <div class="vocab-grid">
                 <!-- 例文で英単語！ -->
                 <article class="app-card neon-card-vocab">
-                    <div class="app-icon-wrapper">
-                        <img src="promo/icons/sentence_vocab_icon.png" alt="例文で英単語！ アイコン" class="app-icon-img">
-                    </div>
-                    <div class="app-card-content">
-                        <div class="app-badges">
-                            <span class="badge badge-amber">🌟 おすすめ</span>
-                            <span class="badge badge-emerald">Web版・無料</span>
+                    <div class="app-card-top">
+                        <div class="app-icon-wrapper">
+                            <img src="promo/icons/sentence_vocab_icon.png" alt="例文で英単語！ アイコン" class="app-icon-img">
                         </div>
-                        <h3>例文で英単語！</h3>
-                        <p><strong>生きた例文の文脈で単語がみるみる定着！</strong></p>
-                        <p>単語を1語ずつ丸暗記するのではなく、自然な英文フレーズと一緒に学習することで、読解や英作文で本当に使える語彙力が身につきます。</p>
+                        <div class="app-card-main-col">
+                            <div class="app-card-title-row">
+                                <h3>例文で英単語！</h3>
+                                <div class="app-badges">
+                                    <span class="badge badge-amber">🌟 おすすめ</span>
+                                    <span class="badge badge-emerald">Web版・無料</span>
+                                </div>
+                            </div>
+                            <div class="app-card-action">
+                                <a href="english-sentence-vocab/index.html?v=20261122b" class="btn btn-neon-amber">
+                                    <span>▶ 例文で英単語で勉強する</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-card-details">
+                        <p class="app-lead-line"><strong>生きた例文の文脈で単語がみるみる定着！</strong>単語を1語ずつ丸暗記するのではなく、自然な英文フレーズと一緒に学習することで、読解や英作文で本当に使える語彙力が身につきます。</p>
                         <ul class="app-features">
                             <li>⚡ 例文とセットで効率よくインプット</li>
                             <li>🔊 全例文ネイティブ音声読み上げ対応</li>
                             <li>🎯 多彩な品詞色分けと解説付き</li>
                         </ul>
                     </div>
-                    <div class="app-card-action">
-                        <a href="english-sentence-vocab/index.html?v=20261122b" class="btn btn-neon-amber">
-                            <span>▶ 例文で英単語を勉強する</span>
-                        </a>
-                    </div>
+                    <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="例文で英単語！の説明を表示">
+                        <span class="expand-chevron" aria-hidden="true">▽</span>
+                    </button>
                 </article>
 
                 <!-- 中学英語 教科書単語 -->
                 <article class="app-card neon-card-vocab">
-                    <div class="app-icon-wrapper">
-                        <img src="promo/icons/textbook_vocab_icon.png" alt="教科書単語 アイコン" class="app-icon-img">
-                    </div>
-                    <div class="app-card-content">
-                        <div class="app-badges">
-                            <span class="badge badge-amber">📚 定期テスト対策</span>
-                            <span class="badge badge-emerald">Web版・無料</span>
+                    <div class="app-card-top">
+                        <div class="app-icon-wrapper">
+                            <img src="promo/icons/textbook_vocab_icon.png" alt="教科書単語 アイコン" class="app-icon-img">
                         </div>
-                        <h3>中学英語 教科書単語</h3>
-                        <p><strong>学校の教科書準拠でテスト範囲を完全攻略！</strong></p>
-                        <p>全国の中学校で採用されている主要英語教科書（New Crown, Here We Go等）や学年を選ぶだけで、テストに出る単語をピンポイント暗記できます。</p>
+                        <div class="app-card-main-col">
+                            <div class="app-card-title-row">
+                                <h3>中学英語 教科書単語</h3>
+                                <div class="app-badges">
+                                    <span class="badge badge-amber">📚 定期テスト対策</span>
+                                    <span class="badge badge-emerald">Web版・無料</span>
+                                </div>
+                            </div>
+                            <div class="app-card-action">
+                                <a href="english-textbook-vocab/index.html" class="btn btn-neon-amber">
+                                    <span>▶ 教科書単語で勉強する</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-card-details">
+                        <p class="app-lead-line"><strong>学校の教科書準拠でテスト範囲を完全攻略！</strong>全国の中学校で採用されている主要英語教科書（New Crown, Here We Go等）や学年を選ぶだけで、テストに出る単語をピンポイント暗記できます。</p>
                         <ul class="app-features">
                             <li>🏫 教科書・学年ごとの単元別出題</li>
                             <li>👂 音声リスニング＆スペル並べ替え問題</li>
                             <li>🖨️ A4プリント出力＆学習カレンダー対応</li>
                         </ul>
                     </div>
-                    <div class="app-card-action">
-                        <a href="english-textbook-vocab/index.html" class="btn btn-neon-amber">
-                            <span>▶ 教科書単語を勉強する</span>
-                        </a>
-                    </div>
+                    <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="中学英語 教科書単語の説明を表示">
+                        <span class="expand-chevron" aria-hidden="true">▽</span>
+                    </button>
                 </article>
             </div>
         </section>
 
         <!-- ============================================================
-             ② 長文パネル
+             ② 長文パネル（メイン：『段階別！中学英語長文！』／サブ：『英文で社会基礎！』）
              ============================================================ -->
         <section class="tab-panel" id="panel-reading" role="tabpanel" aria-labelledby="tab-reading" data-panel="reading" hidden>
             <h2 class="category-heading cat-reading-heading">
                 <span class="category-icon">🪜</span> 長文 (Reading Comprehension)
             </h2>
             <p class="category-desc">
-                「長文が苦手…」を克服！習った文法だけで1段ずつ階段を上がるように読解力を鍛える新感覚アプリです。
+                「長文が苦手…」を克服！習った文法だけで1段ずつ鍛える実戦演習と、英語で読んで社会の基礎も覚えられるWeb教科書を収録しています。
             </p>
 
             <!-- 段階別！中学英語長文！ -->
             <article class="app-card neon-card-reading">
-                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
-                    <img src="promo/icons/reading_icon.png" alt="段階別！中学英語長文！ アイコン" class="app-icon-img">
-                </div>
-                <div class="app-card-content">
-                    <div class="app-badges">
-                        <span class="badge badge-cyan">🔥 大人気</span>
-                        <span class="badge badge-emerald">Web版・無料</span>
-                        <span class="badge badge-cyan">全21ステップ・315本収録</span>
+                <div class="app-card-top">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/reading_icon.png" alt="段階別！中学英語長文！ アイコン" class="app-icon-img">
                     </div>
-                    <h3>段階別！中学英語長文！</h3>
-                    <p><strong>習った文法だけで1段ずつステップアップ！読めないストレスゼロの長文演習！</strong></p>
-                    <p>中1のbe動詞から中3の仮定法まで、中学3年間の学習順に沿った全21ステップ累積式カリキュラム。各単元では未習文法を使わないため、つまずかずに自分のペースで実力を伸ばせます。</p>
+                    <div class="app-card-main-col">
+                        <div class="app-card-title-row">
+                            <h3>段階別！中学英語長文！</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-cyan">🔥 大人気</span>
+                                <span class="badge badge-cyan">全21ステップ・315本</span>
+                            </div>
+                        </div>
+                        <div class="app-card-action">
+                            <a href="english-reading-app/index.html?v=20261123b" class="btn btn-neon-cyan">
+                                <span>▶ 段階別！長文で勉強する</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card-details">
+                    <p class="app-lead-line"><strong>習った文法だけで1段ずつステップアップ！読めないストレスゼロの長文演習！</strong>中1のbe動詞から中3の仮定法まで、中学3年間の学習順に沿った全21ステップ累積式カリキュラム。各単元では未習文法を使わないため、つまずかずに自分のペースで実力を伸ばせます。</p>
                     <ul class="app-features">
                         <li>📚 「説明文」「会話文」「図表・グラフ」の3タイプ（全315本）</li>
                         <li>🔍 <strong>全単語タップ辞書 ＆ 1文翻訳・1文音声</strong>：分からない1文だけ和訳・発音を確認でき挫折ゼロ！</li>
@@ -195,11 +221,44 @@
                         <li>💡 <strong>即採点＆根拠ハイライト</strong>：設問を解いた瞬間に本文の該当根拠箇所が光る</li>
                     </ul>
                 </div>
-                <div class="app-card-action">
-                    <a href="english-reading-app/index.html?v=20261123b" class="btn btn-neon-cyan">
-                        <span>🚀 段階別！長文に挑戦する</span>
-                    </a>
+                <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="段階別！中学英語長文！の説明を表示">
+                    <span class="expand-chevron" aria-hidden="true">▽</span>
+                </button>
+            </article>
+
+            <!-- サブアプリ：英文で社会基礎！ -->
+            <article class="app-card neon-card-social">
+                <div class="app-card-top">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/social_textbook_icon.png" alt="英文で社会基礎！ アイコン" class="app-icon-img">
+                    </div>
+                    <div class="app-card-main-col">
+                        <div class="app-card-title-row">
+                            <h3>英文で社会基礎！</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-rose">🆕 NEW 公開！</span>
+                                <span class="badge badge-emerald">歴史・地理・公民 全50章</span>
+                            </div>
+                        </div>
+                        <div class="app-card-action">
+                            <a href="english-social-textbook/index.html?v=20261126a" class="btn btn-neon-listening">
+                                <span>▶ 英文で社会基礎！で勉強する</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                <div class="app-card-details">
+                    <p class="app-lead-line"><strong>英語で読み解くから記憶に残る！中学歴史・地理・公民のWeb教科書！</strong>日本語でただ読むだけでは忘れやすい社会の重要事項も、やさしい英語長文で意味を考えながら読むことで記憶に強く定着します。受験シーズンの英語読解と社会基礎のW総復習に最適です。</p>
+                    <ul class="app-features">
+                        <li>🔖 <strong>全重要語句にふりがな付き漢字を併記</strong>：読み間違いゼロで正確な漢字までしっかり定着（809箇所）</li>
+                        <li>🔴 <strong>「赤シート暗記」モード搭載</strong>：重要漢字と読みをワンタップで「？？？ 」に隠し、めくって暗記チェック！</li>
+                        <li>🔊 <strong>英語のみを自然に読み上げるクリーン音声 ＆ 全単語タップ辞書・1文翻訳・対訳モード</strong>完備</li>
+                        <li>🖼️ <strong>歴史20章・地理16章・公民14章（全50章）</strong>にわかりやすい図解・イラスト98枚を収録</li>
+                    </ul>
+                </div>
+                <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="英文で社会基礎！の説明を表示">
+                    <span class="expand-chevron" aria-hidden="true">▽</span>
+                </button>
             </article>
         </section>
 
@@ -216,18 +275,27 @@
 
             <!-- メインアプリ：段階別！並べ替え英文法！ -->
             <article class="app-card neon-card-grammar">
-                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
-                    <img src="promo/icons/step_grammar_icon.png" alt="段階別！並べ替え英文法！ アイコン" class="app-icon-img">
-                </div>
-                <div class="app-card-content">
-                    <div class="app-badges">
-                        <span class="badge badge-rose">🆕 NEW 電子教科書搭載！</span>
-                        <span class="badge badge-emerald">Web版・無料</span>
-                        <span class="badge badge-purple">全26単元・842問・21教科書</span>
+                <div class="app-card-top">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/step_grammar_icon.png" alt="段階別！並べ替え英文法！ アイコン" class="app-icon-img">
                     </div>
-                    <h3>段階別！並べ替え英文法！</h3>
-                    <p><strong>電子教科書で「わかる」→ 並べ替え842問で「できる」！予習から入試対策まで完全網羅！</strong></p>
-                    <p>中1〜中3の全21文法単元に「📘 電子教科書」を完備し、重要表現・熟語5単元を合わせた計842問を収録。英単語も「助動詞・原形」などの専門用語もタップ1つで解説が開くため、自宅学習や予習・復習に最適です。</p>
+                    <div class="app-card-main-col">
+                        <div class="app-card-title-row">
+                            <h3>段階別！並べ替え英文法！</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-rose">🆕 電子教科書搭載</span>
+                                <span class="badge badge-purple">全26単元・842問</span>
+                            </div>
+                        </div>
+                        <div class="app-card-action">
+                            <a href="english-step-grammar-app/index.html?v=20261122g" class="btn btn-neon-purple">
+                                <span>▶ 並べ替え英文法で勉強する</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card-details">
+                    <p class="app-lead-line"><strong>電子教科書で「わかる」→ 並べ替え842問で「できる」！予習から入試対策まで完全網羅！</strong>中1〜中3の全21文法単元に「📘 電子教科書」を完備し、重要表現・熟語5単元を合わせた計842問を収録。英単語も「助動詞・原形」などの専門用語もタップ1つで解説が開きます。</p>
                     <ul class="app-features">
                         <li>📘 <strong>全21単元の電子教科書</strong>：音声（通常/0.75x）・全単語辞書・品詞/文法用語タップ解説（53語）・文字1.2倍対応</li>
                         <li>📖 <strong>辞書モード＆右スライド全単語辞書</strong>：例文音声・連語・単語タップ連鎖ジャンプに対応</li>
@@ -235,31 +303,38 @@
                         <li>🖨️ <strong>A4プリント作成・印刷 ＆ 連続ログインカレンダー</strong>で毎日の学習と紙のテスト対策に完全対応</li>
                     </ul>
                 </div>
-                <div class="app-card-action">
-                    <a href="english-step-grammar-app/index.html?v=20261122g" class="btn btn-neon-purple">
-                        <span>🚀 段階別！並べ替え英文法！を始める</span>
-                    </a>
-                </div>
+                <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="段階別！並べ替え英文法！の説明を表示">
+                    <span class="expand-chevron" aria-hidden="true">▽</span>
+                </button>
             </article>
 
             <!-- 旧アプリ：中学生文法　並べ替え７００！（既存ユーザー向けに継続公開） -->
-            <article class="app-card" style="border: 1px solid rgba(168, 85, 247, 0.35); background: rgba(15, 22, 38, 0.68); padding: 1.25rem 1.5rem; margin-top: 1.2rem;">
-                <div class="app-icon-wrapper" style="width: 78px; height: 78px; border-radius: 18px;">
-                    <img src="promo/icons/grammar_icon.png" alt="中学生文法　並べ替え７００！（旧アプリ） アイコン" class="app-icon-img">
-                </div>
-                <div class="app-card-content">
-                    <div class="app-badges">
-                        <span class="badge badge-purple">🐾 旧アプリ（ムック登場版）</span>
-                        <span class="badge badge-emerald">全700問</span>
+            <article class="app-card neon-card-grammar-sub">
+                <div class="app-card-top">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/grammar_icon.png" alt="中学生文法　並べ替え７００！（旧アプリ） アイコン" class="app-icon-img">
                     </div>
-                    <h3 style="font-size: 1.18rem; margin-bottom: 0.3rem;">中学生文法　並べ替え７００！（旧バージョン）</h3>
-                    <p style="font-size: 0.86rem; margin-bottom: 0.2rem;">これまで旧アプリをご利用いただいていた方や、マスコットの「ムック」と一緒に学びたい方はこちらから引き続きご利用いただけます。</p>
+                    <div class="app-card-main-col">
+                        <div class="app-card-title-row">
+                            <h3>並べ替え７００！（旧版）</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-purple">🐾 ムック登場版</span>
+                                <span class="badge badge-emerald">全700問</span>
+                            </div>
+                        </div>
+                        <div class="app-card-action">
+                            <a href="english-grammar-web/index.html" class="btn btn-sub-purple">
+                                <span>▶ 並べ替え700（旧版）で勉強する</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="app-card-action">
-                    <a href="english-grammar-web/index.html" class="btn" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.55); color: #e9d5ff; font-size: 0.88rem; padding: 0.65rem 1.3rem;">
-                        <span>▶ 旧アプリを開く</span>
-                    </a>
+                <div class="app-card-details">
+                    <p class="app-lead-line"><strong>マスコットの「ムック」と一緒に学べる従来版アプリ！</strong>これまで旧アプリをご利用いただいていた方や、シーズー犬ムックの応援コメントと一緒にテンポよく並べ替え練習を続けたい方はこちらからご利用いただけます。</p>
                 </div>
+                <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="並べ替え７００！（旧版）の説明を表示">
+                    <span class="expand-chevron" aria-hidden="true">▽</span>
+                </button>
             </article>
         </section>
 
@@ -276,18 +351,27 @@
 
             <!-- 段階別！英語リスニング！ -->
             <article class="app-card neon-card-listening">
-                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
-                    <img src="promo/icons/listening_icon.png" alt="段階別！英語リスニング！ シーズー犬アイコン" class="app-icon-img">
-                </div>
-                <div class="app-card-content">
-                    <div class="app-badges">
-                        <span class="badge badge-rose">🆕 NEW 公開！</span>
-                        <span class="badge badge-emerald">Web版・無料</span>
-                        <span class="badge badge-cyan">全21ステップ・150問＋おまけコント</span>
+                <div class="app-card-top">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/listening_icon.png" alt="段階別！英語リスニング！ シーズー犬アイコン" class="app-icon-img">
                     </div>
-                    <h3>段階別！英語リスニング！</h3>
-                    <p><strong>習った文法だけで1段ずつ耳からステップアップ！聴き取れる楽しさを実感！</strong></p>
-                    <p>中1のbe動詞から中3の仮定法まで、既習文法だけで聴ける全21ステップ累積式リスニング。中1・中2は各タイプ2問、受験生の中3は各タイプ3問のたっぷり150問に加え、クスッと笑える「おまけコント」も収録しています。</p>
+                    <div class="app-card-main-col">
+                        <div class="app-card-title-row">
+                            <h3>段階別！英語リスニング！</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-emerald">Web版・無料</span>
+                                <span class="badge badge-cyan">全21ステップ・150問＋コント</span>
+                            </div>
+                        </div>
+                        <div class="app-card-action">
+                            <a href="english-listening-app/index.html?v=20261119j" class="btn btn-neon-listening">
+                                <span>▶ 英語リスニングで勉強する</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card-details">
+                    <p class="app-lead-line"><strong>習った文法だけで1段ずつ耳からステップアップ！聴き取れる楽しさを実感！</strong>中1のbe動詞から中3の仮定法まで、既習文法だけで聴ける全21ステップ累積式リスニング。全150問に加え、クスッと笑える「おまけコント」も収録しています。</p>
                     <ul class="app-features">
                         <li>🎧 <strong>入試・英検仕様の3タイプ</strong>：「会話文」「資料・条件」「スピーチ・放送」＋「🎭 おまけコント」6本</li>
                         <li>🌊 <strong>10分割グリーン波形</strong>：音声の長さと進み具合が目で見てすぐわかる（2回/1回再生・速度変更対応）</li>
@@ -295,11 +379,9 @@
                         <li>📅 <strong>連続ログイン＆学習カレンダー</strong>：毎日の挑戦記録と👑王冠コレクションで楽しく継続</li>
                     </ul>
                 </div>
-                <div class="app-card-action">
-                    <a href="english-listening-app/index.html?v=20261119j" class="btn btn-neon-listening">
-                        <span>🎧 段階別！リスニングに挑戦する</span>
-                    </a>
-                </div>
+                <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="段階別！英語リスニング！の説明を表示">
+                    <span class="expand-chevron" aria-hidden="true">▽</span>
+                </button>
             </article>
         </section>
 
@@ -316,18 +398,27 @@
 
             <!-- 英文で謎解き！— 鶴川えいなの放課後ミステリー -->
             <article class="app-card neon-card-entame">
-                <div class="app-icon-wrapper" style="width: 120px; height: 120px;">
-                    <img src="promo/icons/mystery_icon.png" alt="英文で謎解き！ 鶴川えいなアイコン" class="app-icon-img">
-                </div>
-                <div class="app-card-content">
-                    <div class="app-badges">
-                        <span class="badge badge-rose">🆕 NEW 公開！</span>
-                        <span class="badge badge-emerald">Web版・無料</span>
-                        <span class="badge badge-pink">全5ランク・100事件収録</span>
+                <div class="app-card-top">
+                    <div class="app-icon-wrapper">
+                        <img src="promo/icons/mystery_icon.png" alt="英文で謎解き！ 鶴川えいなアイコン" class="app-icon-img">
                     </div>
-                    <h3>英文で謎解き！<span style="display:block; font-size:0.88rem; font-weight:700; color:#f9a8d4; margin-top:2px;">— 鶴川えいなの放課後ミステリー</span></h3>
-                    <p><strong>英語の証言と手がかりイラストから日常の謎を解明！楽しく遊んで読解力アップ！</strong></p>
-                    <p>ヘッドホンがトレードマークの女子高生・鶴川えいなと一緒に、街や学校で起きる100のちょっとした事件を解き明かす新感覚英語ミステリー。消去法でスッキリ解ける納得感100%の推理パズルです。</p>
+                    <div class="app-card-main-col">
+                        <div class="app-card-title-row">
+                            <h3>英文で謎解き！</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-rose">🆕 NEW</span>
+                                <span class="badge badge-pink">全5ランク・100事件</span>
+                            </div>
+                        </div>
+                        <div class="app-card-action">
+                            <a href="english-mystery-app/index.html?v=20261126a" class="btn btn-neon-pink">
+                                <span>▶ 英文で謎解き！で勉強する</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card-details">
+                    <p class="app-lead-line"><strong>英語の証言と手がかりイラストから日常の謎を解明！楽しく遊んで読解力アップ！</strong>ヘッドホンがトレードマークの女子高生探偵・鶴川えいなと一緒に、街や学校で起きる100のちょっとした事件を解き明かす新感覚英語ミステリーです。</p>
                     <ul class="app-features">
                         <li>🪜 <strong>5段階の英語レベルアップ</strong>：Rank 1〜2（日本語ヒント）→ Rank 3（ヒント画像＆導入文も英語）→ Rank 4（選択肢も英語）→ Rank 5（質問文まで完全オール英語！）</li>
                         <li>🔥 <strong>2段階W推理（全63問）＆ 多彩なジャンル</strong>：イラスト観察・犯人さがし・買い物計算・すれ違い・正直者＆嘘つき論理など全100問</li>
@@ -335,11 +426,9 @@
                         <li>👑 <strong>探偵の通り名コレクション ＆ ランク別探偵ノート</strong>：連続ログインカレンダーと解決記録で「伝説の英語名探偵」を目指そう</li>
                     </ul>
                 </div>
-                <div class="app-card-action">
-                    <a href="english-mystery-app/index.html?v=20261126a" class="btn btn-neon-pink">
-                        <span>🔍 英文で謎解きに挑戦する</span>
-                    </a>
-                </div>
+                <button type="button" class="app-card-expand-btn" aria-expanded="false" aria-label="英文で謎解き！の説明を表示">
+                    <span class="expand-chevron" aria-hidden="true">▽</span>
+                </button>
             </article>
 
             <!-- エンタメ枠の今後の予定予告 -->
@@ -453,6 +542,32 @@
                     };
                 });
             }
+
+            // 1.5. 各アプリカードの ▽ ボタン（および折りたたみ時の説明1行目タップ）で詳細説明を開閉
+            var appCards = Array.prototype.slice.call(document.querySelectorAll('.app-card'));
+            appCards.forEach(function (card) {
+                var expBtn = card.querySelector('.app-card-expand-btn');
+                var detailsEl = card.querySelector('.app-card-details');
+                if (!expBtn) return;
+
+                function toggleCardDetails() {
+                    var expanded = card.classList.toggle('is-expanded');
+                    expBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                    var chev = expBtn.querySelector('.expand-chevron');
+                    if (chev) {
+                        chev.textContent = expanded ? '△' : '▽';
+                    }
+                }
+
+                expBtn.onclick = toggleCardDetails;
+                if (detailsEl) {
+                    detailsEl.onclick = function () {
+                        if (!card.classList.contains('is-expanded')) {
+                            toggleCardDetails();
+                        }
+                    };
+                }
+            });
 
             // 2. 5カテゴリタブ切替（単語 / 長文 / 文法 / リスニング / エンタメ）
             var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.cat-tab-btn'));

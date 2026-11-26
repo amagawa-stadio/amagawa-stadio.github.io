@@ -9,12 +9,23 @@
  */
 (function () {
   const REMOTE_JSON_URL = 'https://amagawa-stadio.github.io/promo/sister-apps.json';
-  const CACHE_KEY = 'amakawa_sister_apps_promo_v10';
+  const CACHE_KEY = 'amakawa_sister_apps_promo_v11';
 
   const FALLBACK_DATA = {
     updatedAt: '2026-11-26',
     heading: '＼ 雨川の旦那 学習アプリシリーズ ／',
     apps: [
+      {
+        id: 'english-social-textbook',
+        isNew: true,
+        badgeText: 'NEW',
+        title: '英文で社会基礎！',
+        subtitle: 'ふりがな＆赤シート完備！英語で読んで覚える中学社会50章',
+        borderColor: '#10b981',
+        icon: 'https://amagawa-stadio.github.io/promo/icons/social_textbook_icon.png',
+        localIcon: 'promo/icons/social_textbook_icon.png',
+        url: 'https://amagawa-stadio.github.io/english-social-textbook/'
+      },
       {
         id: 'english-mystery',
         isNew: true,
